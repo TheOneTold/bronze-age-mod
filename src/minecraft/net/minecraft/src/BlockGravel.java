@@ -33,7 +33,7 @@ public class BlockGravel extends BlockSand
         }
         
         // 30% chance for 2 Flint
-        if (world.rand.nextInt(8) < 3) {
+        if (world.rand.nextInt(16) < 3) {
             this.dropBlockAsItem_do(world, i, j, k, new ItemStack(Item.flint.shiftedIndex, 2, 0));
         } else {
             // 70% chance for 1 Gravel Block
