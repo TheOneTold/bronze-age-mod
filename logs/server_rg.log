@@ -6,7 +6,7 @@
 #
 # RetroGuard v2.3.1, by Retrologic Systems - www.retrologic.com
 #
-# Logfile created on Sat Sep 12 18:47:23 CDT 2026
+# Logfile created on Sun Sep 13 00:50:14 CDT 2026
 #
 # Jar file to be obfuscated:           server_recomp.jar
 # Target Jar file for obfuscated code: server_reobf.jar
@@ -24,7 +24,7 @@
 #      Your class net/minecraft/src/Packet uses '.class' or calls java/lang/Class.forName(Ljava/lang/String;)Ljava/lang/Class;
 #      Your class net/minecraft/src/DataWatcher uses '.class' or calls java/lang/Class.forName(Ljava/lang/String;)Ljava/lang/Class;
 #
-# Memory in use after class data structure built: 8441200 bytes
+# Memory in use after class data structure built: 8433072 bytes
 # Total memory available                        : 385875968 bytes
 #
 #

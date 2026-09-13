@@ -43,9 +43,9 @@ net\minecraft\src\BlockFurnace ef2d5a8623d45153fa3325480edc3d70
 net\minecraft\src\BlockGlass 19454a159f71828c062d0ea7c864a946
 net\minecraft\src\BlockGlowStone 2d36a5c50c8cef02f5493b6a9b502e8a
 net\minecraft\src\BlockGrass 5e2d1e1e66b4b05ba2447464a0a96b70
-net\minecraft\src\BlockGravel f3c4d405e40d1fb07aeb85773c5c67ad
+net\minecraft\src\BlockGravel c8958ff0b9686dcd6117332e5e93ff69
 net\minecraft\src\BlockHay 8f97ee2391599d4965e3a81dbb950634
-net\minecraft\src\BlockHearth 5e7b5a2833de200c74dcb5806f9b5067
+net\minecraft\src\BlockHearth cc391bea6118d7a6b28ca7d8c82d03e7
 net\minecraft\src\BlockIce 88263b50ebb2360df657a109926a1f67
 net\minecraft\src\BlockJukeBox 806886ba05f0fc5fadc32d53428424d0
 net\minecraft\src\BlockLadder 892c549575aa9e1e10b6127f7a460879
@@ -528,7 +528,7 @@ net\minecraft\src\PlayerControllerTest 657265fe344f386e3dbd19b47f3a326e
 net\minecraft\src\PositionTextureVertex 76e20d6652a031ad62151f8b1029f366
 net\minecraft\src\RailLogic 9d16e039bcbd740bea5f7f5e197976ed
 net\minecraft\src\RecipesArmor 4a2de1fed2bb592bade8479551a4c73c
-net\minecraft\src\RecipesCrafting c1ba90b33c24dc6d0f8b6d0768444ecd
+net\minecraft\src\RecipesCrafting 86753f62659187d6c9302359afd57a57
 net\minecraft\src\RecipesDyes 0cfb18a75c6080f3e5ef90f642dbf4d2
 net\minecraft\src\RecipesFood 6023975619f9c6e46f5282b0a3558470
 net\minecraft\src\RecipesIngots 91abb8de77ef1b20db023c55e589e56d

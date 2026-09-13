@@ -38,7 +38,7 @@ net\minecraft\src\BlockFurnace 5d0eb7ca505b3280c69b4b9f5f93eaac
 net\minecraft\src\BlockGlass 7f8ee2d9ed0f91a656ed6d183a6c09f1
 net\minecraft\src\BlockGlowStone 2d36a5c50c8cef02f5493b6a9b502e8a
 net\minecraft\src\BlockGrass 1889bf72565edfa7843470786b76c4bf
-net\minecraft\src\BlockGravel a2dc172c286a7ee66a0f58030d696cfa
+net\minecraft\src\BlockGravel 1e431f424339a54117f05f4e0f52b8d2
 net\minecraft\src\BlockHay 8f97ee2391599d4965e3a81dbb950634
 net\minecraft\src\BlockHearth 8512a960622bd74569883cc8794355e5
 net\minecraft\src\BlockIce 34ca8a4989c7d95f2e54745d45b4087e
@@ -361,13 +361,13 @@ net\minecraft\src\PlayerNBTManager 42be2fee1a892d399bfdc695b7fa6a7e
 net\minecraft\src\PropertyManager 8e0bee862135e081ab4a34b1432671f7
 net\minecraft\src\RailLogic ccb77b21e444aa42d0b216e8a825fe82
 net\minecraft\src\RecipesArmor 8591a6db1c066d57f4e8baa6bede54b5
-net\minecraft\src\RecipesCrafting 758c8e4276cefcf0c991518aed239c25
+net\minecraft\src\RecipesCrafting f8676692a957d59ba574e818e9d4e78f
 net\minecraft\src\RecipesDyes 8be559e2b9e75f81ba2988a31d317843
 net\minecraft\src\RecipesFood 6023975619f9c6e46f5282b0a3558470
 net\minecraft\src\RecipesIngots af8950b4af12568aa4935500b8867c37
 net\minecraft\src\RecipeSorter d3b0ec17b78fde242e02b370a3c4c1b7
 net\minecraft\src\RecipesTools bd58bfc3b4fc8822003083ebaf0bc4e2
-net\minecraft\src\RecipesWeapons d28254182ad9bd5e1f3e546824775afd
+net\minecraft\src\RecipesWeapons ae3e3e8bc2d9ef01301c2e95179eb366
 net\minecraft\src\RedstoneUpdateInfo ca51b1c373a71ce9159c56045cc83c66
 net\minecraft\src\RegionFile 6b3609ee20d2c66496948edfc7fbd8e1
 net\minecraft\src\RegionFileCache 068285b6e4df62d602b351546ce4c0b4
