@@ -32,13 +32,13 @@ public class BlockLog extends Block
     public void harvestBlock(World world, EntityPlayer entityplayer, int i, int j, int k, int l)
     {
 
-        // Check if the player is holding an item, and if that item is an Axe
+        
         ItemStack heldItem = entityplayer.inventory.getCurrentItem();
         if (heldItem != null && heldItem.getItem() instanceof ItemAxe) {
-            // Player used an axe, let the wood drop normally
+            
             dropBlockAsItem(world, i, j, k, l);
         }
-        // If they used a fist or wrong tool, we do nothing (no drops)
+        
     }
 
     public void onBlockRemoval(World world, int i, int j, int k)

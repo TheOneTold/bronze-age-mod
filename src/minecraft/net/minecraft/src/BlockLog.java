@@ -31,16 +31,16 @@ public class BlockLog extends Block
 
     public void harvestBlock(World world, EntityPlayer entityplayer, int i, int j, int k, int l)
     {
-        // Increase statistics for mining the block
+        
         entityplayer.addStat(StatList.mineBlockStatArray[blockID], 1);
 
-        // Check if the player is holding an item, and if that item is an Axe
+       
         ItemStack heldItem = entityplayer.inventory.getCurrentItem();
         if (heldItem != null && heldItem.getItem() instanceof ItemAxe) {
-            // Player used an axe, let the wood drop normally
+            
             dropBlockAsItem(world, i, j, k, l);
         }
-        // If they used a fist or wrong tool, we do nothing (no drops)
+       
     }
 
     public void onBlockRemoval(World world, int i, int j, int k)
@@ -99,8 +99,8 @@ public class BlockLog extends Block
 	public float blockStrength(EntityPlayer entityplayer) {
 		ItemStack heldItem = entityplayer.inventory.getCurrentItem();
 		if (heldItem != null && heldItem.getItem() instanceof ItemAxe) {
-			return super.blockStrength(entityplayer); // Normal axe speed
+			return super.blockStrength(entityplayer);
 		}
-		return 0.02F; // Extremely slow break speed (like mining stone with a fist)
+		return 0.02F; 
 	}
 }

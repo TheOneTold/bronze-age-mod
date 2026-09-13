@@ -97,15 +97,15 @@ public class BlockFurnace extends BlockContainer
 
 	public static void updateFurnaceBlockState(boolean flag, World world, int i, int j, int k)
     {
-        // --- THE ULTIMATE SERVER INTERCEPTOR ---
+        
         int currentBlockID = world.getBlockId(i, j, k);
         if (currentBlockID == Block.hearthIdle.blockID || currentBlockID == Block.hearthActive.blockID)
         {
-            // Stop vanilla from making it a cobblestone oven and use your Hearth's logic instead!
+            
             BlockHearth.updateHearthBlockState(flag, world, i, j, k);
             return; 
         }
-        // ----------------------------------------
+        
 
         int l = world.getBlockMetadata(i, j, k);
         TileEntity tileentity = world.getBlockTileEntity(i, j, k);

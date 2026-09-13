@@ -35,7 +35,7 @@ public class BlockHearth extends BlockContainer
 
     public int getBlockTexture(IBlockAccess iblockaccess, int i, int j, int k, int l)
 	{
-		// 1. Top Face
+		// Top Face
 		if(l == 1)
 		{
 			if(isActive) {
@@ -45,32 +45,28 @@ public class BlockHearth extends BlockContainer
 			}
 		}
 		
-		// 2. Bottom Face
+		// Bottom Face
 		if(l == 0)
 		{
 			return blockIndexInTexture - 16;
 		}
 		
-		// 3. Side Faces (l is 2, 3, 4, or 5)
+		// Side Faces
 		int i1 = iblockaccess.getBlockMetadata(i, j, k);
 		if(l == i1)
 		{
-			// This is the front face! 
-			// If your active FRONT is different, change this value. 
-			// Otherwise, if the front and sides look identical when active, keep it + 16.
 			if(isActive) {
 				return blockIndexInTexture + 16; 
 			} else {
-				return blockIndexInTexture; // Front face idle (same as sides)
+				return blockIndexInTexture;
 			}
 		}
 		else
 		{
-			// These are the non-front sides and back faces
 			if(isActive) {
-				return blockIndexInTexture + 16; // Active side texture
+				return blockIndexInTexture + 16;
 			} else {
-				return blockIndexInTexture; // Idle side texture
+				return blockIndexInTexture;
 			}
 		}
 	}
@@ -87,8 +83,8 @@ public class BlockHearth extends BlockContainer
 		float centerY = (float)y + 0.0F + random.nextFloat() * 6.0F / 16.0F;
 		float centerZ = (float)z + 0.5F;
 		
-		float offsetOutward = 0.52F; // Just outside the block face edge
-		float randomSpread = random.nextFloat() * 0.6F - 0.3F; // Spreads particles along the face
+		float offsetOutward = 0.52F; 
+		float randomSpread = random.nextFloat() * 0.6F - 0.3F;
 
 		// --- WEST FACE ---
 		world.spawnParticle("smoke", centerX - offsetOutward, centerY, centerZ + randomSpread, 0.0D, 0.0D, 0.0D);
@@ -107,20 +103,20 @@ public class BlockHearth extends BlockContainer
 		world.spawnParticle("flame", centerX + randomSpread, centerY, centerZ + offsetOutward, 0.0D, 0.0D, 0.0D);
 		
 		// --- TOP FACE ---
-		float topY = (float)y + 1.02F; // Placed just above the top surface
+		float topY = (float)y + 1.02F;
         
-        // Spawns 5 smoke particles every single tick for a thick cloud
+
         for (int count = 0; count < 5; count++) {
-            // Tight spread so it looks like a concentrated column rising up
+
             float randomSpreadX = random.nextFloat() * 0.4F - 0.2F;
             float randomSpreadZ = random.nextFloat() * 0.4F - 0.2F;
             
-            // The last three parameters control particle velocity (X, Y, Z motion).
-            // Setting the middle one to 0.1D pushes the smoke upward faster!
+.
+
             world.spawnParticle("smoke", centerX + randomSpreadX, topY, centerZ + randomSpreadZ, 0.0D, 0.1D, 0.0D);
         }
         
-        // Keep a normal flame particle spawn rate so the top doesn't just catch fire
+
         if (random.nextInt(4) == 0) {
             float randomSpreadX = random.nextFloat() * 0.4F - 0.2F;
             float randomSpreadZ = random.nextFloat() * 0.4F - 0.2F;
@@ -251,7 +247,7 @@ label0:
     private static boolean keepHearthInventory = false;
 
 	public int getBlockTextureFromSideAndMetadata(int side, int metadata) {
-		// 1. Top Face
+		// Top Face
 		if (side == 1) {
 			if (isActive) {
 				return blockIndexInTexture + 17;
@@ -260,25 +256,25 @@ label0:
 			}
 		}
 		
-		// 2. Bottom Face
+		// Bottom Face
 		if (side == 0) {
 			return blockIndexInTexture - 16;
 		}
 		
-		// 3. Side Faces (In inventory, side 3 is typically treated as the front face)
+		// Side Faces
 		if (side == 3) {
 			if (isActive) {
-				return blockIndexInTexture + 16; // Front face active
+				return blockIndexInTexture + 16;
 			} else {
-				return blockIndexInTexture;      // Front face idle
+				return blockIndexInTexture;      
 			}
 		}
 		
-		// 4. Remaining sides and back
+	
 		if (isActive) {
-			return blockIndexInTexture + 16;     // Active sides
+			return blockIndexInTexture + 16;     
 		} else {
-			return blockIndexInTexture;          // Idle sides
+			return blockIndexInTexture;          
 		}
 	}
 
