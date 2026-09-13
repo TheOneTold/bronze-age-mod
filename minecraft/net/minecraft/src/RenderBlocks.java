@@ -16,7 +16,7 @@ import org.lwjgl.opengl.GL11;
 
 public class RenderBlocks
 {
-
+	public static boolean cfgGrassFix = false;
     public RenderBlocks(IBlockAccess iblockaccess)
     {
         overrideBlockTexture = -1;
@@ -2628,65 +2628,86 @@ public class RenderBlocks
 
     public boolean renderBlockFence(Block block, int i, int j, int k)
     {
+        int blockID = block.blockID;
         boolean flag = false;
-        float f = 0.375F;
-        float f1 = 0.625F;
-        block.setBlockBounds(f, 0.0F, f, f1, 1.0F, f1);
+        
+        
+        float fPostMin = 0.375F;
+        float fPostMax = 0.625F;
+        
+        
+        float fRailMin = 0.4375F;
+        float fRailMax = 0.5625F;
+        
+        
+        block.setBlockBounds(fPostMin, 0.0F, fPostMin, fPostMax, 1.0F, fPostMax);
         renderStandardBlock(block, i, j, k);
         flag = true;
-        boolean flag1 = false;
-        boolean flag2 = false;
-        if(blockAccess.getBlockId(i - 1, j, k) == block.blockID || blockAccess.getBlockId(i + 1, j, k) == block.blockID)
+
+        
+
+        
+        int idNorth = blockAccess.getBlockId(i, j, k - 1);
+        Block bNorth = Block.blocksList[idNorth];
+        if (idNorth == blockID || (bNorth != null && bNorth.isOpaqueCube()))
         {
-            flag1 = true;
-        }
-        if(blockAccess.getBlockId(i, j, k - 1) == block.blockID || blockAccess.getBlockId(i, j, k + 1) == block.blockID)
-        {
-            flag2 = true;
-        }
-        boolean flag3 = blockAccess.getBlockId(i - 1, j, k) == block.blockID;
-        boolean flag4 = blockAccess.getBlockId(i + 1, j, k) == block.blockID;
-        boolean flag5 = blockAccess.getBlockId(i, j, k - 1) == block.blockID;
-        boolean flag6 = blockAccess.getBlockId(i, j, k + 1) == block.blockID;
-        if(!flag1 && !flag2)
-        {
-            flag1 = true;
-        }
-        f = 0.4375F;
-        f1 = 0.5625F;
-        float f2 = 0.75F;
-        float f3 = 0.9375F;
-        float f4 = flag3 ? 0.0F : f;
-        float f5 = flag4 ? 1.0F : f1;
-        float f6 = flag5 ? 0.0F : f;
-        float f7 = flag6 ? 1.0F : f1;
-        if(flag1)
-        {
-            block.setBlockBounds(f4, f2, f, f5, f3, f1);
+            
+            block.setBlockBounds(fRailMin, 0.3125F, 0.0F, fRailMax, 0.5F, fPostMin);
+            renderStandardBlock(block, i, j, k);
+            
+            
+            block.setBlockBounds(fRailMin, 0.75F, 0.0F, fRailMax, 0.9375F, fPostMin);
             renderStandardBlock(block, i, j, k);
             flag = true;
         }
-        if(flag2)
+
+        
+        int idSouth = blockAccess.getBlockId(i, j, k + 1);
+        Block bSouth = Block.blocksList[idSouth];
+        if (idSouth == blockID || (bSouth != null && bSouth.isOpaqueCube()))
         {
-            block.setBlockBounds(f, f2, f6, f1, f3, f7);
+            
+            block.setBlockBounds(fRailMin, 0.3125F, fPostMax, fRailMax, 0.5F, 1.0F);
+            renderStandardBlock(block, i, j, k);
+            
+            
+            block.setBlockBounds(fRailMin, 0.75F, fPostMax, fRailMax, 0.9375F, 1.0F);
             renderStandardBlock(block, i, j, k);
             flag = true;
         }
-        f2 = 0.375F;
-        f3 = 0.5625F;
-        if(flag1)
+
+        
+        int idWest = blockAccess.getBlockId(i - 1, j, k);
+        Block bWest = Block.blocksList[idWest];
+        if (idWest == blockID || (bWest != null && bWest.isOpaqueCube()))
         {
-            block.setBlockBounds(f4, f2, f, f5, f3, f1);
+            
+            block.setBlockBounds(0.0F, 0.3125F, fRailMin, fPostMin, 0.5F, fRailMax);
+            renderStandardBlock(block, i, j, k);
+            
+            
+            block.setBlockBounds(0.0F, 0.75F, fRailMin, fPostMin, 0.9375F, fRailMax);
             renderStandardBlock(block, i, j, k);
             flag = true;
         }
-        if(flag2)
+
+        
+        int idEast = blockAccess.getBlockId(i + 1, j, k);
+        Block bEast = Block.blocksList[idEast];
+        if (idEast == blockID || (bEast != null && bEast.isOpaqueCube()))
         {
-            block.setBlockBounds(f, f2, f6, f1, f3, f7);
+            
+            block.setBlockBounds(fPostMax, 0.3125F, fRailMin, 1.0F, 0.5F, fRailMax);
+            renderStandardBlock(block, i, j, k);
+            
+            
+            block.setBlockBounds(fPostMax, 0.75F, fRailMin, 1.0F, 0.9375F, fRailMax);
             renderStandardBlock(block, i, j, k);
             flag = true;
         }
-        block.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F);
+
+        
+        block.setBlockBounds(fPostMin, 0.0F, fPostMin, fPostMax, 1.0F, fPostMax);
         return flag;
     }
 

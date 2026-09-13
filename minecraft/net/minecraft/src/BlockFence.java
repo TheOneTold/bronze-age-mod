@@ -33,8 +33,79 @@ public class BlockFence extends Block
 
     public AxisAlignedBB getCollisionBoundingBoxFromPool(World world, int i, int j, int k)
     {
-        return AxisAlignedBB.getBoundingBoxFromPool(i, j, k, i + 1, (float)j + 1.5F, k + 1);
+        boolean flag = this.canConnectFenceTo(world, i, j, k - 1);
+        boolean flag1 = this.canConnectFenceTo(world, i, j, k + 1);
+        boolean flag2 = this.canConnectFenceTo(world, i - 1, j, k);
+        boolean flag3 = this.canConnectFenceTo(world, i + 1, j, k);
+        
+        float f = 0.375F;
+        float f1 = 0.625F;
+        float f2 = 0.375F;
+        float f3 = 0.625F;
+        
+        if (flag) {
+            f2 = 0.0F;
+        }
+        if (flag1) {
+            f3 = 1.0F;
+        }
+        if (flag2) {
+            f = 0.0F;
+        }
+        if (flag3) {
+            f1 = 1.0F;
+        }
+        return AxisAlignedBB.getBoundingBoxFromPool((float)i + f, j, (float)k + f2, (float)i + f1, (float)j + 1.5F, (float)k + f3);
     }
+
+    public boolean canConnectFenceTo(IBlockAccess iblockaccess, int i, int j, int k)
+    {
+        int l = iblockaccess.getBlockId(i, j, k);
+        
+        
+        if (l == blockID)
+        {
+            return true;
+        }
+
+        Block block = Block.blocksList[l];
+        if (block != null)
+        {
+            
+            return block.isOpaqueCube();
+        }
+        
+        return false;
+    }
+
+    public void setBlockBoundsBasedOnState(IBlockAccess iblockaccess, int i, int j, int k)
+    {
+        boolean flag = this.canConnectFenceTo(iblockaccess, i, j, k - 1);
+        boolean flag1 = this.canConnectFenceTo(iblockaccess, i, j, k + 1);
+        boolean flag2 = this.canConnectFenceTo(iblockaccess, i - 1, j, k);
+        boolean flag3 = this.canConnectFenceTo(iblockaccess, i + 1, j, k);
+        
+        float f = 0.375F;
+        float f1 = 0.625F;
+        float f2 = 0.375F;
+        float f3 = 0.625F;
+        
+        if (flag) {
+            f2 = 0.0F;
+        }
+        if (flag1) {
+            f3 = 1.0F;
+        }
+        if (flag2) {
+            f = 0.0F;
+        }
+        if (flag3) {
+            f1 = 1.0F;
+        }
+        
+        this.setBlockBounds(f, 0.0F, f2, f1, 1.0F, f3);
+    }
+
 
     public boolean isOpaqueCube()
     {
