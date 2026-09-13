@@ -111,7 +111,7 @@ public class BlockHearth extends BlockContainer
             float randomSpreadX = random.nextFloat() * 0.4F - 0.2F;
             float randomSpreadZ = random.nextFloat() * 0.4F - 0.2F;
             
-.
+
 
             world.spawnParticle("smoke", centerX + randomSpreadX, topY, centerZ + randomSpreadZ, 0.0D, 0.1D, 0.0D);
         }
