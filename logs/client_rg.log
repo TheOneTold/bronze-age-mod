@@ -6,7 +6,7 @@
 #
 # RetroGuard v2.3.1, by Retrologic Systems - www.retrologic.com
 #
-# Logfile created on Sun Sep 13 00:50:07 CDT 2026
+# Logfile created on Sun Sep 13 01:10:44 CDT 2026
 #
 # Jar file to be obfuscated:           client_recomp.jar
 # Target Jar file for obfuscated code: client_reobf.jar
@@ -23,7 +23,7 @@
 #      Your class net/minecraft/src/TileEntity uses '.class' or calls java/lang/Class.forName(Ljava/lang/String;)Ljava/lang/Class;
 #      Your class net/minecraft/src/DataWatcher uses '.class' or calls java/lang/Class.forName(Ljava/lang/String;)Ljava/lang/Class;
 #
-# Memory in use after class data structure built: 10322656 bytes
+# Memory in use after class data structure built: 10322472 bytes
 # Total memory available                        : 385875968 bytes
 #
 #
