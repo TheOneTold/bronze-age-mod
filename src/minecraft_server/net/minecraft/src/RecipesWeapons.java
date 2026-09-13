@@ -17,7 +17,7 @@ public class RecipesWeapons
             new Object[] {
                 Block.planks, Item.flint, Item.ingotIron, Item.diamond, Item.ingotGold, Item.ingotCopper, Item.ingotTin, Item.ingotBronze
             }, new Object[] {
-                Item.swordWood, Item.swordStone, Item.swordSteel, Item.swordDiamond, Item.swordGold, Item.swordTin, Item.swordBronze
+                Item.swordWood, Item.swordStone, Item.swordSteel, Item.swordDiamond, Item.swordGold, Item.swordCopper, Item.swordTin, Item.swordBronze
             }
         });
     }
