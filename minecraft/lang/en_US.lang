@@ -358,6 +358,8 @@ tile.flowerIndigo.name=Indigo
 tile.flowerIndigo.desc=
 tile.flowerBluebell.name=Bluebell
 tile.flowerBluebell.desc=
+tile.cobbleBricks.name=Cobble Bricks
+tile.cobbleBricks.desc=
 
 item.shovelIron.name=Iron Shovel
 item.shovelIron.desc=

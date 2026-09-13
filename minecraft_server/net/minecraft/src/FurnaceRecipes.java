@@ -21,18 +21,17 @@ public class FurnaceRecipes
     private FurnaceRecipes()
     {
         smeltingList = new HashMap();
-        addSmelting(Block.oreIron.blockID, new ItemStack(Item.ingotIron));
-        addSmelting(Block.oreGold.blockID, new ItemStack(Item.ingotGold));
-        addSmelting(Block.oreDiamond.blockID, new ItemStack(Item.diamond));
+        //addSmelting(Block.oreIron.blockID, new ItemStack(Item.ingotIron));
+		//addSmelting(Block.oreGold.blockID, new ItemStack(Item.ingotGold));
 		addSmelting(Block.oreCopper.blockID, new ItemStack(Item.ingotCopper));
 		addSmelting(Block.oreTin.blockID, new ItemStack(Item.ingotTin));
 		addSmelting(Block.oreSilver.blockID, new ItemStack(Item.ingotSilver));
+		//addSmelting(Block.oreDiamond.blockID, new ItemStack(Item.diamond));
 		addSmelting(Item.rawBronze.shiftedIndex, new ItemStack(Item.ingotBronze));
-        addSmelting(Block.sand.blockID, new ItemStack(Block.glass));
-        addSmelting(Block.cobblestone.blockID, new ItemStack(Block.stone));
-        addSmelting(Item.clay.shiftedIndex, new ItemStack(Item.brick));
-        addSmelting(Block.cactus.blockID, new ItemStack(Item.dyePowder, 1, 2));
-        addSmelting(Block.wood.blockID, new ItemStack(Item.coal, 1, 1));
+		//addSmelting(Block.sand.blockID, new ItemStack(Block.glass));
+		addSmelting(Block.cobblestone.blockID, new ItemStack(Block.stone));
+		addSmelting(Item.clay.shiftedIndex, new ItemStack(Item.brick));
+		addSmelting(Block.wood.blockID, new ItemStack(Item.coal, 1, 1));
 		addSmelting(Block.netherstone.blockID, new ItemStack(Block.purifiedNetherstone));
 		addSmelting(Block.netherstonePillar.blockID, new ItemStack(Block.purifiedNetherstonePillar));
 		addSmelting(Block.netherstoneBricks.blockID, new ItemStack(Block.purifiedNetherstoneBricks));

@@ -55,7 +55,7 @@ public class CraftingManager
         addRecipe(new ItemStack(Block.blockClay, 1), new Object[] {
             "##", "##", Character.valueOf('#'), Item.clay
         });
-        addRecipe(new ItemStack(Block.brick, 1), new Object[] {
+        addRecipe(new ItemStack(Block.brick, 2), new Object[] {
             "##", "##", Character.valueOf('#'), Item.brick
         });
         addRecipe(new ItemStack(Block.glowStone, 1), new Object[] {

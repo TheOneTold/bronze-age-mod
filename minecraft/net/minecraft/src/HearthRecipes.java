@@ -12,14 +12,10 @@ public class HearthRecipes {
 	}
 
 	private HearthRecipes() {
-		this.addSmelting(Block.oreGold.blockID, new ItemStack(Item.ingotGold));
 		this.addSmelting(Block.oreCopper.blockID, new ItemStack(Item.ingotCopper));
 		this.addSmelting(Block.oreTin.blockID, new ItemStack(Item.ingotTin));
-		this.addSmelting(Block.oreSilver.blockID, new ItemStack(Item.ingotSilver));
-		this.addSmelting(Item.rawBronze.shiftedIndex, new ItemStack(Item.ingotBronze));
 		this.addSmelting(Item.porkRaw.shiftedIndex, new ItemStack(Item.porkCooked));
 		this.addSmelting(Item.fishRaw.shiftedIndex, new ItemStack(Item.fishCooked));
-		this.addSmelting(Item.clay.shiftedIndex, new ItemStack(Item.brick));
 		this.addSmelting(Block.cactus.blockID, new ItemStack(Item.dyePowder, 1, 2));
 		this.addSmelting(Block.sticks.blockID, new ItemStack(Item.gunpowder));
 	}

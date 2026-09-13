@@ -140,6 +140,7 @@ public class Block {
 	public static final Block hay = (new BlockHay(117, 153)).setHardness(0.5F).setResistance(3.0F).setStepSound(soundGravelFootstep).setBlockName("hay");
 	public static final BlockFlower flowerIndigo = (BlockFlower)(new BlockFlower(118, 111)).setHardness(0.0F).setStepSound(soundGrassFootstep).setBlockName("flowerIndigo");
 	public static final BlockFlower flowerBluebell = (BlockFlower)(new BlockFlower(119, 127)).setHardness(0.0F).setStepSound(soundGrassFootstep).setBlockName("flowerBluebell");
+	public static final Block cobbleBricks = (new Block(120, 143, Material.rock)).setHardness(1.5F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("cobbleBricks");
 	public int blockIndexInTexture;
 	public final int blockID;
 	protected float blockHardness;

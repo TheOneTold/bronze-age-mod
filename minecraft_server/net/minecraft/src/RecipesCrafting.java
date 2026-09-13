@@ -20,12 +20,9 @@ public class RecipesCrafting
         craftingmanager.addRecipe(new ItemStack(Block.chest), new Object[] {
             "###", "# #", "###", Character.valueOf('#'), Block.planks
         });
-        craftingmanager.addRecipe(new ItemStack(Block.stoneOvenIdle), new Object[]{"###", "# #", "###", Character.valueOf('#'), Block.stoneBricks});
+        craftingmanager.addRecipe(new ItemStack(Block.stoneOvenIdle), new Object[]{"###", "# #", "###", Character.valueOf('#'), Block.cobbleBricks});
         craftingmanager.addRecipe(new ItemStack(Block.workbench), new Object[] {
             "##", "##", Character.valueOf('#'), Block.planks
-        });
-        craftingmanager.addRecipe(new ItemStack(Block.sandStone), new Object[] {
-            "##", "##", Character.valueOf('#'), Block.sand
         });
         craftingmanager.addRecipe(new ItemStack(Block.hearthIdle), new Object[]{"###", "# #", "#X#", Character.valueOf('#'), Block.cobblestone, Character.valueOf('X'), Block.sticks});
 		craftingmanager.addRecipe(new ItemStack(Block.sticks), new Object[]{"##", "##", Character.valueOf('#'), Item.stick});
@@ -37,6 +34,7 @@ public class RecipesCrafting
 		craftingmanager.addRecipe(new ItemStack(Item.ingotGold), new Object[]{"###", "###", "###", Character.valueOf('#'), Item.coinGold});
 		craftingmanager.addRecipe(new ItemStack(Block.workbench), new Object[]{"##", "##", Character.valueOf('#'), Block.sticks});
 		craftingmanager.addRecipe(new ItemStack(Item.stick, 4), new Object[]{"#", Character.valueOf('#'), Block.sticks});
-		craftingmanager.addRecipe(new ItemStack(Block.sandStone), new Object[]{"##", "##", Character.valueOf('#'), Block.sand});
+		craftingmanager.addRecipe(new ItemStack(Block.sandStone, 2), new Object[]{"##", "##", Character.valueOf('#'), Block.sand});
+		craftingmanager.addRecipe(new ItemStack(Block.cobbleBricks, 4), new Object[]{"##", "##", Character.valueOf('#'), Block.cobblestone});
     }
 }
