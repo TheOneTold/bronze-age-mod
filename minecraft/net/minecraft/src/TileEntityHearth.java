@@ -22,6 +22,7 @@ public class TileEntityHearth extends TileEntityFurnace
         this.furnaceBurnTime = 0;
         this.currentItemBurnTime = 0;
         this.furnaceCookTime = 0;
+        this.hearthNotCookingMultiplier = 4;
     }
 
     public int getSizeInventory()
@@ -67,7 +68,7 @@ public class TileEntityHearth extends TileEntityFurnace
 
     public String getInvName()
     {
-        return "Furnace";
+        return "Hearth";
     }
 
     public void readFromNBT(NBTTagCompound nbttagcompound)
@@ -141,13 +142,17 @@ public class TileEntityHearth extends TileEntityFurnace
         boolean flag1 = false;
         if(furnaceBurnTime > 0)
         {
-            furnaceBurnTime--;
+            if(canSmelt()){
+                furnaceBurnTime -= hearthNotCookingMultiplier;
+            }else{
+                furnaceBurnTime -= 1;
+            }
         }
         if(!worldObj.multiplayerWorld)
         {
-            if(furnaceBurnTime == 0 && canSmelt())
+            if(furnaceBurnTime <= 0)
             {
-                currentItemBurnTime = furnaceBurnTime = getItemBurnTime(furnaceItemStacks[1]);
+                currentItemBurnTime = furnaceBurnTime = getItemBurnTime(furnaceItemStacks[1]) * hearthNotCookingMultiplier;
                 if(furnaceBurnTime > 0)
                 {
                     flag1 = true;
@@ -274,4 +279,5 @@ public class TileEntityHearth extends TileEntityFurnace
         }
         return entityplayer.getDistanceSq((double)xCoord + 0.5D, (double)yCoord + 0.5D, (double)zCoord + 0.5D) <= 64D;
     }
+    public int hearthNotCookingMultiplier;
 }
