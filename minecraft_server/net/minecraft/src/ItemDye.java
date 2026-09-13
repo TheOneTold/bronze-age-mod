@@ -98,7 +98,7 @@ label0:
         {
             EntitySheep entitysheep = (EntitySheep)entityliving;
             int i = BlockCloth.func_21033_c(itemstack.getItemDamage());
-            if(!entitysheep.func_21069_f_() && entitysheep.getFleeceColor() != i)
+            if(!entitysheep.getSheared() && entitysheep.getFleeceColor() != i)
             {
                 entitysheep.setFleeceColor(i);
                 itemstack.stackSize--;

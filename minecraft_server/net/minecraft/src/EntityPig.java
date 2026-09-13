@@ -1,14 +1,7 @@
-// Decompiled by Jad v1.5.8g. Copyright 2001 Pavel Kouznetsov.
-// Jad home page: http://www.kpdus.com/jad.html
-// Decompiler options: packimports(3) braces deadcode 
-
 package net.minecraft.src;
 
-
-// Referenced classes of package net.minecraft.src:
-//            EntityAnimal, DataWatcher, NBTTagCompound, World, 
-//            EntityPlayer, Item, EntityPigZombie, AchievementList, 
-//            EntityLightningBolt
+import java.util.List;
+import java.util.Random;
 
 public class EntityPig extends EntityAnimal
 {
@@ -16,8 +9,12 @@ public class EntityPig extends EntityAnimal
     public EntityPig(World world)
     {
         super(world);
+        tamed = false;
+        urged = false;
+        birthtime = getBTime();
         texture = "/mob/pig.png";
         setSize(0.9F, 0.9F);
+        tamed = false;
     }
 
     protected void entityInit()
@@ -29,12 +26,16 @@ public class EntityPig extends EntityAnimal
     {
         super.writeEntityToNBT(nbttagcompound);
         nbttagcompound.setBoolean("Saddle", getSaddled());
+        nbttagcompound.setBoolean("Tamed", tamed);
+        nbttagcompound.setInteger("Timeto", birthtime);
     }
 
     public void readEntityFromNBT(NBTTagCompound nbttagcompound)
     {
         super.readEntityFromNBT(nbttagcompound);
         setSaddled(nbttagcompound.getBoolean("Saddle"));
+        birthtime = nbttagcompound.getInteger("Timeto");
+        tamed = nbttagcompound.getBoolean("Tamed");
     }
 
     protected String getLivingSound()
@@ -54,14 +55,45 @@ public class EntityPig extends EntityAnimal
 
     public boolean interact(EntityPlayer entityplayer)
     {
-        if(getSaddled() && !worldObj.singleplayerWorld && (riddenByEntity == null || riddenByEntity == entityplayer))
+        if(riddenByEntity != null && riddenByEntity == entityplayer)
+        {
+            entityplayer.mountEntity(null);
+            return true;
+        }
+        ItemStack itemstack = entityplayer.getCurrentEquippedItem();
+        if(tamed && itemstack != null && itemstack.itemID == mod_AnimalFarming.mounter.shiftedIndex)
+        {
+            itemstack.damageItem(1, entityplayer);
+            entityplayer.mountEntity(this);
+            return true;
+        }
+        if(getSaddled() && (riddenByEntity == null || riddenByEntity == entityplayer))
         {
             entityplayer.mountEntity(this);
             return true;
-        } else
-        {
-            return false;
         }
+        if(itemstack != null && itemstack.itemID == Item.wheat.shiftedIndex)
+        {
+            if(tamed)
+            {
+                if(health < 10)
+                {
+                    itemstack.stackSize--;
+                    health++;
+                }
+            } else
+            {
+                itemstack.stackSize--;
+                int i = rand.nextInt(5);
+                if(i == 2)
+                {
+                    tamed = true;
+                    birthtime = getBTime();
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     protected int getDropItemId()
@@ -91,27 +123,117 @@ public class EntityPig extends EntityAnimal
         }
     }
 
-    public void onStruckByLightning(EntityLightningBolt entitylightningbolt)
+    public void onStruckByLightning(EntityLightningBolt entitylightningbolt) {
+		EntityPigZombie entitypigzombie = new EntityPigZombie(worldObj);
+		entitypigzombie.setLocationAndAngles(posX, posY, posZ, rotationYaw, rotationPitch);
+		worldObj.entityJoinedWorld(entitypigzombie);
+		setEntityDead();
+	}
+
+    public void onUpdate()
     {
-        if(worldObj.singleplayerWorld)
+        super.onUpdate();
+        if(!GuiAnimalFarmingInfo_breed_check())
+            {
+                if(urged)
+                {
+                    List list = worldObj.getEntitiesWithinAABBExcludingEntity(this, boundingBox.expand(2D, 2D, 2D));
+                    if(list != null)
+                    {
+                        for(int i = 0; i < list.size(); i++)
+                        {
+                            Entity entity = (Entity)list.get(i);
+                            if(entity == other)
+                            {
+                                GiveBirth();
+                            }
+                        }
+
+                    }
+                    setPathToEntity(worldObj.getPathToEntity(this, other, 16F));
+                    if(waiter-- <= 0 || other == null)
+                    {
+                        urged = false;
+                        birthtime = getBTime() / 2;
+                    }
+                }
+                if(tamed && !urged)
+                {
+                    if(birthtime-- == 0 || birthtime < 0)
+                    {
+                        List list1 = worldObj.getEntitiesWithinAABBExcludingEntity(this, boundingBox.expand(32D, 32D, 32D));
+                        boolean flag = false;
+                        for(int j = 0; j < list1.size(); j++)
+                        {
+                            Entity entity1 = (Entity)list1.get(j);
+                            if(entity1.getClass() != (net.minecraft.src.EntityPig.class))
+                            {
+                                continue;
+                            }
+                            EntityPig entitypig = (EntityPig)entity1;
+                            if(!entitypig.tamed)
+                            {
+                                continue;
+                            }
+                            other = (EntityPig)entity1;
+                            waiter = 500;
+                            urged = true;
+                            flag = true;
+                            setPathToEntity(worldObj.getPathToEntity(this, other, 16F));
+                            break;
+                        }
+
+                        if(!flag)
+                        {
+                            birthtime = getBTime() / 4;
+                        }
+                    }
+                }
+            }
+    }
+
+    private boolean GuiAnimalFarmingInfo_breed_check()
+    {
+        return false;
+    }
+
+    private int getBTime()
+    {
+        return 18000 + rand.nextInt(1000);
+    }
+
+    public boolean GiveBirth()
+    {
+        if(rand.nextInt(100) > 20)
         {
-            return;
+            for(int i = 0; i < rand.nextInt(3) + 1; i++)
+            {
+                EntityPig entitypig = new EntityPig(worldObj);
+                entitypig.setPosition(posX, posY, posZ);
+                entitypig.tamed = (rand.nextInt(10) != 0);
+                worldObj.playSoundAtEntity(this, "random.pop", 0.3F, 0.5F);
+                urged = false;
+                birthtime = getBTime();
+                worldObj.entityJoinedWorld(entitypig);
+            }
+
+            return true;
         } else
         {
-            EntityPigZombie entitypigzombie = new EntityPigZombie(worldObj);
-            entitypigzombie.setLocationAndAngles(posX, posY, posZ, rotationYaw, rotationPitch);
-            worldObj.entityJoinedWorld(entitypigzombie);
-            setEntityDead();
-            return;
+            urged = false;
+            birthtime = getBTime() / 4;
+            return false;
         }
     }
 
-    protected void fall(float f)
+    protected boolean canDespawn()
     {
-        super.fall(f);
-        if(f > 5F && (riddenByEntity instanceof EntityPlayer))
-        {
-            ((EntityPlayer)riddenByEntity).func_27017_a(AchievementList.field_27098_u);
-        }
+        return !tamed;
     }
+
+    boolean tamed;
+    boolean urged;
+    EntityPig other;
+    int birthtime;
+    int waiter;
 }

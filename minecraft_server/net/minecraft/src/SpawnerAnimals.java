@@ -194,7 +194,7 @@ public final class SpawnerAnimals
         } else
         if(entityliving instanceof EntitySheep)
         {
-            ((EntitySheep)entityliving).setFleeceColor(EntitySheep.func_21066_a(world.rand));
+            ((EntitySheep)entityliving).setFleeceColor(EntitySheep.getRandomFleeceColor(world.rand));
         }
     }
 
