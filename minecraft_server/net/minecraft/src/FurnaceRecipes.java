@@ -22,7 +22,7 @@ public class FurnaceRecipes
     {
         smeltingList = new HashMap();
         //addSmelting(Block.oreIron.blockID, new ItemStack(Item.ingotIron));
-		//addSmelting(Block.oreGold.blockID, new ItemStack(Item.ingotGold));
+		addSmelting(Block.oreGold.blockID, new ItemStack(Item.ingotGold));
 		addSmelting(Block.oreCopper.blockID, new ItemStack(Item.ingotCopper));
 		addSmelting(Block.oreTin.blockID, new ItemStack(Item.ingotTin));
 		addSmelting(Block.oreSilver.blockID, new ItemStack(Item.ingotSilver));

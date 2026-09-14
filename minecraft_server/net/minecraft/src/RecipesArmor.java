@@ -15,15 +15,15 @@ public class RecipesArmor
     {
         recipeItems = (new Object[][] {
             new Object[] {
-                Item.leather, Block.fire, Item.ingotIron, Item.diamond, Item.ingotGold
+                Item.leather, Block.fire, Item.ingotIron, Item.diamond, Item.ingotGold, Item.ingotCopper, Item.ingotTin, Item.ingotBronze
             }, new Object[] {
-                Item.helmetLeather, Item.helmetChain, Item.helmetSteel, Item.helmetDiamond, Item.helmetGold
+                Item.helmetLeather, Item.helmetChain, Item.helmetSteel, Item.helmetDiamond, Item.helmetGold, Item.helmetCopper, Item.helmetTin, Item.helmetBronze
             }, new Object[] {
-                Item.plateLeather, Item.plateChain, Item.plateSteel, Item.plateDiamond, Item.plateGold
+                Item.plateLeather, Item.plateChain, Item.plateSteel, Item.plateDiamond, Item.plateGold, Item.plateCopper, Item.plateTin, Item.plateBronze
             }, new Object[] {
-                Item.legsLeather, Item.legsChain, Item.legsSteel, Item.legsDiamond, Item.legsGold
+                Item.legsLeather, Item.legsChain, Item.legsSteel, Item.legsDiamond, Item.legsGold, Item.legsCopper, Item.legsTin, Item.legsBronze
             }, new Object[] {
-                Item.bootsLeather, Item.bootsChain, Item.bootsSteel, Item.bootsDiamond, Item.bootsGold
+                Item.bootsLeather, Item.bootsChain, Item.bootsSteel, Item.bootsDiamond, Item.bootsGold, Item.bootsCopper, Item.bootsTin, Item.bootsBronze
             }
         });
     }

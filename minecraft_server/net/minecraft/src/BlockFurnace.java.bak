@@ -97,6 +97,7 @@ public class BlockFurnace extends BlockContainer
 
 	public static void updateFurnaceBlockState(boolean flag, World world, int i, int j, int k)
     {
+
         int l = world.getBlockMetadata(i, j, k);
         TileEntity tileentity = world.getBlockTileEntity(i, j, k);
         field_28034_c = true;
@@ -109,7 +110,7 @@ public class BlockFurnace extends BlockContainer
         }
         field_28034_c = false;
         world.setBlockMetadataWithNotify(i, j, k, l);
-        tileentity.validate();
+		tileentity.validate();
         world.setBlockTileEntity(i, j, k, tileentity);
     }
 

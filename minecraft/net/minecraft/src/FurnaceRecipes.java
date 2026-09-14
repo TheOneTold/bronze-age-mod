@@ -13,7 +13,7 @@ public class FurnaceRecipes {
 
 	private FurnaceRecipes() {
 		//this.addSmelting(Block.oreIron.blockID, new ItemStack(Item.ingotIron));
-		//this.addSmelting(Block.oreGold.blockID, new ItemStack(Item.ingotGold));
+		this.addSmelting(Block.oreGold.blockID, new ItemStack(Item.ingotGold));
 		this.addSmelting(Block.oreCopper.blockID, new ItemStack(Item.ingotCopper));
 		this.addSmelting(Block.oreTin.blockID, new ItemStack(Item.ingotTin));
 		this.addSmelting(Block.oreSilver.blockID, new ItemStack(Item.ingotSilver));
