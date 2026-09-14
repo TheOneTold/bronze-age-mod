@@ -675,6 +675,7 @@ public class Block
 	public static final BlockFlower flowerIndigo;
 	public static final BlockFlower flowerBluebell;
 	public static final Block cobbleBricks;
+	public static final Block grapePlant;
     public int blockIndexInTexture;
     public final int blockID; 
     protected float blockHardness;
@@ -826,6 +827,7 @@ public class Block
 		flowerIndigo = (BlockFlower)(new BlockFlower(118, 111)).setHardness(0.0F).setStepSound(soundGrassFootstep).setBlockName("flowerIndigo");
 		flowerBluebell = (BlockFlower)(new BlockFlower(119, 127)).setHardness(0.0F).setStepSound(soundGrassFootstep).setBlockName("flowerBluebell");
 		cobbleBricks = (new Block(120, 143, Material.rock)).setHardness(1.5F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("cobbleBricks");
+		grapePlant = (new BlockGrapes(121, 226)).setHardness(0.0F).setStepSound(soundGrassFootstep).setBlockName("grapePlant");
 		
 		Item.itemsList[cloth.blockID] = (new ItemCloth(cloth.blockID - 256)).setItemName("cloth");
         Item.itemsList[wood.blockID] = (new ItemLog(wood.blockID - 256)).setItemName("log");

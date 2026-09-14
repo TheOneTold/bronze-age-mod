@@ -362,6 +362,8 @@ tile.cobbleBricks.name=Cobble Bricks
 tile.cobbleBricks.desc=
 tile.hearth.name=Hearth
 tile.hearth.desc=
+tile.grapePlant.name=Grape Bush
+tile.grapePlant.desc=
 
 item.shovelIron.name=Iron Shovel
 item.shovelIron.desc=
@@ -711,4 +713,6 @@ item.rawBronze.name=Raw Bronze
 item.rawBronze.desc=
 item.bowDrill.name=Bow Drill
 item.bowDrill.desc=
+item.grapes.name=Grapes
+item.grapes.desc=
 

@@ -45,6 +45,15 @@ public class ItemDye extends Item
                 }
                 return true;
             }
+			if(i1 == Block.grapePlant.blockID)
+            {
+                if(!world.singleplayerWorld)
+                {
+                    ((BlockGrapes)Block.grapePlant).fertilize(world, i, j, k);
+                    itemstack.stackSize--;
+                }
+                return true;
+            }
             if(i1 == Block.grass.blockID)
             {
                 if(!world.singleplayerWorld)

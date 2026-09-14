@@ -162,6 +162,7 @@ public class Item {
 	public static Item coinGold = (new ItemCoin(145)).setIconCoord(8, 10).setItemName("coinGold");
 	public static Item rawBronze = (new Item(146)).setIconCoord(11, 5).setItemName("rawBronze");
 	public static Item bowDrill = (new ItemBowDrill(147)).setIconCoord(3, 10).setItemName("bowDrill");
+	public static Item grapes = (new ItemFood(148, 3, false)).setIconCoord(4, 10).setItemName("grapes");
 	
 	public static Item record13 = (new ItemRecord(2000, "13")).setIconCoord(0, 15).setItemName("record");
 	public static Item recordCat = (new ItemRecord(2001, "cat")).setIconCoord(1, 15).setItemName("record");

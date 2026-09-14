@@ -61,10 +61,18 @@ public class BlockTallGrass extends BlockFlower
 
     public int idDropped(int i, Random random)
     {
-        if(random.nextInt(8) == 0)
+        if(random.nextInt(6) == 0)
         {
-            return Item.seeds.shiftedIndex;
-        } else
+			// Switch to decide what kind of seed/plant is dropped.
+			switch(random.nextInt(2)) {
+			  case 0:
+				return Item.seeds.shiftedIndex;
+			  case 1:
+				return Block.grapePlant.blockID;
+			  default:
+				return Item.seeds.shiftedIndex;
+			}
+		} else
         {
             return -1;
         }
