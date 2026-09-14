@@ -24,6 +24,6 @@ public class BlockClay extends Block
 
     public int quantityDropped(Random random)
     {
-        return 4;
+        return 9;
     }
 }

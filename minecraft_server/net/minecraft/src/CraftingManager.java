@@ -52,12 +52,8 @@ public class CraftingManager
         addRecipe(new ItemStack(Block.blockSnow, 1), new Object[] {
             "##", "##", Character.valueOf('#'), Item.snowball
         });
-        addRecipe(new ItemStack(Block.blockClay, 1), new Object[] {
-            "##", "##", Character.valueOf('#'), Item.clay
-        });
-        addRecipe(new ItemStack(Block.brick, 2), new Object[] {
-            "##", "##", Character.valueOf('#'), Item.brick
-        });
+        addRecipe(new ItemStack(Block.blockClay, 1), new Object[]{"###", "###", "###", Character.valueOf('#'), Item.clay});
+		addRecipe(new ItemStack(Block.brick, 1), new Object[]{"#", "#", Character.valueOf('#'), Item.brick});
         addRecipe(new ItemStack(Block.glowStone, 1), new Object[] {
             "##", "##", Character.valueOf('#'), Item.lightStoneDust
         });
@@ -207,7 +203,6 @@ public class CraftingManager
 		addRecipe(new ItemStack(Item.rawBronze, 3), new Object[]{"X#", "##", Character.valueOf('#'), Item.ingotCopper, Character.valueOf('X'), Item.ingotTin});
 		addRecipe(new ItemStack(Item.rawBronze, 3), new Object[]{"##", "#X", Character.valueOf('#'), Item.ingotCopper, Character.valueOf('X'), Item.ingotTin});
 		addRecipe(new ItemStack(Item.rawBronze, 3), new Object[]{"#X", "X#", Character.valueOf('#'), Item.ingotCopper, Character.valueOf('X'), Item.ingotTin});
-		addRecipe(new ItemStack(Block.netherstone, 4), new Object[]{"##", "##", Character.valueOf('#'), Block.bloodStone});
 		addRecipe(new ItemStack(Block.smoothSandstone, 4), new Object[]{"##", "##", Character.valueOf('#'), Block.sandStone});
 		addRecipe(new ItemStack(Block.purifiedNetherstonePillar, 2), new Object[]{"#", "#", Character.valueOf('#'), Block.purifiedNetherstone});
 		addRecipe(new ItemStack(Block.netherstonePillar, 2), new Object[]{"#", "#", Character.valueOf('#'), Block.netherstone});

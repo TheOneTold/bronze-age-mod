@@ -30,6 +30,8 @@ public class FurnaceRecipes
 		addSmelting(Item.rawBronze.shiftedIndex, new ItemStack(Item.ingotBronze));
 		//addSmelting(Block.sand.blockID, new ItemStack(Block.glass));
 		addSmelting(Block.cobblestone.blockID, new ItemStack(Block.stone));
+		addSmelting(Block.sand.blockID, new ItemStack(Block.sandStone));
+		addSmelting(Block.bloodStone.blockID, new ItemStack(Block.netherstone));
 		addSmelting(Item.clay.shiftedIndex, new ItemStack(Item.brick));
 		addSmelting(Block.wood.blockID, new ItemStack(Item.coal, 1, 1));
 		addSmelting(Block.netherstone.blockID, new ItemStack(Block.purifiedNetherstone));

@@ -360,6 +360,8 @@ tile.flowerBluebell.name=Bluebell
 tile.flowerBluebell.desc=
 tile.cobbleBricks.name=Cobble Bricks
 tile.cobbleBricks.desc=
+tile.hearth.name=Hearth
+tile.hearth.desc=
 
 item.shovelIron.name=Iron Shovel
 item.shovelIron.desc=
@@ -707,5 +709,6 @@ item.coinGold.name=Gold Coin
 item.coinGold.desc=
 item.rawBronze.name=Raw Bronze
 item.rawBronze.desc=
-tile.hearth.name=Hearth
-tile.hearth.desc=
+item.bowDrill.name=Bow Drill
+item.bowDrill.desc=
+

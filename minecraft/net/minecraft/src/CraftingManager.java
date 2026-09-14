@@ -28,8 +28,8 @@ public class CraftingManager {
 		this.addRecipe(new ItemStack(Block.musicBlock, 1), new Object[]{"###", "#X#", "###", Character.valueOf('#'), Block.planks, Character.valueOf('X'), Item.redstone});
 		this.addRecipe(new ItemStack(Block.bookShelf, 1), new Object[]{"###", "XXX", "###", Character.valueOf('#'), Block.planks, Character.valueOf('X'), Item.book});
 		this.addRecipe(new ItemStack(Block.blockSnow, 1), new Object[]{"##", "##", Character.valueOf('#'), Item.snowball});
-		this.addRecipe(new ItemStack(Block.blockClay, 1), new Object[]{"##", "##", Character.valueOf('#'), Item.clay});
-		this.addRecipe(new ItemStack(Block.brick, 2), new Object[]{"##", "##", Character.valueOf('#'), Item.brick});
+		this.addRecipe(new ItemStack(Block.blockClay, 1), new Object[]{"###", "###", "###", Character.valueOf('#'), Item.clay});
+		this.addRecipe(new ItemStack(Block.brick, 1), new Object[]{"#", "#", Character.valueOf('#'), Item.brick});
 		this.addRecipe(new ItemStack(Block.glowStone, 1), new Object[]{"##", "##", Character.valueOf('#'), Item.lightStoneDust});
 		this.addRecipe(new ItemStack(Block.cloth, 1), new Object[]{"##", "##", Character.valueOf('#'), Item.silk});
 		this.addRecipe(new ItemStack(Block.tnt, 1), new Object[]{"X#X", "#X#", "X#X", Character.valueOf('X'), Item.gunpowder, Character.valueOf('#'), Block.sand});
@@ -83,7 +83,6 @@ public class CraftingManager {
 		this.addRecipe(new ItemStack(Item.rawBronze, 3), new Object[]{"X#", "##", Character.valueOf('#'), Item.ingotCopper, Character.valueOf('X'), Item.ingotTin});
 		this.addRecipe(new ItemStack(Item.rawBronze, 3), new Object[]{"##", "#X", Character.valueOf('#'), Item.ingotCopper, Character.valueOf('X'), Item.ingotTin});
 		this.addRecipe(new ItemStack(Item.rawBronze, 3), new Object[]{"#X", "X#", Character.valueOf('#'), Item.ingotCopper, Character.valueOf('X'), Item.ingotTin});
-		this.addRecipe(new ItemStack(Block.netherstone, 4), new Object[]{"##", "##", Character.valueOf('#'), Block.netherrack});
 		this.addRecipe(new ItemStack(Block.smoothSandstone, 4), new Object[]{"##", "##", Character.valueOf('#'), Block.sandStone});
 		this.addRecipe(new ItemStack(Block.purifiedNetherstonePillar, 2), new Object[]{"#", "#", Character.valueOf('#'), Block.purifiedNetherstone});
 		this.addRecipe(new ItemStack(Block.netherstonePillar, 2), new Object[]{"#", "#", Character.valueOf('#'), Block.netherstone});

@@ -21,6 +21,8 @@ public class FurnaceRecipes {
 		this.addSmelting(Item.rawBronze.shiftedIndex, new ItemStack(Item.ingotBronze));
 		//this.addSmelting(Block.sand.blockID, new ItemStack(Block.glass));
 		this.addSmelting(Block.cobblestone.blockID, new ItemStack(Block.stone));
+		this.addSmelting(Block.sand.blockID, new ItemStack(Block.sandStone));
+		this.addSmelting(Block.netherrack.blockID, new ItemStack(Block.netherstone));
 		this.addSmelting(Item.clay.shiftedIndex, new ItemStack(Item.brick));
 		this.addSmelting(Block.wood.blockID, new ItemStack(Item.coal, 1, 1));
 		this.addSmelting(Block.netherstone.blockID, new ItemStack(Block.purifiedNetherstone));
