@@ -343,7 +343,7 @@ public class Item
 	public static Item spearTin = (new ItemSpear(141, EnumToolMaterial.TIN)).setIconCoord(1, 10).setItemName("spearTin");
 	public static Item spearBronze = (new ItemSpear(142, EnumToolMaterial.BRONZE)).setIconCoord(2, 10).setItemName("spearBronze");
 	
-	public static Item coinCopper = (new ItemCoin(143)).setIconCoord(8, 7).setItemName("coinCopper");
+	public static Item coinBronze = (new ItemCoin(143)).setIconCoord(8, 7).setItemName("coinBronze");
 	public static Item coinSilver = (new ItemCoin(144)).setIconCoord(8, 9).setItemName("coinSilver");
 	public static Item coinGold = (new ItemCoin(145)).setIconCoord(8, 10).setItemName("coinGold");
 	public static Item rawBronze = (new Item(146)).setIconCoord(11, 5).setItemName("rawBronze");
