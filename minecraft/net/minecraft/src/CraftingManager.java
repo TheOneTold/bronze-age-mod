@@ -93,6 +93,13 @@ public class CraftingManager {
 		this.addRecipe(new ItemStack(Block.stoneBricks, 4), new Object[]{"##", "##", Character.valueOf('#'), Block.stone});
 		this.addRecipe(new ItemStack(Block.hay, 1), new Object[]{"###", "###", "###", Character.valueOf('#'), Item.wheat});
 		this.addRecipe(new ItemStack(Item.wheat, 9), new Object[]{"#", Character.valueOf('#'), Block.hay});
+		this.addRecipe(new ItemStack(Block.flintBricks, 2), new Object[]{"###", "###", "###", Character.valueOf('#'), Item.flint});
+		this.addRecipe(new ItemStack(Block.clayBricks, 4), new Object[]{"##", "##", Character.valueOf('#'), Block.blockClay});
+		this.addRecipe(new ItemStack(Block.blockClay, 1), new Object[]{"#", Character.valueOf('#'), Block.clayBricks});
+		this.addRecipe(new ItemStack(Block.stairShingles, 4), new Object[]{"#  ", "## ", "###", Character.valueOf('#'), Block.flintBricks});
+		this.addRecipe(new ItemStack(Block.stairTiles, 4), new Object[]{"#  ", "## ", "###", Character.valueOf('#'), Block.tileBricks});
+		this.addRecipe(new ItemStack(Block.slabShinglesSingle, 3), new Object[]{"###", Character.valueOf('#'), Block.flintBricks});
+		this.addRecipe(new ItemStack(Block.slabTileSingle, 3), new Object[]{"###", Character.valueOf('#'), Block.tileBricks});
 		
 		Collections.sort(this.recipes, new RecipeSorter(this));
 		System.out.println(this.recipes.size() + " recipes");

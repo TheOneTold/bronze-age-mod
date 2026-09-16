@@ -28,6 +28,7 @@ public class FurnaceRecipes {
 		this.addSmelting(Block.netherstone.blockID, new ItemStack(Block.purifiedNetherstone));
 		this.addSmelting(Block.netherstonePillar.blockID, new ItemStack(Block.purifiedNetherstonePillar));
 		this.addSmelting(Block.netherstoneBricks.blockID, new ItemStack(Block.purifiedNetherstoneBricks));
+		this.addSmelting(Block.clayBricks.blockID, new ItemStack(Block.tileBricks));
 	}
 
 	public void addSmelting(int var1, ItemStack var2) {

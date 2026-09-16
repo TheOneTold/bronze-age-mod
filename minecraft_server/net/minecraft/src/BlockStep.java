@@ -25,6 +25,12 @@ public class BlockStep extends Block
 
     public int getBlockTextureFromSideAndMetadata(int i, int j)
     {
+		if (this.blockID == Block.slabTileSingle.blockID || this.blockID == Block.slabTileDouble.blockID) {
+			return Block.tileBricks.blockIndexInTexture;
+		}
+		if (this.blockID == Block.slabShinglesSingle.blockID || this.blockID == Block.slabShinglesDouble.blockID) {
+			return Block.flintBricks.blockIndexInTexture;
+		}
         if(j == 0)
         {
             return i > 1 ? 5 : 6;
@@ -72,11 +78,30 @@ public class BlockStep extends Block
             world.setBlockWithNotify(i, j, k, 0);
             world.setBlockAndMetadataWithNotify(i, j - 1, k, Block.stairDouble.blockID, i1);
         }
+		if(l == slabTileSingle.blockID)
+        {
+            world.setBlockWithNotify(i, j, k, 0);
+            world.setBlockAndMetadataWithNotify(i, j - 1, k, Block.slabTileDouble.blockID, i1);
+        }
+		if(l == slabShinglesSingle.blockID)
+        {
+            world.setBlockWithNotify(i, j, k, 0);
+            world.setBlockAndMetadataWithNotify(i, j - 1, k, Block.slabShinglesDouble.blockID, i1);
+        }
     }
 
     public int idDropped(int i, Random random)
     {
-        return Block.stairSingle.blockID;
+        if (this.blockID == Block.slabTileSingle.blockID || this.blockID == Block.slabTileDouble.blockID) {
+			return Block.slabTileSingle.blockID;
+			
+		} else if (this.blockID == Block.slabShinglesSingle.blockID || this.blockID == Block.slabShinglesDouble.blockID) {
+			return Block.slabShinglesSingle.blockID;
+			
+		} else {
+			return Block.stairSingle.blockID;
+			
+		}
     }
 
     public int quantityDropped(Random random)

@@ -142,6 +142,15 @@ public class Block {
 	public static final BlockFlower flowerBluebell = (BlockFlower)(new BlockFlower(119, 127)).setHardness(0.0F).setStepSound(soundGrassFootstep).setBlockName("flowerBluebell");
 	public static final Block cobbleBricks = (new Block(120, 143, Material.rock)).setHardness(1.5F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("cobbleBricks");
 	public static final Block grapePlant = (new BlockGrapes(121, 226)).setHardness(0.0F).setStepSound(soundGrassFootstep).setBlockName("grapePlant").disableStats().disableNeighborNotifyOnMetadataChange();
+	public static final Block flintBricks = (new Block(122, 148, Material.rock)).setHardness(1.5F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("flintBricks");
+	public static final Block clayBricks = (new Block(123, 155, Material.clay)).setHardness(0.6F).setStepSound(soundGravelFootstep).setBlockName("clayBricks");
+	public static final Block tileBricks = (new Block(124, 156, Material.rock)).setHardness(1.5F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("tileBricks");
+	public static final Block stairShingles = (new BlockStairs(125, flintBricks)).setBlockName("stairsShingles").disableNeighborNotifyOnMetadataChange();
+	public static final Block stairTiles = (new BlockStairs(126, tileBricks)).setBlockName("stairsTiles").disableNeighborNotifyOnMetadataChange();
+	public static final Block slabTileSingle = (new BlockStep(127, false)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("slabTile");
+	public static final Block slabTileDouble = (new BlockStep(128, true)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("slabTile");
+	public static final Block slabShinglesSingle = (new BlockStep(129, false)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("slabShingles");
+	public static final Block slabShinglesDouble = (new BlockStep(130, true)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("slabShingles");
 	public int blockIndexInTexture;
 	public final int blockID;
 	protected float blockHardness;
@@ -592,6 +601,14 @@ public class Block {
 		Item.itemsList[leaves.blockID] = (new ItemLeaves(leaves.blockID - 256)).setItemName("leaves");
 		Item.itemsList[pistonBase.blockID] = new ItemPiston(pistonBase.blockID - 256);
 		Item.itemsList[pistonStickyBase.blockID] = new ItemPiston(pistonStickyBase.blockID - 256);
+		lightOpacity[stairShingles.blockID] = 0;
+		lightOpacity[stairTiles.blockID] = 0;
+		field_28032_t[stairShingles.blockID] = true;
+		field_28032_t[stairTiles.blockID] = true;
+		lightOpacity[slabShinglesSingle.blockID] = 0;
+		lightOpacity[slabTileSingle.blockID] = 0;
+		field_28032_t[slabShinglesSingle.blockID] = true;
+		field_28032_t[slabTileSingle.blockID] = true;
 
 		for(int var0 = 0; var0 < 256; ++var0) {
 			if(blocksList[var0] != null && Item.itemsList[var0] == null) {

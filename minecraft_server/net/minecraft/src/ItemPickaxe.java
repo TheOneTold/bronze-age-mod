@@ -59,7 +59,7 @@ public class ItemPickaxe extends ItemTool
     {
         blocksEffectiveAgainst = (new Block[] {
             Block.cobblestone, Block.stairDouble, Block.stairSingle, Block.stone, Block.sandStone, Block.cobblestoneMossy, Block.oreIron, Block.blockSteel, Block.oreCoal, Block.blockGold, 
-            Block.oreGold, Block.oreDiamond, Block.blockDiamond, Block.ice, Block.bloodStone, Block.oreLapis, Block.blockLapis, Block.oreCopper, Block.oreTin, Block.oreSilver, Block.blockCopper, Block.blockTin, Block.blockBronze, Block.blockSilver, Block.purifiedNetherstone, Block.netherstone, Block.smoothSandstone, Block.purifiedNetherstonePillar, Block.netherstonePillar, Block.sandstonePillar, Block.purifiedNetherstoneBricks, Block.netherstoneBricks, Block.sandstoneBricks, Block.stoneBricks, Block.cobbleBricks, Block.brick
+            Block.oreGold, Block.oreDiamond, Block.blockDiamond, Block.ice, Block.bloodStone, Block.oreLapis, Block.blockLapis, Block.oreCopper, Block.oreTin, Block.oreSilver, Block.blockCopper, Block.blockTin, Block.blockBronze, Block.blockSilver, Block.purifiedNetherstone, Block.netherstone, Block.smoothSandstone, Block.purifiedNetherstonePillar, Block.netherstonePillar, Block.sandstonePillar, Block.purifiedNetherstoneBricks, Block.netherstoneBricks, Block.sandstoneBricks, Block.stoneBricks, Block.cobbleBricks, Block.brick, Block.flintBricks, Block.tileBricks, Block.stairTiles, Block.stairShingles, Block.slabTileSingle, Block.slabTileDouble, Block.slabShinglesSingle, Block.slabShinglesDouble
         });
     }
 }

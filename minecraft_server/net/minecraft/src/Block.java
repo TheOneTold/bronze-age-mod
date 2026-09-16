@@ -676,6 +676,15 @@ public class Block
 	public static final BlockFlower flowerBluebell;
 	public static final Block cobbleBricks;
 	public static final Block grapePlant;
+	public static final Block flintBricks;
+	public static final Block clayBricks;
+	public static final Block tileBricks;
+	public static final Block stairShingles;
+	public static final Block stairTiles;
+	public static final Block slabTileSingle;
+	public static final Block slabTileDouble;
+	public static final Block slabShinglesSingle;
+	public static final Block slabShinglesDouble;
     public int blockIndexInTexture;
     public final int blockID; 
     protected float blockHardness;
@@ -828,6 +837,16 @@ public class Block
 		flowerBluebell = (BlockFlower)(new BlockFlower(119, 127)).setHardness(0.0F).setStepSound(soundGrassFootstep).setBlockName("flowerBluebell");
 		cobbleBricks = (new Block(120, 143, Material.rock)).setHardness(1.5F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("cobbleBricks");
 		grapePlant = (new BlockGrapes(121, 226)).setHardness(0.0F).setStepSound(soundGrassFootstep).setBlockName("grapePlant");
+		flintBricks = (new Block(122, 148, Material.rock)).setHardness(1.5F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("flintBricks");
+		clayBricks = (new Block(123, 155, Material.rock)).setHardness(0.6F).setStepSound(soundGravelFootstep).setBlockName("clayBricks");
+		tileBricks = (new Block(124, 156, Material.rock)).setHardness(1.5F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("tileBricks");
+		stairShingles = (new BlockStairs(125, flintBricks)).setBlockName("stairsShingles");
+		stairTiles = (new BlockStairs(126, tileBricks)).setBlockName("stairsTiles");
+		slabTileSingle = (new BlockStep(127, false)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("slabTile");
+		slabTileDouble = (new BlockStep(128, true)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("slabTile");
+		slabShinglesSingle = (new BlockStep(129, false)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("slabShingles");
+		slabShinglesDouble = (new BlockStep(130, true)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("slabShingles");
+		
 		
 		Item.itemsList[cloth.blockID] = (new ItemCloth(cloth.blockID - 256)).setItemName("cloth");
         Item.itemsList[wood.blockID] = (new ItemLog(wood.blockID - 256)).setItemName("log");

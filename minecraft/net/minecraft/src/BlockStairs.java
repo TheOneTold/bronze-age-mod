@@ -123,7 +123,7 @@ public class BlockStairs extends Block
     {
         return modelBlock.idDropped(i, random);
     }
-
+	
     public int quantityDropped(Random random)
     {
         return modelBlock.quantityDropped(random);
