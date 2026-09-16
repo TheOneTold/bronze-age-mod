@@ -18,5 +18,6 @@ public class RecipesCrafting {
 		var1.addRecipe(new ItemStack(Block.cobbleBricks, 4), new Object[]{"##", "##", Character.valueOf('#'), Block.cobblestone});
 		var1.addRecipe(new ItemStack(Item.bowDrill, 1), new Object[]{" # ", "#X#", " # ", Character.valueOf('#'), Item.stick, Character.valueOf('X'), Item.silk});
 		var1.addRecipe(new ItemStack(Item.silk, 4), new Object[]{"#", Character.valueOf('#'), Block.cloth});
+		var1.addRecipe(new ItemStack(Item.clay, 9), new Object[]{"#", Character.valueOf('#'), Block.blockClay});
 	}
 }

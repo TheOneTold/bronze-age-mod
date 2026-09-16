@@ -50,7 +50,7 @@ public class BlockReed extends Block
         {
             return true;
         }
-        if(l != Block.grass.blockID && l != Block.dirt.blockID)
+        if(l != Block.grass.blockID && l != Block.dirt.blockID && l != Block.sand.blockID)
         {
             return false;
         }

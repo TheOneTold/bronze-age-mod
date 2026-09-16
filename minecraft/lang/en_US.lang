@@ -332,6 +332,11 @@ tile.pistonBase.name=Piston
 tile.pistonBase.desc=
 tile.pistonStickyBase.name=Sticky Piston
 tile.pistonStickyBase.desc=
+
+tile.oreCopper.name=Copper Ore
+tile.oreCopper.desc=
+tile.oreTin.name=Tin Ore
+tile.oreTin.desc=
 tile.purifiedNetherstone.name=Purified Netherstone
 tile.purifiedNetherstone.desc=
 tile.netherstone.name=Netherstone
@@ -609,10 +614,7 @@ item.leaves.name=Leaves
 item.leaves.desc=
 item.shears.name=Shears
 item.shears.desc=
-tile.oreCopper.name=Copper Ore
-tile.oreCopper.desc=
-tile.oreTin.name=Tin Ore
-tile.oreTin.desc=
+
 item.ingotCopper.name=Copper Ingot
 item.ingotCopper.desc=
 item.ingotTin.name=Tin Chunk
