@@ -348,6 +348,9 @@ public class Item
 	public static Item coinGold = (new ItemCoin(145)).setIconCoord(8, 10).setItemName("coinGold");
 	public static Item rawBronze = (new Item(146)).setIconCoord(11, 5).setItemName("rawBronze");
 	
+	public static Item roundUp = (new ItemRoundUp(9922)).setItemName("roundup");
+	public static Item mounter = (new Item(9923)).setMaxStackSize(1).setMaxDamage(100).setItemName("mounter");
+	
 	public static Item record13 = (new ItemRecord(2000, "13")).setIconCoord(0, 15).setItemName("record");
     public static Item recordCat = (new ItemRecord(2001, "cat")).setIconCoord(1, 15).setItemName("record");
     public final int shiftedIndex;

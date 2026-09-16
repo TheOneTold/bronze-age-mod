@@ -218,6 +218,8 @@ public class CraftingManager
 		addRecipe(new ItemStack(Block.stoneBricks, 4), new Object[]{"##", "##", Character.valueOf('#'), Block.stone});
 		addRecipe(new ItemStack(Block.hay, 1), new Object[]{"###", "###", "###", Character.valueOf('#'), Item.wheat});
 		addRecipe(new ItemStack(Item.wheat, 9), new Object[]{"#", Character.valueOf('#'), Block.hay});
+		addRecipe(new ItemStack(Item.roundUp), new Object[] {"#  ", " # ", "  #", Character.valueOf('#'), Item.stick});
+		addRecipe(new ItemStack(Item.mounter), new Object[] {"###", "XYX", Character.valueOf('#'), Item.leather, Character.valueOf('X'), Item.ingotIron, Character.valueOf('Y'), Item.diamond});
 		
         Collections.sort(recipes, new RecipeSorter(this));
         System.out.println((new StringBuilder()).append(recipes.size()).append(" recipes").toString());

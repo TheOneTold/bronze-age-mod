@@ -23,6 +23,24 @@ public class EntitySheep extends EntityAnimal
     {
         super.entityInit();
         dataWatcher.addObject(16, new Byte((byte)0));
+		dataWatcher.addObject(17, Byte.valueOf((byte)0));
+    }
+	
+	public boolean getTamed()
+    {
+        return (dataWatcher.getWatchableObjectByte(17) & 1) != 0;
+    }
+
+    public void setTamed(boolean flag)
+    {
+        this.tamed = flag;
+        if(flag)
+        {
+            dataWatcher.updateObject(17, Byte.valueOf((byte)1));
+        } else
+        {
+            dataWatcher.updateObject(17, Byte.valueOf((byte)0));
+        }
     }
 
     public boolean attackEntityFrom(Entity entity, int i)
@@ -51,7 +69,7 @@ public class EntitySheep extends EntityAnimal
             return true;
         }
         ItemStack itemstack = entityplayer.getCurrentEquippedItem();
-        if(tamed && itemstack != null && itemstack.itemID == mod_AnimalFarming.mounter.shiftedIndex)
+        if(getTamed() && itemstack != null && itemstack.itemID == mod_AnimalFarming.mounter.shiftedIndex)
         {
             itemstack.damageItem(1, entityplayer);
             entityplayer.mountEntity(this);
@@ -72,7 +90,7 @@ public class EntitySheep extends EntityAnimal
         }
         if(itemstack != null && itemstack.itemID != 359 && itemstack.itemID == Item.wheat.shiftedIndex)
         {
-            if(tamed)
+            if(getTamed())
             {
                 if(health < 10)
                 {
@@ -85,7 +103,7 @@ public class EntitySheep extends EntityAnimal
                 int j = rand.nextInt(5);
                 if(j == 2)
                 {
-                    tamed = true;
+                    setTamed(true);
                     birthtime = getBTime();
                     return true;
                 }
@@ -99,7 +117,7 @@ public class EntitySheep extends EntityAnimal
         super.writeEntityToNBT(nbttagcompound);
         nbttagcompound.setBoolean("Sheared", getSheared());
         nbttagcompound.setByte("Color", (byte)getFleeceColor());
-        nbttagcompound.setBoolean("Tamed", tamed);
+        nbttagcompound.setBoolean("Tamed", getTamed());
         nbttagcompound.setInteger("Timeto", birthtime);
         nbttagcompound.setInteger("FleeceReset", reFleece);
     }
@@ -109,7 +127,8 @@ public class EntitySheep extends EntityAnimal
         super.readEntityFromNBT(nbttagcompound);
         setSheared(nbttagcompound.getBoolean("Sheared"));
         setFleeceColor(nbttagcompound.getByte("Color"));
-        tamed = nbttagcompound.getBoolean("Tamed");
+        boolean isTamed = nbttagcompound.getBoolean("Tamed");
+        setTamed(isTamed);
         birthtime = nbttagcompound.getInteger("Timeto");
         reFleece = nbttagcompound.getInteger("FleeceReset");
     }
@@ -211,7 +230,7 @@ public class EntitySheep extends EntityAnimal
                         birthtime = getBTime() / 2;
                     }
                 }
-                if(tamed && !urged)
+                if(getTamed() && !urged)
                 {
                     if(birthtime-- == 0 || birthtime < 0)
                     {
@@ -225,7 +244,7 @@ public class EntitySheep extends EntityAnimal
                                 continue;
                             }
                             EntitySheep entitysheep = (EntitySheep)entity1;
-                            if(!entitysheep.tamed)
+                            if(!entitysheep.getTamed())
                             {
                                 continue;
                             }
@@ -267,7 +286,7 @@ public class EntitySheep extends EntityAnimal
         {
             EntitySheep entitysheep = new EntitySheep(worldObj);
             entitysheep.setPosition(posX, posY, posZ);
-            entitysheep.tamed = (rand.nextInt(10) != 0);
+            entitysheep.setTamed(rand.nextInt(10) != 0);
             worldObj.playSoundAtEntity(this, "random.pop", 0.3F, 0.5F);
             urged = false;
             birthtime = getBTime();
@@ -283,7 +302,7 @@ public class EntitySheep extends EntityAnimal
 
     protected boolean canDespawn()
     {
-        return !tamed;
+        return !getTamed();
     }
 
     public static final float fleeceColorTable[][] = {

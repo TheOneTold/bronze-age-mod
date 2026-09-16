@@ -24,6 +24,11 @@ public class EntityChicken extends EntityAnimal
         tamed = false;
     }
 
+	protected void entityInit()
+    {
+        dataWatcher.addObject(17, Byte.valueOf((byte)0));
+    }
+
     public void onLivingUpdate()
     {
         super.onLivingUpdate();
@@ -77,7 +82,7 @@ public class EntityChicken extends EntityAnimal
                         birthtime = getBTime() / 2;
                     }
                 }
-                if(tamed && !urged)
+                if(getTamed() && !urged)
                 {
                     if(birthtime-- == 0 || birthtime < 0)
                     {
@@ -91,7 +96,7 @@ public class EntityChicken extends EntityAnimal
                                 continue;
                             }
                             EntityChicken entitychicken = (EntityChicken)entity1;
-                            if(!entitychicken.tamed)
+                            if(!entitychicken.getTamed())
                             {
                                 continue;
                             }
@@ -124,15 +129,33 @@ public class EntityChicken extends EntityAnimal
     public void writeEntityToNBT(NBTTagCompound nbttagcompound)
     {
         super.writeEntityToNBT(nbttagcompound);
-        nbttagcompound.setBoolean("Tamed", tamed);
+        nbttagcompound.setBoolean("Tamed", getTamed());
         nbttagcompound.setInteger("Timeto", birthtime);
     }
 
     public void readEntityFromNBT(NBTTagCompound nbttagcompound)
     {
         super.readEntityFromNBT(nbttagcompound);
-        tamed = nbttagcompound.getBoolean("Tamed");
+        boolean isTamed = nbttagcompound.getBoolean("Tamed");
+        setTamed(isTamed);
         birthtime = nbttagcompound.getInteger("Timeto");
+    }
+	
+	public boolean getTamed()
+    {
+        return (dataWatcher.getWatchableObjectByte(17) & 1) != 0;
+    }
+
+    public void setTamed(boolean flag)
+    {
+        this.tamed = flag;
+        if(flag)
+        {
+            dataWatcher.updateObject(17, Byte.valueOf((byte)1));
+        } else
+        {
+            dataWatcher.updateObject(17, Byte.valueOf((byte)0));
+        }
     }
 
     protected String getLivingSound()
@@ -163,7 +186,7 @@ public class EntityChicken extends EntityAnimal
                 return true;
             }
             ItemStack itemstack = entityplayer.getCurrentEquippedItem();
-            if(tamed && itemstack != null && itemstack.itemID == mod_AnimalFarming.mounter.shiftedIndex)
+            if(getTamed() && itemstack != null && itemstack.itemID == mod_AnimalFarming.mounter.shiftedIndex)
             {
                 itemstack.damageItem(1, entityplayer);
                 entityplayer.mountEntity(this);
@@ -171,7 +194,7 @@ public class EntityChicken extends EntityAnimal
             }
             if(itemstack != null && itemstack.itemID == Item.seeds.shiftedIndex)
             {
-                if(tamed)
+                if(getTamed())
                 {
                     if(health < 4)
                     {
@@ -184,7 +207,7 @@ public class EntityChicken extends EntityAnimal
                     int i = rand.nextInt(5);
                     if(i == 2)
                     {
-                        tamed = true;
+                        setTamed(true);
                         birthtime = getBTime();
                         return true;
                     }
@@ -204,7 +227,7 @@ public class EntityChicken extends EntityAnimal
         {
             EntityChicken entitychicken = new EntityChicken(worldObj);
             entitychicken.setPosition(posX, posY, posZ);
-            entitychicken.tamed = (rand.nextInt(10) != 0);
+            entitychicken.setTamed(rand.nextInt(10) != 0);
             worldObj.playSoundAtEntity(this, "random.pop", 0.3F, 0.5F);
             urged = false;
             birthtime = getBTime();
@@ -220,7 +243,7 @@ public class EntityChicken extends EntityAnimal
 
     protected boolean canDespawn()
     {
-        return !tamed;
+        return !getTamed();
     }
 
     public boolean field_753_a;

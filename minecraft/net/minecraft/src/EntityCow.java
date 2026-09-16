@@ -30,17 +30,23 @@ public class EntityCow extends EntityAnimal
         tamed = false;
     }
 
+	protected void entityInit()
+    {
+        dataWatcher.addObject(17, Byte.valueOf((byte)0));
+    }
+
     public void writeEntityToNBT(NBTTagCompound nbttagcompound)
     {
         super.writeEntityToNBT(nbttagcompound);
-        nbttagcompound.setBoolean("Tamed", tamed);
+        nbttagcompound.setBoolean("Tamed", getTamed());
         nbttagcompound.setInteger("Timeto", birthtime);
     }
 
     public void readEntityFromNBT(NBTTagCompound nbttagcompound)
     {
         super.readEntityFromNBT(nbttagcompound);
-        tamed = nbttagcompound.getBoolean("Tamed");
+        boolean isTamed = nbttagcompound.getBoolean("Tamed");
+        setTamed(isTamed);
         birthtime = nbttagcompound.getInteger("Timeto");
     }
 
@@ -77,7 +83,7 @@ public class EntityCow extends EntityAnimal
             return true;
         }
         ItemStack itemstack = entityplayer.getCurrentEquippedItem();
-        if(tamed && itemstack != null && itemstack.itemID == mod_AnimalFarming.mounter.shiftedIndex)
+        if(getTamed() && itemstack != null && itemstack.itemID == mod_AnimalFarming.mounter.shiftedIndex)
         {
             itemstack.damageItem(1, entityplayer);
             entityplayer.mountEntity(this);
@@ -90,7 +96,7 @@ public class EntityCow extends EntityAnimal
         }
         if(itemstack != null && itemstack.itemID == Item.wheat.shiftedIndex)
         {
-            if(tamed)
+            if(getTamed())
             {
                 if(health < 10)
                 {
@@ -103,7 +109,7 @@ public class EntityCow extends EntityAnimal
                 int i = rand.nextInt(5);
                 if(i == 2)
                 {
-                    tamed = true;
+                    setTamed(true);
                     showHeartsOrSmokeFX(false);
                     showHeartsOrSmokeFX(true);
                     birthtime = getBTime();
@@ -113,7 +119,7 @@ public class EntityCow extends EntityAnimal
             }
         } else
         {
-            mc.displayGuiScreen(new GuiAnimalFarmingInfo(tamed, "Cow", birthtime, this));
+            mc.displayGuiScreen(new GuiAnimalFarmingInfo(getTamed(), "Cow", birthtime, this));
         }
         return false;
     }
@@ -123,7 +129,7 @@ public class EntityCow extends EntityAnimal
         super.onUpdate();
         if(!worldObj.multiplayerWorld)
         {
-            if(tamed && mc.thePlayer.getCurrentEquippedItem() != null && mc.thePlayer.getCurrentEquippedItem().itemID == mod_AnimalFarming.roundUp.shiftedIndex && ItemRoundUp.pos && (ItemRoundUp.posi == 1 || ItemRoundUp.posi == 5))
+            if(getTamed() && mc.thePlayer.getCurrentEquippedItem() != null && mc.thePlayer.getCurrentEquippedItem().itemID == mod_AnimalFarming.roundUp.shiftedIndex && ItemRoundUp.pos && (ItemRoundUp.posi == 1 || ItemRoundUp.posi == 5))
             {
                 setPathToEntity(worldObj.getPathToEntity(mc.thePlayer, this, 8F));
             }
@@ -148,7 +154,7 @@ public class EntityCow extends EntityAnimal
                         birthtime = getBTime() / 2;
                     }
                 }
-                if(tamed && !urged)
+                if(getTamed() && !urged)
                 {
                     if(mc.thePlayer.ridingEntity != null && mc.thePlayer.ridingEntity == this)
                     {
@@ -166,7 +172,7 @@ public class EntityCow extends EntityAnimal
                                 continue;
                             }
                             EntityCow entitycow = (EntityCow)entity1;
-                            if(!entitycow.tamed)
+                            if(!entitycow.getTamed())
                             {
                                 continue;
                             }
@@ -185,6 +191,23 @@ public class EntityCow extends EntityAnimal
                     }
                 }
             }
+        }
+    }
+	
+	public boolean getTamed()
+    {
+        return (dataWatcher.getWatchableObjectByte(17) & 1) != 0;
+    }
+
+    public void setTamed(boolean flag)
+    {
+        this.tamed = flag;
+        if(flag)
+        {
+            dataWatcher.updateObject(17, Byte.valueOf((byte)1));
+        } else
+        {
+            dataWatcher.updateObject(17, Byte.valueOf((byte)0));
         }
     }
 
@@ -236,10 +259,10 @@ public class EntityCow extends EntityAnimal
             entitycow.setPosition(posX, posY, posZ);
             if(rand.nextInt(10) == 0)
             {
-                entitycow.tamed = false;
+                entitycow.setTamed(false);
             } else
             {
-                entitycow.tamed = true;
+                entitycow.setTamed(true);
             }
             minecraft.theWorld.entityJoinedWorld(entitycow);
             showHeartsOrSmokeFX(false);
@@ -259,7 +282,7 @@ public class EntityCow extends EntityAnimal
 
     protected boolean canDespawn()
     {
-        return !tamed;
+        return !getTamed();
     }
 
     void showHeartsOrSmokeFX(boolean flag)

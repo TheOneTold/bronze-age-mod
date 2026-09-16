@@ -33,13 +33,15 @@ public class EntityPig extends EntityAnimal
     protected void entityInit()
     {
         dataWatcher.addObject(16, Byte.valueOf((byte)0));
+        dataWatcher.addObject(17, Byte.valueOf((byte)0));
     }
 
     public void writeEntityToNBT(NBTTagCompound nbttagcompound)
     {
         super.writeEntityToNBT(nbttagcompound);
         nbttagcompound.setBoolean("Saddle", getSaddled());
-        nbttagcompound.setBoolean("Tamed", tamed);
+        setTamed(tamed);
+        nbttagcompound.setBoolean("Tamed", getTamed());
         nbttagcompound.setInteger("Timeto", birthtime);
     }
 
@@ -48,7 +50,8 @@ public class EntityPig extends EntityAnimal
         super.readEntityFromNBT(nbttagcompound);
         setSaddled(nbttagcompound.getBoolean("Saddle"));
         birthtime = nbttagcompound.getInteger("Timeto");
-        tamed = nbttagcompound.getBoolean("Tamed");
+        boolean isTamed = nbttagcompound.getBoolean("Tamed");
+        setTamed(isTamed);
     }
 
     protected String getLivingSound()
@@ -74,7 +77,7 @@ public class EntityPig extends EntityAnimal
             return true;
         }
         ItemStack itemstack = entityplayer.getCurrentEquippedItem();
-        if(tamed && itemstack != null && itemstack.itemID == mod_AnimalFarming.mounter.shiftedIndex)
+        if(getTamed() && itemstack != null && itemstack.itemID == mod_AnimalFarming.mounter.shiftedIndex)
         {
             itemstack.damageItem(1, entityplayer);
             entityplayer.mountEntity(this);
@@ -87,7 +90,7 @@ public class EntityPig extends EntityAnimal
         }
         if(itemstack != null && itemstack.itemID == Item.wheat.shiftedIndex)
         {
-            if(tamed)
+            if(getTamed())
             {
                 if(health < 10)
                 {
@@ -100,7 +103,7 @@ public class EntityPig extends EntityAnimal
                 int i = rand.nextInt(5);
                 if(i == 2)
                 {
-                    tamed = true;
+                    setTamed(true);
                     showHeartsOrSmokeFX(false);
                     showHeartsOrSmokeFX(true);
                     birthtime = getBTime();
@@ -110,20 +113,9 @@ public class EntityPig extends EntityAnimal
             }
         } else
         {
-            mc.displayGuiScreen(new GuiAnimalFarmingInfo(tamed, "Pig", birthtime, this));
+            mc.displayGuiScreen(new GuiAnimalFarmingInfo(getTamed(), "Pig", birthtime, this));
         }
         return false;
-    }
-
-    protected int getDropItemId()
-    {
-        if(fire > 0)
-        {
-            return Item.porkCooked.shiftedIndex;
-        } else
-        {
-            return Item.porkRaw.shiftedIndex;
-        }
     }
 
     public boolean getSaddled()
@@ -139,6 +131,23 @@ public class EntityPig extends EntityAnimal
         } else
         {
             dataWatcher.updateObject(16, Byte.valueOf((byte)0));
+        }
+    }
+
+    public boolean getTamed()
+    {
+        return (dataWatcher.getWatchableObjectByte(17) & 1) != 0;
+    }
+
+    public void setTamed(boolean flag)
+    {
+        this.tamed = flag;
+        if(flag)
+        {
+            dataWatcher.updateObject(17, Byte.valueOf((byte)1));
+        } else
+        {
+            dataWatcher.updateObject(17, Byte.valueOf((byte)0));
         }
     }
 
@@ -171,7 +180,7 @@ public class EntityPig extends EntityAnimal
         super.onUpdate();
         if(!worldObj.multiplayerWorld)
         {
-            if(tamed && mc.thePlayer.getCurrentEquippedItem() != null && mc.thePlayer.getCurrentEquippedItem().itemID == mod_AnimalFarming.roundUp.shiftedIndex && ItemRoundUp.pos && (ItemRoundUp.posi == 2 || ItemRoundUp.posi == 5))
+            if(getTamed() && mc.thePlayer.getCurrentEquippedItem() != null && mc.thePlayer.getCurrentEquippedItem().itemID == mod_AnimalFarming.roundUp.shiftedIndex && ItemRoundUp.pos && (ItemRoundUp.posi == 2 || ItemRoundUp.posi == 5))
             {
                 setPathToEntity(worldObj.getPathToEntity(mc.thePlayer, this, 8F));
             }
@@ -199,7 +208,7 @@ public class EntityPig extends EntityAnimal
                         birthtime = getBTime() / 2;
                     }
                 }
-                if(tamed && !urged)
+                if(getTamed() && !urged)
                 {
                     if(mc.thePlayer.ridingEntity != null && mc.thePlayer.ridingEntity == this)
                     {
@@ -217,7 +226,7 @@ public class EntityPig extends EntityAnimal
                                 continue;
                             }
                             EntityPig entitypig = (EntityPig)entity1;
-                            if(!entitypig.tamed)
+                            if(!entitypig.getTamed())
                             {
                                 continue;
                             }
@@ -289,10 +298,10 @@ public class EntityPig extends EntityAnimal
                 entitypig.setPosition(posX, posY, posZ);
                 if(rand.nextInt(10) == 0)
                 {
-                    entitypig.tamed = false;
+                    entitypig.setTamed(false);
                 } else
                 {
-                    entitypig.tamed = true;
+                    entitypig.setTamed(true);
                 }
                 showHeartsOrSmokeFX(false);
                 showHeartsOrSmokeFX(true);
@@ -314,7 +323,7 @@ public class EntityPig extends EntityAnimal
 
     protected boolean canDespawn()
     {
-        return !tamed;
+        return !getTamed();
     }
 
     void showHeartsOrSmokeFX(boolean flag)

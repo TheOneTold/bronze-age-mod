@@ -20,13 +20,14 @@ public class EntityPig extends EntityAnimal
     protected void entityInit()
     {
         dataWatcher.addObject(16, Byte.valueOf((byte)0));
+		dataWatcher.addObject(17, Byte.valueOf((byte)0));
     }
 
     public void writeEntityToNBT(NBTTagCompound nbttagcompound)
     {
         super.writeEntityToNBT(nbttagcompound);
         nbttagcompound.setBoolean("Saddle", getSaddled());
-        nbttagcompound.setBoolean("Tamed", tamed);
+        nbttagcompound.setBoolean("Tamed", getTamed());
         nbttagcompound.setInteger("Timeto", birthtime);
     }
 
@@ -35,7 +36,25 @@ public class EntityPig extends EntityAnimal
         super.readEntityFromNBT(nbttagcompound);
         setSaddled(nbttagcompound.getBoolean("Saddle"));
         birthtime = nbttagcompound.getInteger("Timeto");
-        tamed = nbttagcompound.getBoolean("Tamed");
+        boolean isTamed = nbttagcompound.getBoolean("Tamed");
+        setTamed(isTamed);
+    }
+	
+	public boolean getTamed()
+    {
+        return (dataWatcher.getWatchableObjectByte(17) & 1) != 0;
+    }
+
+    public void setTamed(boolean flag)
+    {
+        this.tamed = flag;
+        if(flag)
+        {
+            dataWatcher.updateObject(17, Byte.valueOf((byte)1));
+        } else
+        {
+            dataWatcher.updateObject(17, Byte.valueOf((byte)0));
+        }
     }
 
     protected String getLivingSound()
@@ -61,7 +80,7 @@ public class EntityPig extends EntityAnimal
             return true;
         }
         ItemStack itemstack = entityplayer.getCurrentEquippedItem();
-        if(tamed && itemstack != null && itemstack.itemID == mod_AnimalFarming.mounter.shiftedIndex)
+        if(getTamed() && itemstack != null && itemstack.itemID == mod_AnimalFarming.mounter.shiftedIndex)
         {
             itemstack.damageItem(1, entityplayer);
             entityplayer.mountEntity(this);
@@ -74,7 +93,7 @@ public class EntityPig extends EntityAnimal
         }
         if(itemstack != null && itemstack.itemID == Item.wheat.shiftedIndex)
         {
-            if(tamed)
+            if(getTamed())
             {
                 if(health < 10)
                 {
@@ -87,7 +106,7 @@ public class EntityPig extends EntityAnimal
                 int i = rand.nextInt(5);
                 if(i == 2)
                 {
-                    tamed = true;
+                    setTamed(true);
                     birthtime = getBTime();
                     return true;
                 }
@@ -157,7 +176,7 @@ public class EntityPig extends EntityAnimal
                         birthtime = getBTime() / 2;
                     }
                 }
-                if(tamed && !urged)
+                if(getTamed() && !urged)
                 {
                     if(birthtime-- == 0 || birthtime < 0)
                     {
@@ -171,7 +190,7 @@ public class EntityPig extends EntityAnimal
                                 continue;
                             }
                             EntityPig entitypig = (EntityPig)entity1;
-                            if(!entitypig.tamed)
+                            if(!entitypig.getTamed())
                             {
                                 continue;
                             }
@@ -210,7 +229,7 @@ public class EntityPig extends EntityAnimal
             {
                 EntityPig entitypig = new EntityPig(worldObj);
                 entitypig.setPosition(posX, posY, posZ);
-                entitypig.tamed = (rand.nextInt(10) != 0);
+                entitypig.setTamed(rand.nextInt(10) != 0);
                 worldObj.playSoundAtEntity(this, "random.pop", 0.3F, 0.5F);
                 urged = false;
                 birthtime = getBTime();
@@ -228,7 +247,7 @@ public class EntityPig extends EntityAnimal
 
     protected boolean canDespawn()
     {
-        return !tamed;
+        return !getTamed();
     }
 
     boolean tamed;

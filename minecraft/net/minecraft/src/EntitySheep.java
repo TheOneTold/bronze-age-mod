@@ -36,6 +36,7 @@ public class EntitySheep extends EntityAnimal
     {
         super.entityInit();
         dataWatcher.addObject(16, new Byte((byte)0));
+		dataWatcher.addObject(17, Byte.valueOf((byte)0));
     }
 
     public boolean attackEntityFrom(Entity entity, int i)
@@ -55,6 +56,23 @@ public class EntitySheep extends EntityAnimal
     {
         return Block.cloth.blockID;
     }
+	
+	public boolean getTamed()
+    {
+        return (dataWatcher.getWatchableObjectByte(17) & 1) != 0;
+    }
+
+    public void setTamed(boolean flag)
+    {
+        this.tamed = flag;
+        if(flag)
+        {
+            dataWatcher.updateObject(17, Byte.valueOf((byte)1));
+        } else
+        {
+            dataWatcher.updateObject(17, Byte.valueOf((byte)0));
+        }
+    }
 
     public boolean interact(EntityPlayer entityplayer)
     {
@@ -64,7 +82,7 @@ public class EntitySheep extends EntityAnimal
             return true;
         }
         ItemStack itemstack = entityplayer.getCurrentEquippedItem();
-        if(tamed && itemstack != null && itemstack.itemID == mod_AnimalFarming.mounter.shiftedIndex)
+        if(getTamed() && itemstack != null && itemstack.itemID == mod_AnimalFarming.mounter.shiftedIndex)
         {
             itemstack.damageItem(1, entityplayer);
             entityplayer.mountEntity(this);
@@ -89,7 +107,7 @@ public class EntitySheep extends EntityAnimal
         }
         if(itemstack != null && itemstack.itemID != 359 && itemstack.itemID == Item.wheat.shiftedIndex)
         {
-            if(tamed)
+            if(getTamed())
             {
                 if(health < 10)
                 {
@@ -102,7 +120,7 @@ public class EntitySheep extends EntityAnimal
                 int j = rand.nextInt(5);
                 if(j == 2)
                 {
-                    tamed = true;
+                    setTamed(true);
                     showHeartsOrSmokeFX(false);
                     showHeartsOrSmokeFX(true);
                     birthtime = getBTime();
@@ -113,11 +131,11 @@ public class EntitySheep extends EntityAnimal
         } else
         if(itemstack == null)
         {
-            mc.displayGuiScreen(new GuiAnimalFarmingInfo(tamed, "Sheep", birthtime, this));
+            mc.displayGuiScreen(new GuiAnimalFarmingInfo(getTamed(), "Sheep", birthtime, this));
         } else
         if(itemstack.itemID != 359)
         {
-            mc.displayGuiScreen(new GuiAnimalFarmingInfo(tamed, "Sheep", birthtime, this));
+            mc.displayGuiScreen(new GuiAnimalFarmingInfo(getTamed(), "Sheep", birthtime, this));
         }
         return false;
     }
@@ -127,7 +145,7 @@ public class EntitySheep extends EntityAnimal
         super.writeEntityToNBT(nbttagcompound);
         nbttagcompound.setBoolean("Sheared", getSheared());
         nbttagcompound.setByte("Color", (byte)getFleeceColor());
-        nbttagcompound.setBoolean("Tamed", tamed);
+        nbttagcompound.setBoolean("Tamed", getTamed());
         nbttagcompound.setInteger("Timeto", birthtime);
         nbttagcompound.setInteger("FleeceReset", reFleece);
     }
@@ -137,7 +155,8 @@ public class EntitySheep extends EntityAnimal
         super.readEntityFromNBT(nbttagcompound);
         setSheared(nbttagcompound.getBoolean("Sheared"));
         setFleeceColor(nbttagcompound.getByte("Color"));
-        tamed = nbttagcompound.getBoolean("Tamed");
+        boolean isTamed = nbttagcompound.getBoolean("Tamed");
+        setTamed(isTamed);
         birthtime = nbttagcompound.getInteger("Timeto");
         reFleece = nbttagcompound.getInteger("FleeceReset");
     }
@@ -214,7 +233,7 @@ public class EntitySheep extends EntityAnimal
         super.onUpdate();
         if(!worldObj.multiplayerWorld)
         {
-            if(tamed && mc.thePlayer.getCurrentEquippedItem() != null && mc.thePlayer.getCurrentEquippedItem().itemID == mod_AnimalFarming.roundUp.shiftedIndex && ItemRoundUp.pos && (ItemRoundUp.posi == 3 || ItemRoundUp.posi == 5))
+            if(getTamed() && mc.thePlayer.getCurrentEquippedItem() != null && mc.thePlayer.getCurrentEquippedItem().itemID == mod_AnimalFarming.roundUp.shiftedIndex && ItemRoundUp.pos && (ItemRoundUp.posi == 3 || ItemRoundUp.posi == 5))
             {
                 setPathToEntity(worldObj.getPathToEntity(mc.thePlayer, this, 8F));
             }
@@ -245,7 +264,7 @@ public class EntitySheep extends EntityAnimal
                         birthtime = getBTime() / 2;
                     }
                 }
-                if(tamed && !urged)
+                if(getTamed() && !urged)
                 {
                     if(mc.thePlayer.ridingEntity != null && mc.thePlayer.ridingEntity == this)
                     {
@@ -263,7 +282,7 @@ public class EntitySheep extends EntityAnimal
                                 continue;
                             }
                             EntitySheep entitysheep = (EntitySheep)entity1;
-                            if(!entitysheep.tamed)
+                            if(!entitysheep.getTamed())
                             {
                                 continue;
                             }
@@ -338,10 +357,10 @@ public class EntitySheep extends EntityAnimal
             entitysheep.setPosition(posX, posY, posZ);
             if(rand.nextInt(10) == 0)
             {
-                entitysheep.tamed = false;
+                entitysheep.setTamed(false);
             } else
             {
-                entitysheep.tamed = true;
+                entitysheep.setTamed(true);
             }
             showHeartsOrSmokeFX(false);
             showHeartsOrSmokeFX(true);
@@ -361,7 +380,7 @@ public class EntitySheep extends EntityAnimal
 
     protected boolean canDespawn()
     {
-        return !tamed;
+        return !getTamed();
     }
 
     void showHeartsOrSmokeFX(boolean flag)
