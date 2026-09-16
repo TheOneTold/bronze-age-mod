@@ -42,7 +42,7 @@ public class EntityPig extends EntityAnimal
 	
 	public boolean getTamed()
     {
-        return (dataWatcher.getWatchableObjectByte(17) & 1) != 0;
+        return this.tamed;
     }
 
     public void setTamed(boolean flag)
