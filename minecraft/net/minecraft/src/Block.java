@@ -146,7 +146,7 @@ public class Block {
 	public static final Block clayBricks = (new Block(123, 155, Material.clay)).setHardness(0.6F).setStepSound(soundGravelFootstep).setBlockName("clayBricks");
 	public static final Block tileBricks = (new Block(124, 156, Material.rock)).setHardness(1.5F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("tileBricks");
 	public static final Block stairShingles = (new BlockStairs(125, flintBricks)).setBlockName("stairsShingles").disableNeighborNotifyOnMetadataChange();
-	public static final Block stairTiles = (new BlockStairs(126, tileBricks)).setBlockName("stairsTiles").disableNeighborNotifyOnMetadataChange();
+	public static final Block stairTiles = (new BlockStairs(126, tileBricks)).setBlockName("stairsTile").disableNeighborNotifyOnMetadataChange();
 	public static final Block slabTileSingle = (new BlockStep(127, false)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("slabTile");
 	public static final Block slabTileDouble = (new BlockStep(128, true)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("slabTile");
 	public static final Block slabShinglesSingle = (new BlockStep(129, false)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("slabShingles");
