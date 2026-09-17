@@ -31,6 +31,15 @@ public class BlockStep extends Block
 		if (this.blockID == Block.slabShinglesSingle.blockID || this.blockID == Block.slabShinglesDouble.blockID) {
 			return Block.flintBricks.blockIndexInTexture;
 		}
+		if (this.blockID == Block.slabGravelSingle.blockID || this.blockID == Block.slabGravelDouble.blockID) {
+			return Block.gravel.blockIndexInTexture;
+		}
+		if (this.blockID == Block.slabWhiteConcreteSingle.blockID || this.blockID == Block.slabWhiteConcreteDouble.blockID) {
+			return Block.whiteConcrete.blockIndexInTexture;
+		}
+		if (this.blockID == Block.slabBlackConcreteSingle.blockID || this.blockID == Block.slabBlackConcreteDouble.blockID) {
+			return Block.blackConcrete.blockIndexInTexture;
+		}
         if(j == 0)
         {
             return i > 1 ? 5 : 6;
@@ -98,6 +107,15 @@ public class BlockStep extends Block
 		} else if (this.blockID == Block.slabShinglesSingle.blockID || this.blockID == Block.slabShinglesDouble.blockID) {
 			return Block.slabShinglesSingle.blockID;
 			
+		} else if (this.blockID == Block.slabGravelSingle.blockID || this.blockID == Block.slabGravelDouble.blockID) {
+			return Block.slabGravelSingle.blockID;
+		
+		} else if (this.blockID == Block.slabWhiteConcreteSingle.blockID || this.blockID == Block.slabWhiteConcreteDouble.blockID) {
+			return Block.slabWhiteConcreteSingle.blockID;
+		
+		} else if (this.blockID == Block.slabBlackConcreteSingle.blockID || this.blockID == Block.slabBlackConcreteDouble.blockID) {
+			return Block.slabBlackConcreteSingle.blockID;
+
 		} else {
 			return Block.stairSingle.blockID;
 			

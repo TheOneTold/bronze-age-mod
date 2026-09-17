@@ -151,8 +151,15 @@ public class Block {
 	public static final Block slabTileDouble = (new BlockStep(128, true)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("slabTile");
 	public static final Block slabShinglesSingle = (new BlockStep(129, false)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("slabShingles");
 	public static final Block slabShinglesDouble = (new BlockStep(130, true)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("slabShingles");
-	public static final Block whiteConcrete = (new BlockPath(131, 168, 1, Material.rock)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("whiteConcrete");
-	public static final Block blackConcrete = (new BlockPath(132, 169, 1, Material.rock)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("blackConcrete");
+	public static final Block whiteConcrete = (new Block(131, 168, Material.rock)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("whiteConcrete");
+	public static final Block blackConcrete = (new Block(132, 169, Material.rock)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("blackConcrete");
+	public static final Block slabGravelSingle = (new BlockStep(133, false)).setHardness(0.6F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("slabGravel");
+	public static final Block slabGravelDouble = (new BlockStep(134, true)).setHardness(0.6F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("slabGravel");
+	public static final Block slabWhiteConcreteSingle = (new BlockStep(135, false)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("slabWhiteConcrete");
+	public static final Block slabWhiteConcreteDouble = (new BlockStep(136, true)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("slabWhiteConcrete");
+	public static final Block slabBlackConcreteSingle = (new BlockStep(137, false)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("slabBlackConcrete");
+	public static final Block slabBlackConcreteDouble = (new BlockStep(138, true)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("slabBlackConcrete");
+	
 	public int blockIndexInTexture;
 	public final int blockID;
 	protected float blockHardness;
@@ -611,6 +618,12 @@ public class Block {
 		lightOpacity[slabTileSingle.blockID] = 0;
 		field_28032_t[slabShinglesSingle.blockID] = true;
 		field_28032_t[slabTileSingle.blockID] = true;
+		lightOpacity[slabGravelSingle.blockID] = 0;
+		lightOpacity[slabWhiteConcreteSingle.blockID] = 0;
+		lightOpacity[slabBlackConcreteSingle.blockID] = 0;
+		field_28032_t[slabGravelSingle.blockID] = true;
+		field_28032_t[slabWhiteConcreteSingle.blockID] = true;
+		field_28032_t[slabBlackConcreteSingle.blockID] = true;
 
 		for(int var0 = 0; var0 < 256; ++var0) {
 			if(blocksList[var0] != null && Item.itemsList[var0] == null) {
