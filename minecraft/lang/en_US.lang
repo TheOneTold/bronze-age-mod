@@ -387,12 +387,6 @@ tile.whiteConcrete.name=White Concrete
 tile.whiteConcrete.desc=
 tile.blackConcrete.name=Black Concrete
 tile.blackConcrete.desc=
-tile.slabGravel.name=Gravel Slab
-tile.slabGravel.desc=
-tile.slabWhiteConcrete.name=White Concrete Slab
-tile.slabWhiteConcrete.desc=
-tile.slabBlackConcrete.name=Black Concrete Slab
-tile.slabBlackConcrete.desc=
 
 item.shovelIron.name=Iron Shovel
 item.shovelIron.desc=

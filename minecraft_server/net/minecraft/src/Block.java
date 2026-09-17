@@ -687,12 +687,6 @@ public class Block
 	public static final Block slabShinglesDouble;
 	public static final Block whiteConcrete;
 	public static final Block blackConcrete;
-	public static final Block slabGravelSingle;
-	public static final Block slabGravelDouble;
-	public static final Block slabWhiteConcreteSingle;
-	public static final Block slabWhiteConcreteDouble;
-	public static final Block slabBlackConcreteSingle;
-	public static final Block slabBlackConcreteDouble;
 	
     public int blockIndexInTexture;
     public final int blockID; 
@@ -855,15 +849,8 @@ public class Block
 		slabTileDouble = (new BlockStep(128, true)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("slabTile");
 		slabShinglesSingle = (new BlockStep(129, false)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("slabShingles");
 		slabShinglesDouble = (new BlockStep(130, true)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("slabShingles");
-		whiteConcrete = (new Block(131, 168, Material.rock)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("whiteConcrete");
-		blackConcrete = (new Block(132, 169, Material.rock)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("blackConcrete");
-		slabGravelSingle = (new BlockStep(133, false)).setHardness(0.6F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("slabGravel");
-		slabGravelDouble = (new BlockStep(134, true)).setHardness(0.6F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("slabGravel");
-		slabWhiteConcreteSingle = (new BlockStep(135, false)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("slabWhiteConcrete");
-		slabWhiteConcreteDouble = (new BlockStep(136, true)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("slabWhiteConcrete");
-		slabBlackConcreteSingle = (new BlockStep(137, false)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("slabBlackConcrete");
-		slabBlackConcreteDouble = (new BlockStep(138, true)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("slabBlackConcrete");
-		
+		whiteConcrete = (new BlockPath(131, 168, 1, Material.rock)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("whiteConcrete");
+		blackConcrete = (new BlockPath(132, 169, 1, Material.rock)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("blackConcrete");
 		
 		Item.itemsList[cloth.blockID] = (new ItemCloth(cloth.blockID - 256)).setItemName("cloth");
         Item.itemsList[wood.blockID] = (new ItemLog(wood.blockID - 256)).setItemName("log");

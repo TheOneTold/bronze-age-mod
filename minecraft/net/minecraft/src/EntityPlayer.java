@@ -60,12 +60,12 @@ public abstract class EntityPlayer extends EntityLiving
 
 		int blockUnderfoot = this.worldObj.getBlockId(playerX, playerY, playerZ);
 
-		if (blockUnderfoot == Block.gravel.blockID || blockUnderfoot == Block.slabGravelSingle.blockID)
+		if (blockUnderfoot == Block.gravel.blockID)
 		{
 			if (Math.abs(this.motionX) < 0.35D) this.motionX *= 1.167D;
 			if (Math.abs(this.motionZ) < 0.35D) this.motionZ *= 1.167D;
 		}
-		else if (blockUnderfoot == Block.whiteConcrete.blockID || blockUnderfoot == Block.blackConcrete.blockID || blockUnderfoot == Block.slabWhiteConcreteSingle.blockID || blockUnderfoot == Block.slabBlackConcreteSingle.blockID)
+		else if (blockUnderfoot == Block.whiteConcrete.blockID || blockUnderfoot == Block.blackConcrete.blockID)
 		{
 			if (Math.abs(this.motionX) < 0.45D) this.motionX *= 1.33D;
 			if (Math.abs(this.motionZ) < 0.45D) this.motionZ *= 1.33D;
