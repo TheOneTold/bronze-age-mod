@@ -220,6 +220,8 @@ public class CraftingManager
 		addRecipe(new ItemStack(Block.stairTiles, 4), new Object[]{"#  ", "## ", "###", Character.valueOf('#'), Block.tileBricks});
 		addRecipe(new ItemStack(Block.slabShinglesSingle, 3), new Object[]{"###", Character.valueOf('#'), Block.flintBricks});
 		addRecipe(new ItemStack(Block.slabTileSingle, 3), new Object[]{"###", Character.valueOf('#'), Block.tileBricks});
+		addRecipe(new ItemStack(Block.whiteConcrete, 8), new Object[]{"X#X", "#Y#", "X#X", Character.valueOf('X'), Item.gunpowder, Character.valueOf('Y'), Item.bucketWater, Character.valueOf('#'), Block.sandStone});
+		addRecipe(new ItemStack(Block.blackConcrete, 8), new Object[]{"X#X", "#Y#", "X#X", Character.valueOf('X'), Item.gunpowder, Character.valueOf('Y'), Item.bucketWater, Character.valueOf('#'), Block.stone});
 		
         Collections.sort(recipes, new RecipeSorter(this));
         System.out.println((new StringBuilder()).append(recipes.size()).append(" recipes").toString());

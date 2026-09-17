@@ -383,6 +383,10 @@ tile.slabTile.name=Terracotta Tiles Slab
 tile.slabTile.desc=
 tile.slabShingles.name=Flint Bricks Slab
 tile.slabShingles.desc=
+tile.whiteConcrete.name=White Concrete
+tile.whiteConcrete.desc=
+tile.blackConcrete.name=Black Concrete
+tile.blackConcrete.desc=
 
 item.shovelIron.name=Iron Shovel
 item.shovelIron.desc=

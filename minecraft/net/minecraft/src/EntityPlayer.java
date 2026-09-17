@@ -53,6 +53,24 @@ public abstract class EntityPlayer extends EntityLiving
 
     public void onUpdate()
     {
+
+		int playerX = MathHelper.floor_double(this.posX);
+		int playerY = MathHelper.floor_double(this.boundingBox.minY - 0.5D);
+		int playerZ = MathHelper.floor_double(this.posZ);
+
+		int blockUnderfoot = this.worldObj.getBlockId(playerX, playerY, playerZ);
+
+		if (blockUnderfoot == Block.gravel.blockID)
+		{
+			if (Math.abs(this.motionX) < 0.35D) this.motionX *= 1.167D;
+			if (Math.abs(this.motionZ) < 0.35D) this.motionZ *= 1.167D;
+		}
+		else if (blockUnderfoot == Block.whiteConcrete.blockID || blockUnderfoot == Block.blackConcrete.blockID)
+		{
+			if (Math.abs(this.motionX) < 0.45D) this.motionX *= 1.33D;
+			if (Math.abs(this.motionZ) < 0.45D) this.motionZ *= 1.33D;
+		}
+		
         if(isPlayerSleeping())
         {
             sleepTimer++;
