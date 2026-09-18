@@ -603,14 +603,6 @@ public class Block {
 		Item.itemsList[leaves.blockID] = (new ItemLeaves(leaves.blockID - 256)).setItemName("leaves");
 		Item.itemsList[pistonBase.blockID] = new ItemPiston(pistonBase.blockID - 256);
 		Item.itemsList[pistonStickyBase.blockID] = new ItemPiston(pistonStickyBase.blockID - 256);
-		lightOpacity[stairShingles.blockID] = 0;
-		lightOpacity[stairTiles.blockID] = 0;
-		field_28032_t[stairShingles.blockID] = true;
-		field_28032_t[stairTiles.blockID] = true;
-		lightOpacity[slabShinglesSingle.blockID] = 0;
-		lightOpacity[slabTileSingle.blockID] = 0;
-		field_28032_t[slabShinglesSingle.blockID] = true;
-		field_28032_t[slabTileSingle.blockID] = true;
 
 		for(int var0 = 0; var0 < 256; ++var0) {
 			if(blocksList[var0] != null && Item.itemsList[var0] == null) {

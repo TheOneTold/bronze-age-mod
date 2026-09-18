@@ -462,7 +462,7 @@ public class World
         if(flag)
         {
             int l = getBlockId(i, j, k);
-            if(l == Block.stairSingle.blockID || l == Block.tilledField.blockID || l == Block.stairCompactCobblestone.blockID || l == Block.stairCompactPlanks.blockID)
+            if(l == Block.stairSingle.blockID || l == Block.tilledField.blockID || l == Block.stairCompactCobblestone.blockID || l == Block.stairCompactPlanks.blockID || l == Block.stairTiles.blockID || l == Block.stairShingles.blockID || l == Block.slabShinglesSingle.blockID || l == Block.slabTileSingle.blockID)
             {
                 int i1 = getBlockLightValue_do(i, j + 1, k, false);
                 int j1 = getBlockLightValue_do(i + 1, j, k, false);
