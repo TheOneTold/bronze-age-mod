@@ -18,6 +18,9 @@ public class HearthRecipes {
 		this.addSmelting(Item.fishRaw.shiftedIndex, new ItemStack(Item.fishCooked));
 		this.addSmelting(Block.cactus.blockID, new ItemStack(Item.dyePowder, 1, 2));
 		this.addSmelting(Block.sticks.blockID, new ItemStack(Item.gunpowder));
+		this.addSmelting(Item.dough.shiftedIndex, new ItemStack(Item.bread));
+		this.addSmelting(Item.cakeMix.shiftedIndex, new ItemStack(Item.cake));
+		this.addSmelting(Item.cookieDough.shiftedIndex, new ItemStack(Item.cookie));
 	}
 
 	public void addSmelting(int var1, ItemStack var2) {

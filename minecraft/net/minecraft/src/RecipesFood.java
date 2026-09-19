@@ -23,8 +23,8 @@ public class RecipesFood
         craftingmanager.addRecipe(new ItemStack(Item.bowlSoup), new Object[] {
             "Y", "X", "#", Character.valueOf('X'), Block.mushroomRed, Character.valueOf('Y'), Block.mushroomBrown, Character.valueOf('#'), Item.bowlEmpty
         });
-        craftingmanager.addRecipe(new ItemStack(Item.cookie, 8), new Object[] {
-            "#X#", Character.valueOf('X'), new ItemStack(Item.dyePowder, 1, 3), Character.valueOf('#'), Item.wheat
+        craftingmanager.addRecipe(new ItemStack(Item.cookieDough, 8), new Object[] {
+            "X", "#", Character.valueOf('X'), new ItemStack(Item.dyePowder, 1, 3), Character.valueOf('#'), Item.dough
         });
     }
 }

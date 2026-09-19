@@ -14,7 +14,7 @@ public class ItemSoup extends ItemFood
 
     public ItemSoup(int i, int j)
     {
-        super(i, j, false);
+        super(i, j, false, 1);
     }
 
     public ItemStack onItemRightClick(ItemStack itemstack, World world, EntityPlayer entityplayer)

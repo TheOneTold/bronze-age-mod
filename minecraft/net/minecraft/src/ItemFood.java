@@ -11,12 +11,12 @@ package net.minecraft.src;
 public class ItemFood extends Item
 {
 
-    public ItemFood(int i, int j, boolean flag)
+    public ItemFood(int i, int j, boolean flag, int k)
     {
         super(i);
         healAmount = j;
         isWolfsFavoriteMeat = flag;
-        maxStackSize = 16;
+        maxStackSize = k;
     }
 
     public ItemStack onItemRightClick(ItemStack itemstack, World world, EntityPlayer entityplayer)

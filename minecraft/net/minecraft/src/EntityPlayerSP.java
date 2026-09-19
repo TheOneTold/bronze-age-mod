@@ -149,6 +149,11 @@ public class EntityPlayerSP extends EntityPlayer
     {
         mc.displayGuiScreen(new GuiCrafting(inventory, worldObj, i, j, k));
     }
+	
+	public void displayMillGUI(int i, int j, int k)
+    {
+        mc.displayGuiScreen(new GuiMill(inventory, worldObj, i, j, k));
+    }
 
     public void displayGUIFurnace(TileEntityFurnace tileentityfurnace)
 	{

@@ -687,6 +687,7 @@ public class Block
 	public static final Block slabShinglesDouble;
 	public static final Block whiteConcrete;
 	public static final Block blackConcrete;
+	public static final Block mill;
 	
     public int blockIndexInTexture;
     public final int blockID; 
@@ -851,6 +852,7 @@ public class Block
 		slabShinglesDouble = (new BlockStep(130, true)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("slabShingles");
 		whiteConcrete = (new Block(131, 168, Material.rock)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("whiteConcrete");
 		blackConcrete = (new Block(132, 169, Material.rock)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("blackConcrete");
+		mill = (new BlockMill(133)).setHardness(2.5F).setStepSound(soundStoneFootstep).setBlockName("mill");
 		
 		Item.itemsList[cloth.blockID] = (new ItemCloth(cloth.blockID - 256)).setItemName("cloth");
         Item.itemsList[wood.blockID] = (new ItemLog(wood.blockID - 256)).setItemName("log");

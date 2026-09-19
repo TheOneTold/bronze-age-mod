@@ -52,7 +52,7 @@ public class CraftingManager
         addRecipe(new ItemStack(Block.blockSnow, 1), new Object[] {
             "##", "##", Character.valueOf('#'), Item.snowball
         });
-        addRecipe(new ItemStack(Block.blockClay, 1), new Object[]{"###", "###", "###", Character.valueOf('#'), Item.clay});
+        addRecipe(new ItemStack(Block.blockClay, 1), new Object[]{"##", "##", Character.valueOf('#'), Item.clay});
 		addRecipe(new ItemStack(Block.brick, 1), new Object[]{"#", "#", Character.valueOf('#'), Item.brick});
         addRecipe(new ItemStack(Block.glowStone, 1), new Object[] {
             "##", "##", Character.valueOf('#'), Item.lightStoneDust
@@ -91,8 +91,8 @@ public class CraftingManager
         addRecipe(new ItemStack(Item.sign, 1), new Object[] {
             "###", "###", " X ", Character.valueOf('#'), Block.planks, Character.valueOf('X'), Item.stick
         });
-        addRecipe(new ItemStack(Item.cake, 1), new Object[] {
-            "AAA", "BEB", "CCC", Character.valueOf('A'), Item.bucketMilk, Character.valueOf('B'), Item.sugar, Character.valueOf('C'), Item.wheat, Character.valueOf('E'), 
+        addRecipe(new ItemStack(Item.cakeMix, 1), new Object[] {
+            "AAA", "BEB", " C ", Character.valueOf('A'), Item.bucketMilk, Character.valueOf('B'), Item.sugar, Character.valueOf('C'), Item.flour, Character.valueOf('E'), 
             Item.egg
         });
         addRecipe(new ItemStack(Item.sugar, 1), new Object[] {
@@ -137,12 +137,9 @@ public class CraftingManager
         addRecipe(new ItemStack(Item.boat, 1), new Object[] {
             "# #", "###", Character.valueOf('#'), Block.planks
         });
-		addRecipe(new ItemStack(Item.bucketEmpty, 1), new Object[]{"# #", " # ", Character.valueOf('#'), Item.clay});
+		addRecipe(new ItemStack(Item.rawBucket, 1), new Object[]{"# #", " # ", Character.valueOf('#'), Item.clay});
         addRecipe(new ItemStack(Item.flintAndSteel, 1), new Object[] {
             "A ", " B", Character.valueOf('A'), Item.ingotIron, Character.valueOf('B'), Item.flint
-        });
-        addRecipe(new ItemStack(Item.bread, 1), new Object[] {
-            "###", Character.valueOf('#'), Item.wheat
         });
         addRecipe(new ItemStack(Block.stairCompactPlanks, 4), new Object[] {
             "#  ", "## ", "###", Character.valueOf('#'), Block.planks
@@ -222,6 +219,7 @@ public class CraftingManager
 		addRecipe(new ItemStack(Block.slabTileSingle, 3), new Object[]{"###", Character.valueOf('#'), Block.tileBricks});
 		addRecipe(new ItemStack(Block.whiteConcrete, 8), new Object[]{"X#X", "#Y#", "X#X", Character.valueOf('X'), Item.gunpowder, Character.valueOf('Y'), Item.bucketWater, Character.valueOf('#'), Block.sandStone});
 		addRecipe(new ItemStack(Block.blackConcrete, 8), new Object[]{"X#X", "#Y#", "X#X", Character.valueOf('X'), Item.gunpowder, Character.valueOf('Y'), Item.bucketWater, Character.valueOf('#'), Block.stone});
+		addRecipe(new ItemStack(Item.dough, 1), new Object[]{"X", "#", Character.valueOf('#'), Item.bucketWater, Character.valueOf('X'), Item.flour});
 		
         Collections.sort(recipes, new RecipeSorter(this));
         System.out.println((new StringBuilder()).append(recipes.size()).append(" recipes").toString());

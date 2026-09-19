@@ -25,21 +25,7 @@ public class RecipesDyes
             });
         }
 
-        craftingmanager.addShapelessRecipe(new ItemStack(Item.dyePowder, 2, 11), new Object[] {
-            Block.plantYellow
-        });
-        craftingmanager.addShapelessRecipe(new ItemStack(Item.dyePowder, 2, 1), new Object[] {
-            Block.plantRed
-        });
-		craftingmanager.addShapelessRecipe(new ItemStack(Item.dyePowder, 2, 5), new Object[] {
-            Block.flowerIndigo
-        });
-		craftingmanager.addShapelessRecipe(new ItemStack(Item.dyePowder, 2, 12), new Object[] {
-            Block.flowerBluebell
-        });
-        craftingmanager.addShapelessRecipe(new ItemStack(Item.dyePowder, 3, 15), new Object[] {
-            Item.bone
-        });
+        
         craftingmanager.addShapelessRecipe(new ItemStack(Item.dyePowder, 2, 9), new Object[] {
             new ItemStack(Item.dyePowder, 1, 1), new ItemStack(Item.dyePowder, 1, 15)
         });
