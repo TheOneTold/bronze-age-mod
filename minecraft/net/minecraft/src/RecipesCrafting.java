@@ -22,7 +22,7 @@ public class RecipesCrafting {
 		var1.addRecipe(new ItemStack(Item.clay, 4), new Object[]{"#", Character.valueOf('#'), Block.blockClay});
 		var1.addRecipe(new ItemStack(Item.wine, 1), new Object[]{"#X", Character.valueOf('#'), Item.grapeJuice, Character.valueOf('X'), Item.bucketEmpty});
 		var1.addRecipe(new ItemStack(Item.helmetRebreather, 1), new Object[]{"# #", "#X#", " # ", Character.valueOf('#'), Item.ingotSilver, Character.valueOf('X'), Block.sponge});
-		var1.addRecipe(new ItemStack(Block.sponge), new Object[]{"###", "###", "###", Character.valueOf('#'), Block.sand});
+		var1.addRecipe(new ItemStack(Block.sponge, 1), new Object[]{"###", "###", "###", Character.valueOf('#'), Block.sand});
 		
 		var1.addRecipe(new ItemStack(Item.cupWood), new Object[]{"# #", " # ", " # ", Character.valueOf('#'), Block.planks});
 		var1.addRecipe(new ItemStack(Item.cupBronze), new Object[]{"# #", " # ", " # ", Character.valueOf('#'), Item.ingotBronze});
