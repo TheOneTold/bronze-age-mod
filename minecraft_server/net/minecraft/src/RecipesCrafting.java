@@ -35,9 +35,9 @@ public class RecipesCrafting
 		craftingmanager.addRecipe(new ItemStack(Item.bowDrill, 1), new Object[]{" # ", "#X#", " # ", Character.valueOf('#'), Item.stick, Character.valueOf('X'), Item.silk});
 		craftingmanager.addRecipe(new ItemStack(Item.silk, 4), new Object[]{"#", Character.valueOf('#'), Block.cloth});
 		craftingmanager.addRecipe(new ItemStack(Item.clay, 4), new Object[]{"#", Character.valueOf('#'), Block.blockClay});
-		craftingmanager.addRecipe(new ItemStack(Item.wine, 1), new Object[]{"#X", Character.valueOf('#'), Item.grapeJuice, Character.valueOf('X'), Item.bucketEmpty});
+		craftingmanager.addRecipe(new ItemStack(Item.wine, 1), new Object[]{"#", Character.valueOf('#'), Item.grapeJuice});
 		craftingmanager.addRecipe(new ItemStack(Item.helmetRebreather, 1), new Object[]{"# #", "#X#", " # ", Character.valueOf('#'), Item.ingotSilver, Character.valueOf('X'), Block.sponge});
-		craftingmanager.addRecipe(new ItemStack(Block.sponge, 1), new Object[]{"###", "###", "###", Character.valueOf('#'), Block.sand});
+		craftingmanager.addRecipe(new ItemStack(Block.sponge), new Object[]{"###", "###", "###", Character.valueOf('#'), Block.sand});
 		
 		craftingmanager.addRecipe(new ItemStack(Item.cupWood), new Object[]{"# #", " # ", " # ", Character.valueOf('#'), Block.planks});
 		craftingmanager.addRecipe(new ItemStack(Item.cupBronze), new Object[]{"# #", " # ", " # ", Character.valueOf('#'), Item.ingotBronze});
