@@ -343,7 +343,7 @@ public class EntityPlayerMP extends EntityPlayer
 	public void displayMillGUI(int i, int j, int k)
     {
         getNextWidowId();
-        playerNetServerHandler.sendPacket(new Packet100OpenWindow(currentWindowId, 1, "Crafting", 9));
+        playerNetServerHandler.sendPacket(new Packet100OpenWindow(currentWindowId, 5, "Mill", 9));
         currentCraftingInventory = new ContainerMill(inventory, worldObj, i, j, k);
         currentCraftingInventory.windowId = currentWindowId;
         currentCraftingInventory.onCraftGuiOpened(this);
@@ -370,7 +370,7 @@ public class EntityPlayerMP extends EntityPlayer
 	public void displayGUIHearth(TileEntityHearth tileentityhearth)
     {
         getNextWidowId();
-        playerNetServerHandler.sendPacket(new Packet100OpenWindow(currentWindowId, 2, tileentityhearth.getInvName(), tileentityhearth.getSizeInventory()));
+        playerNetServerHandler.sendPacket(new Packet100OpenWindow(currentWindowId, 4, tileentityhearth.getInvName(), tileentityhearth.getSizeInventory()));
         currentCraftingInventory = new ContainerHearth(inventory, tileentityhearth);
         currentCraftingInventory.windowId = currentWindowId;
         currentCraftingInventory.onCraftGuiOpened(this);
