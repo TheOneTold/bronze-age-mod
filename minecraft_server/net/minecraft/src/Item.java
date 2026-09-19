@@ -351,7 +351,7 @@ public class Item
 	public static Item grapes = (new ItemFood(148, 3, false, 16)).setIconCoord(4, 10).setItemName("grapes");
 	public static Item grapeJuice = (new ItemDrink(149, 6, 1, 0)).setIconCoord(14, 3).setItemName("grapeJuice").setContainerItem(bucketEmpty);
 	public static Item flour = (new ItemBucket(150, -1, 1)).setIconCoord(14, 2).setItemName("flour");
-	public static Item dough = (new Item(151)).setIconCoord(12, 6).setItemName("dough");
+	public static Item dough = (new Item(151)).setIconCoord(12, 6).setItemName("dough").setContainerItem(bucketEmpty);
 	public static Item cakeMix = (new Item(152)).setIconCoord(12, 11).setItemName("cakeMix");
 	public static Item cookieDough = (new ItemFood(153, 1, false, 16)).setIconCoord(11, 11).setItemName("cookieDough");
 	public static Item rawBucket = (new Item(154)).setIconCoord(10, 11).setItemName("rawBucket");

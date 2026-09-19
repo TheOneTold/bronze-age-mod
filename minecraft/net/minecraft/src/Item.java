@@ -163,8 +163,8 @@ public class Item {
 	public static Item rawBronze = (new Item(146)).setIconCoord(11, 5).setItemName("rawBronze");
 	public static Item bowDrill = (new ItemBowDrill(147)).setIconCoord(3, 10).setItemName("bowDrill");
 	public static Item grapes = (new ItemFood(148, 3, false, 16)).setIconCoord(4, 10).setItemName("grapes");
-	public static Item grapeJuice = (new ItemDrink(149, 6, 1, 0)).setIconCoord(14, 3).setItemName("grapeJuice").setContainerItem(bucketEmpty);
-	public static Item flour = (new ItemBucket(150, -1, 1)).setIconCoord(14, 2).setItemName("flour");
+	public static Item grapeJuice = (new ItemDrink(149, 12, 1, 0)).setIconCoord(14, 3).setItemName("grapeJuice").setContainerItem(bucketEmpty);
+	public static Item flour = (new ItemBucket(150, -1, 1)).setIconCoord(14, 2).setItemName("flour").setContainerItem(bucketEmpty);
 	public static Item dough = (new Item(151)).setIconCoord(12, 6).setItemName("dough");
 	public static Item cakeMix = (new Item(152)).setIconCoord(12, 11).setItemName("cakeMix");
 	public static Item cookieDough = (new ItemFood(153, 1, false, 16)).setIconCoord(11, 11).setItemName("cookieDough");
@@ -182,10 +182,10 @@ public class Item {
 	public static Item cupSilverMilk = (new ItemDrink(165, 1, 3, 3)).setIconCoord(7, 13).setItemName("cupSilverMilk");
 	public static Item cupSilverWine = (new ItemDrink(166, 3, 3, 3)).setIconCoord(6, 13).setItemName("cupSilverWine");
 	public static Item cupGold = (new Item(167)).setIconCoord(9, 14).setItemName("cupGold");
-	public static Item cupGoldGrapeJuice = (new ItemDrink(168, 2, 3, 4)).setIconCoord(8, 14).setItemName("cupGoldGrapeJuice");
-	public static Item cupGoldMilk = (new ItemDrink(169, 1, 3, 4)).setIconCoord(7, 14).setItemName("cupGoldMilk");
-	public static Item cupGoldWine = (new ItemDrink(170, 3, 3, 4)).setIconCoord(6, 14).setItemName("cupGoldWine");
-	public static Item wine = (new ItemDrink(171, 8, 1, 0)).setIconCoord(10, 12).setItemName("wine").setContainerItem(bucketEmpty);
+	public static Item cupGoldGrapeJuice = (new ItemDrink(168, 4, 3, 4)).setIconCoord(8, 14).setItemName("cupGoldGrapeJuice");
+	public static Item cupGoldMilk = (new ItemDrink(169, 3, 3, 4)).setIconCoord(7, 14).setItemName("cupGoldMilk");
+	public static Item cupGoldWine = (new ItemDrink(170, 6, 3, 4)).setIconCoord(6, 14).setItemName("cupGoldWine");
+	public static Item wine = (new ItemDrink(171, 16, 1, 0)).setIconCoord(10, 12).setItemName("wine").setContainerItem(bucketEmpty);
 	
 	public static Item record13 = (new ItemRecord(2000, "13")).setIconCoord(0, 15).setItemName("record");
 	public static Item recordCat = (new ItemRecord(2001, "cat")).setIconCoord(1, 15).setItemName("record");
