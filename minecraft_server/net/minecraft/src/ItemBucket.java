@@ -17,7 +17,7 @@ public class ItemBucket extends Item
     public ItemBucket(int i, int j, int k)
     {
         super(i);
-        maxStackSize = k; // Configured to your stack variable limit (16)
+        maxStackSize = k; 
         isFull = j;
     }
 
@@ -58,21 +58,20 @@ public class ItemBucket extends Item
                 if(world.getBlockMaterial(i, j, k) == Material.water && world.getBlockMetadata(i, j, k) == 0)
                 {
                     world.setBlockWithNotify(i, j, k, 0);
-                    // Safely decrement stack count by 1 and return water bucket
+                   
                     return handleBucketOutput(itemstack, entityplayer, new ItemStack(Item.bucketWater));
                 }
                 if(world.getBlockMaterial(i, j, k) == Material.lava && world.getBlockMetadata(i, j, k) == 0)
                 {
                     world.setBlockWithNotify(i, j, k, 0);
-                    // Safely decrement stack count by 1 and return lava bucket
+                    
                     return handleBucketOutput(itemstack, entityplayer, new ItemStack(Item.bucketLava));
                 }
             } else
             {
                 if(isFull < 0)
                 {
-                    // Placed liquid successfully from a filled bucket, returns empty bucket
-                    // Note: If you eventually make filled buckets stackable, use handleBucketOutput here as well
+                    
                     return new ItemStack(Item.bucketEmpty);
                 }
                 if(movingobjectposition.sideHit == 0)
@@ -119,30 +118,27 @@ public class ItemBucket extends Item
         } else
         if(isFull == 0 && (movingobjectposition.entityHit instanceof EntityCow))
         {
-            // Safely decrement stack count by 1 and return milk bucket
+            
             return handleBucketOutput(itemstack, entityplayer, new ItemStack(Item.bucketMilk));
         }
         return itemstack;
     }
 
-    /**
-     * Custom server-safe logic to decrease the empty bucket stack count by 1 
-     * and put the resulting liquid bucket directly into the player inventory.
-     */
+
     private ItemStack handleBucketOutput(ItemStack originalStack, EntityPlayer player, ItemStack filledBucket)
     {
         originalStack.stackSize--;
         
-        // If it was the last empty bucket in the slot, replace it completely with the fluid version
+        
         if (originalStack.stackSize <= 0)
         {
             return filledBucket;
         }
 
-        // If items remain in the stack, put the filled version into an open inventory slot
+        
         if (!player.inventory.addItemStackToInventory(filledBucket))
         {
-            // If the player's inventory is fully clogged, drop the filled item onto the ground
+           
             player.dropPlayerItem(filledBucket);
         }
         
