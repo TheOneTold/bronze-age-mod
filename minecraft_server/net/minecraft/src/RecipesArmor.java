@@ -15,15 +15,15 @@ public class RecipesArmor
     {
         recipeItems = (new Object[][] {
             new Object[] {
-                Item.leather, Block.fire, Item.ingotIron, Item.diamond, Item.ingotGold, Item.ingotCopper, Item.ingotTin, Item.ingotBronze
+                Item.leather, Block.fire, Item.ingotIron, Item.diamond, Item.ingotGold, Item.ingotCopper, Item.ingotLead, Item.ingotBronze
             }, new Object[] {
-                Item.helmetLeather, Item.helmetChain, Item.helmetSteel, Item.helmetDiamond, Item.helmetGold, Item.helmetCopper, Item.helmetTin, Item.helmetBronze
+                Item.helmetLeather, Item.helmetChain, Item.helmetSteel, Item.helmetDiamond, Item.helmetGold, Item.helmetCopper, Item.helmetLead, Item.helmetBronze
             }, new Object[] {
-                Item.plateLeather, Item.plateChain, Item.plateSteel, Item.plateDiamond, Item.plateGold, Item.plateCopper, Item.plateTin, Item.plateBronze
+                Item.plateLeather, Item.plateChain, Item.plateSteel, Item.plateDiamond, Item.plateGold, Item.plateCopper, Item.plateLead, Item.plateBronze
             }, new Object[] {
-                Item.legsLeather, Item.legsChain, Item.legsSteel, Item.legsDiamond, Item.legsGold, Item.legsCopper, Item.legsTin, Item.legsBronze
+                Item.legsLeather, Item.legsChain, Item.legsSteel, Item.legsDiamond, Item.legsGold, Item.legsCopper, Item.legsLead, Item.legsBronze
             }, new Object[] {
-                Item.bootsLeather, Item.bootsChain, Item.bootsSteel, Item.bootsDiamond, Item.bootsGold, Item.bootsCopper, Item.bootsTin, Item.bootsBronze
+                Item.bootsLeather, Item.bootsChain, Item.bootsSteel, Item.bootsDiamond, Item.bootsGold, Item.bootsCopper, Item.bootsLead, Item.bootsBronze
             }
         });
     }

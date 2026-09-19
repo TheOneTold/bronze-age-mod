@@ -911,18 +911,46 @@ public class EntityRenderer
             fogColorBlue = (float)vec3d2.zCoord;
         } else
         if(entityliving.isInsideOfMaterial(Material.water))
-        {
-            fogColorRed = 0.02F;
-            fogColorGreen = 0.02F;
-            fogColorBlue = 0.2F;
-        } else
+		{
+			if (isWearingRebreather())
+			{
+				fogColorRed = 0.08F;
+				fogColorGreen = 0.08F;
+				fogColorBlue = 0.8F;
+			}
+			else
+			{
+				fogColorRed = 0.02F;
+				fogColorGreen = 0.02F;
+				fogColorBlue = 0.2F;
+			}
+		} else
         if(entityliving.isInsideOfMaterial(Material.lava))
         {
-            fogColorRed = 0.6F;
-            fogColorGreen = 0.1F;
-            fogColorBlue = 0.0F;
+			if (isWearingFullLeadArmor())
+			{
+				fogColorRed = 0.6F;
+				fogColorGreen = 0.1F;
+				fogColorBlue = 0.0F;
+			}
+			else
+			{
+				fogColorRed = 0.6F;
+				fogColorGreen = 0.1F;
+				fogColorBlue = 0.0F;
+			}
+            
         }
         float f10 = fogColor2 + (fogColor1 - fogColor2) * f;
+		// Make it brighter underwater with the rebreather.
+		if (entityliving.isInsideOfMaterial(Material.water) && isWearingRebreather())
+		{
+			f10 = 1.5F; 
+		}
+		if (entityliving.isInsideOfMaterial(Material.lava) && isWearingFullLeadArmor())
+		{
+			f10 = 1.5F; 
+		}
         fogColorRed *= f10;
         fogColorGreen *= f10;
         fogColorBlue *= f10;
@@ -937,6 +965,31 @@ public class EntityRenderer
         }
         GL11.glClearColor(fogColorRed, fogColorGreen, fogColorBlue, 0.0F);
     }
+
+	private boolean isWearingRebreather()
+	{
+		if (mc.thePlayer == null || mc.thePlayer.inventory == null)
+		{
+			return false;
+		}
+		
+		ItemStack helmet = mc.thePlayer.inventory.armorItemInSlot(3);
+		return helmet != null && helmet.itemID == Item.helmetRebreather.shiftedIndex;
+	}
+
+	public boolean isWearingFullLeadArmor()
+	{
+		ItemStack boots = mc.thePlayer.inventory.armorItemInSlot(0);
+		ItemStack legs = mc.thePlayer.inventory.armorItemInSlot(1);
+		ItemStack chest = mc.thePlayer.inventory.armorItemInSlot(2);
+		ItemStack helmet = mc.thePlayer.inventory.armorItemInSlot(3);
+
+		return boots != null && legs != null && chest != null && helmet != null &&
+           boots.itemID == Item.bootsLead.shiftedIndex &&
+           legs.itemID == Item.legsLead.shiftedIndex &&
+           chest.itemID == Item.plateLead.shiftedIndex &&
+           helmet.itemID == Item.helmetLead.shiftedIndex;
+	}
 
     private void setupFog(int i, float f)
     {
@@ -962,23 +1015,34 @@ public class EntityRenderer
             }
         } else
         if(entityliving.isInsideOfMaterial(Material.water))
-        {
-            GL11.glFogi(2917 /*GL_FOG_MODE*/, 2048 /*GL_EXP*/);
-            GL11.glFogf(2914 /*GL_FOG_DENSITY*/, 0.1F);
-            float f2 = 0.4F;
-            float f5 = 0.4F;
-            float f8 = 0.9F;
-            if(mc.gameSettings.anaglyph)
-            {
-                float f11 = (f2 * 30F + f5 * 59F + f8 * 11F) / 100F;
-                float f14 = (f2 * 30F + f5 * 70F) / 100F;
-                float f17 = (f2 * 30F + f8 * 70F) / 100F;
-                f2 = f11;
-                f5 = f14;
-                f8 = f17;
-            }
-        } else
-        if(entityliving.isInsideOfMaterial(Material.lava))
+		{
+			GL11.glFogi(2917 /*GL_FOG_MODE*/, 2048 /*GL_EXP*/);
+			
+			if (isWearingRebreather())
+			{
+				
+				GL11.glFogf(2914 /*GL_FOG_DENSITY*/, 0.005F);
+			}
+			else
+			{
+				
+				GL11.glFogf(2914 /*GL_FOG_DENSITY*/, 0.1F);
+			}
+
+			float f2 = 0.4F;
+			float f5 = 0.4F;
+			float f8 = 0.9F;
+			if(mc.gameSettings.anaglyph)
+			{
+				float f11 = (f2 * 30F + f5 * 59F + f8 * 11F) / 100F;
+				float f14 = (f2 * 30F + f5 * 70F) / 100F;
+				float f17 = (f2 * 30F + f8 * 70F) / 100F;
+				f2 = f11;
+				f5 = f14;
+				f8 = f17;
+			}
+		} else
+        if(entityliving.isInsideOfMaterial(Material.lava) && !isWearingFullLeadArmor())
         {
             GL11.glFogi(2917 /*GL_FOG_MODE*/, 2048 /*GL_EXP*/);
             GL11.glFogf(2914 /*GL_FOG_DENSITY*/, 2.0F);

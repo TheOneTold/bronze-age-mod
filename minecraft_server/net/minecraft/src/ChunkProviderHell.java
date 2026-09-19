@@ -374,6 +374,14 @@ public class ChunkProviderHell
             int k6 = l + hellRNG.nextInt(16) + 8;
             (new WorldGenGlowStone2()).generate(field_4235_n, hellRNG, l3, j5, k6);
         }
+		
+		for(int j2 = 0; j2 < 10; j2++)
+        {
+            int l3 = k + hellRNG.nextInt(16) + 8;
+            int j5 = hellRNG.nextInt(128);
+            int k6 = l + hellRNG.nextInt(16) + 8;
+            (new WorldGenLead()).generate(field_4235_n, hellRNG, l3, j5, k6);
+        }
 
         if(hellRNG.nextInt(1) == 0)
         {

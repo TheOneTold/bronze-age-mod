@@ -688,6 +688,8 @@ public class Block
 	public static final Block whiteConcrete;
 	public static final Block blackConcrete;
 	public static final Block mill;
+	public static final Block oreLead;
+	public static final Block blockLead;
 	
     public int blockIndexInTexture;
     public final int blockID; 
@@ -853,6 +855,8 @@ public class Block
 		whiteConcrete = (new Block(131, 168, Material.rock)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("whiteConcrete");
 		blackConcrete = (new Block(132, 169, Material.rock)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("blackConcrete");
 		mill = (new BlockMill(133)).setHardness(2.5F).setStepSound(soundStoneFootstep).setBlockName("mill");
+		oreLead = (new BlockOre(134, 166)).setHardness(3.0F).setResistance(5.0F).setStepSound(soundStoneFootstep).setBlockName("oreLead");
+		blockLead = (new BlockOreStorage(135, 182)).setHardness(5.0F).setResistance(20.0F).setStepSound(soundStoneFootstep).setBlockName("blockLead");
 		
 		Item.itemsList[cloth.blockID] = (new ItemCloth(cloth.blockID - 256)).setItemName("cloth");
         Item.itemsList[wood.blockID] = (new ItemLog(wood.blockID - 256)).setItemName("log");

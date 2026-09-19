@@ -21,8 +21,17 @@ public class RecipesIngots
             }, new Object[] {
                 Block.blockDiamond, new ItemStack(Item.diamond, 9)
             }, new Object[] {
+                Block.blockCopper, new ItemStack(Item.ingotCopper, 9)
+			}, new Object[] {
+                Block.blockBronze, new ItemStack(Item.ingotBronze, 9)
+			}, new Object[] {
+                Block.blockTin, new ItemStack(Item.ingotTin, 9)
+			}, new Object[] {
+                Block.blockLead, new ItemStack(Item.ingotLead, 9)
+            },	new Object[] {
                 Block.blockLapis, new ItemStack(Item.dyePowder, 9, 4)
             }
+			
         });
     }
 

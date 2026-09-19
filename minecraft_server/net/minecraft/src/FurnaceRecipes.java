@@ -26,6 +26,7 @@ public class FurnaceRecipes
 		addSmelting(Block.oreCopper.blockID, new ItemStack(Item.ingotCopper));
 		addSmelting(Block.oreTin.blockID, new ItemStack(Item.ingotTin));
 		addSmelting(Block.oreSilver.blockID, new ItemStack(Item.ingotSilver));
+		addSmelting(Block.oreLead.blockID, new ItemStack(Item.ingotLead));
 		//addSmelting(Block.oreDiamond.blockID, new ItemStack(Item.diamond));
 		addSmelting(Item.rawBronze.shiftedIndex, new ItemStack(Item.ingotBronze));
 		//addSmelting(Block.sand.blockID, new ItemStack(Block.glass));

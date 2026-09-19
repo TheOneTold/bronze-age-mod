@@ -154,6 +154,8 @@ public class Block {
 	public static final Block whiteConcrete = (new Block(131, 168, Material.rock)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("whiteConcrete");
 	public static final Block blackConcrete = (new Block(132, 169, Material.rock)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("blackConcrete");
 	public static final Block mill = (new BlockMill(133)).setHardness(2.5F).setStepSound(soundStoneFootstep).setBlockName("mill");
+	public static final Block oreLead = (new BlockOre(134, 166)).setHardness(3.0F).setResistance(5.0F).setStepSound(soundStoneFootstep).setBlockName("oreLead");
+	public static final Block blockLead = (new BlockOreStorage(135, 182)).setHardness(5.0F).setResistance(20.0F).setStepSound(soundStoneFootstep).setBlockName("blockLead");
 	public int blockIndexInTexture;
 	public final int blockID;
 	protected float blockHardness;

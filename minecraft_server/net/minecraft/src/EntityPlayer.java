@@ -45,6 +45,25 @@ public abstract class EntityPlayer extends EntityLiving
         texture = "/mob/char.png";
     }
 
+	public boolean isWearingRebreather()
+	{
+		ItemStack helmet = inventory.armorInventory[3];
+		return helmet != null && helmet.itemID == Item.helmetRebreather.shiftedIndex;
+	}
+	public boolean isWearingFullLeadArmor()
+	{
+		ItemStack boots = inventory.armorInventory[0];
+		ItemStack legs = inventory.armorInventory[1];
+		ItemStack chest = inventory.armorInventory[2];
+		ItemStack helmet = inventory.armorInventory[3];
+
+		return boots != null && legs != null && chest != null && helmet != null &&
+			   boots.itemID == Item.bootsLead.shiftedIndex &&
+			   legs.itemID == Item.legsLead.shiftedIndex &&
+			   chest.itemID == Item.plateLead.shiftedIndex &&
+			   helmet.itemID == Item.helmetLead.shiftedIndex;
+	}
+
     protected void entityInit()
     {
         super.entityInit();
@@ -53,6 +72,18 @@ public abstract class EntityPlayer extends EntityLiving
 
     public void onUpdate()
     {
+		if (isWearingFullLeadArmor())
+		{
+			this.fire = 0;
+			this.isImmuneToFire = true;
+			
+			if (Math.abs(this.motionX) < 0.35D) this.motionX *= 0.700D;
+			if (Math.abs(this.motionZ) < 0.35D) this.motionZ *= 0.700D;
+		}
+		else
+		{
+			this.isImmuneToFire = false;
+		}
 		
 		int playerX = MathHelper.floor_double(this.posX);
 		int playerY = MathHelper.floor_double(this.boundingBox.minY - 0.5D);
@@ -184,6 +215,10 @@ public abstract class EntityPlayer extends EntityLiving
 
     public void onLivingUpdate()
     {
+		if (isWearingRebreather())
+		{
+			this.air = 300;
+		}
         if(worldObj.difficultySetting == 0 && health < 20 && (ticksExisted % 20) * 12 == 0)
         {
             heal(1);
@@ -316,15 +351,17 @@ public abstract class EntityPlayer extends EntityLiving
     public float getCurrentPlayerStrVsBlock(Block block)
     {
         float f = inventory.getStrVsBlock(block);
-        if(isInsideOfMaterial(Material.water))
-        {
-            f /= 5F;
-        }
-        if(!onGround)
-        {
-            f /= 5F;
-        }
-        return f;
+		
+		// If player isn't wearing the rebreather, slow mining speed underwater.
+		if(isInsideOfMaterial(Material.water) && !isWearingRebreather())
+		{
+			f /= 5F;
+		}
+		if(!onGround)
+		{
+			f /= 5F;
+		}
+		return f;
     }
 
     public boolean canHarvestBlock(Block block)
@@ -780,13 +817,41 @@ public abstract class EntityPlayer extends EntityLiving
     }
 
     public void moveEntityWithHeading(float f, float f1)
-    {
-        double d = posX;
-        double d1 = posY;
-        double d2 = posZ;
-        super.moveEntityWithHeading(f, f1);
-        func_25045_g(posX - d, posY - d1, posZ - d2);
-    }
+	{
+		if (isWearingRebreather() && (isInWater() || handleWaterMovement()))
+		{
+			double startY = posY;
+
+			
+			moveFlying(f, f1, 0.04F);
+			moveEntity(motionX, motionY, motionZ);
+
+			
+			motionX *= 0.8D;
+			motionZ *= 0.8D;
+
+			
+			if (isJumping)
+			{
+				motionY = 0.15D;
+			}
+			else
+			{
+				
+				motionY -= 0.02D;
+				motionY *= 0.9D;
+			}
+
+			//addMovementStat(posX - posX, posY - startY, posZ - posZ);
+			return;
+		}
+
+		double d = posX;
+		double d1 = posY;
+		double d2 = posZ;
+		super.moveEntityWithHeading(f, f1);
+		//addMovementStat(posX - d, posY - d1, posZ - d2);
+	}
 
     private void func_25045_g(double d, double d1, double d2)
     {

@@ -303,10 +303,10 @@ public class Item
 	public static Item legsCopper = (new ItemArmor(108, 1, 5, 2)).setIconCoord(5, 9).setItemName("leggingsCopper");
 	public static Item bootsCopper = (new ItemArmor(109, 1, 5, 3)).setIconCoord(5, 10).setItemName("bootsCopper");
 	
-	public static Item helmetTin = (new ItemArmor(110, 0, 6, 0)).setIconCoord(6, 7).setItemName("helmetTin");
-	public static Item plateTin = (new ItemArmor(111, 0, 6, 1)).setIconCoord(6, 8).setItemName("chestplateTin");
-	public static Item legsTin = (new ItemArmor(112, 0, 6, 2)).setIconCoord(6, 9).setItemName("leggingsTin");
-	public static Item bootsTin = (new ItemArmor(113, 0, 6, 3)).setIconCoord(6, 10).setItemName("bootsTin");
+	public static Item helmetLead = (new ItemArmor(110, 1, 6, 0)).setIconCoord(6, 7).setItemName("helmetLead");
+	public static Item plateLead = (new ItemArmor(111, 1, 6, 1)).setIconCoord(6, 8).setItemName("chestplateLead");
+	public static Item legsLead = (new ItemArmor(112, 1, 6, 2)).setIconCoord(6, 9).setItemName("leggingsLead");
+	public static Item bootsLead = (new ItemArmor(113, 1, 6, 3)).setIconCoord(6, 10).setItemName("bootsLead");
 	
 	public static Item helmetBronze = (new ItemArmor(114, 2, 7, 0)).setIconCoord(12, 7).setItemName("helmetBronze");
 	public static Item plateBronze = (new ItemArmor(115, 2, 7, 1)).setIconCoord(12, 8).setItemName("chestplateBronze");
@@ -372,6 +372,8 @@ public class Item
 	public static Item cupGoldMilk = (new ItemDrink(169, 1, 3, 4)).setIconCoord(7, 14).setItemName("cupGoldMilk");
 	public static Item cupGoldWine = (new ItemDrink(170, 3, 3, 4)).setIconCoord(6, 14).setItemName("cupGoldWine");
 	public static Item wine = (new ItemDrink(171, 8, 1, 0)).setIconCoord(10, 12).setItemName("wine").setContainerItem(bucketEmpty);
+	public static Item ingotLead = (new Item(172)).setIconCoord(5, 11).setItemName("ingotLead");
+	public static Item helmetRebreather = (new ItemArmor(173, 1, 6, 0)).setIconCoord(4, 11).setItemName("helmetRebreather");
 	
 	public static Item record13 = (new ItemRecord(2000, "13")).setIconCoord(0, 15).setItemName("record");
     public static Item recordCat = (new ItemRecord(2001, "cat")).setIconCoord(1, 15).setItemName("record");
