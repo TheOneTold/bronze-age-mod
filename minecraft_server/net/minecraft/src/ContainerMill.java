@@ -59,7 +59,7 @@ public class ContainerMill extends Container
         {
             return;
         }
-        for(int i = 0; i < 9; i++)
+        for(int i = 0; i < 6; i++)
         {
             ItemStack itemstack = craftMatrix.getStackInSlot(i);
             if(itemstack != null)
@@ -72,7 +72,7 @@ public class ContainerMill extends Container
 
     public boolean canInteractWith(EntityPlayer entityplayer)
     {
-        if(field_20150_c.getBlockId(field_20149_h, field_20148_i, field_20147_j) != Block.workbench.blockID)
+        if(field_20150_c.getBlockId(field_20149_h, field_20148_i, field_20147_j) != Block.mill.blockID)
         {
             return false;
         }

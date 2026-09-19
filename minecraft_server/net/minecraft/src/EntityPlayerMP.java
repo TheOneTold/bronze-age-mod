@@ -343,7 +343,7 @@ public class EntityPlayerMP extends EntityPlayer
 	public void displayMillGUI(int i, int j, int k)
     {
         getNextWidowId();
-        playerNetServerHandler.sendPacket(new Packet100OpenWindow(currentWindowId, 5, "Mill", 9));
+        playerNetServerHandler.sendPacket(new Packet100OpenWindow(currentWindowId, 5, "Mill", 5));
         currentCraftingInventory = new ContainerMill(inventory, worldObj, i, j, k);
         currentCraftingInventory.windowId = currentWindowId;
         currentCraftingInventory.onCraftGuiOpened(this);

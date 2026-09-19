@@ -60,7 +60,7 @@ public class ContainerMill extends Container
         {
             return;
         }
-        for(int i = 0; i < 9; i++)
+        for(int i = 0; i < 6; i++)
         {
             ItemStack itemstack = craftMatrix.getStackInSlot(i);
             if(itemstack != null)
@@ -73,6 +73,9 @@ public class ContainerMill extends Container
 
     public boolean isUsableByPlayer(EntityPlayer entityplayer)
     {
+		if (field_20133_c.multiplayerWorld) {
+			
+		}
         if(field_20133_c.getBlockId(field_20132_h, field_20131_i, field_20130_j) != Block.mill.blockID)
         {
             return false;
