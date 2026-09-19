@@ -167,6 +167,7 @@ public abstract class Minecraft
         sndManager.loadSoundSettings(gameSettings);
         renderEngine.registerTextureFX(textureLavaFX);
         renderEngine.registerTextureFX(textureWaterFX);
+        renderEngine.registerTextureFX(new TextureHearthFX());
         renderEngine.registerTextureFX(new TexturePortalFX());
         renderEngine.registerTextureFX(new TextureCompassFX(this));
         renderEngine.registerTextureFX(new TextureWatchFX(this));
