@@ -53,7 +53,7 @@ public class BlockTallGrass extends BlockFlower
 			}
         } else
         {
-            return -1;
+            return Item.straw.shiftedIndex;
         }
     }
 }

@@ -156,6 +156,10 @@ public class Block {
 	public static final Block mill = (new BlockMill(133)).setHardness(2.5F).setStepSound(soundStoneFootstep).setBlockName("mill");
 	public static final Block oreLead = (new BlockOre(134, 166)).setHardness(3.0F).setResistance(5.0F).setStepSound(soundStoneFootstep).setBlockName("oreLead");
 	public static final Block blockLead = (new BlockOreStorage(135, 182)).setHardness(5.0F).setResistance(20.0F).setStepSound(soundStoneFootstep).setBlockName("blockLead");
+	public static final Block thatch = (new Block(136, 185, Material.sticks)).setHardness(0.5F).setResistance(3.0F).setStepSound(soundWoodFootstep).setBlockName("thatch");
+	public static final Block stairThatch = (new BlockStairs(137, thatch)).setBlockName("stairThatch").disableNeighborNotifyOnMetadataChange();
+	public static final Block slabThatchSingle = (new BlockStep(138, false)).setHardness(0.5F).setResistance(3.0F).setStepSound(soundStoneFootstep).setBlockName("slabThatch");
+	public static final Block slabThatchDouble = (new BlockStep(139, true)).setHardness(0.5F).setResistance(3.0F).setStepSound(soundStoneFootstep).setBlockName("slabThatch");
 	public int blockIndexInTexture;
 	public final int blockID;
 	protected float blockHardness;

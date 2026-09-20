@@ -14,7 +14,7 @@ public class BlockStep extends Block
 
     public BlockStep(int i, boolean flag)
     {
-        super(i, 6, Material.rock);
+        super(i, 6, Material.sticks);
         blockType = flag;
         if(!flag)
         {
@@ -30,6 +30,9 @@ public class BlockStep extends Block
 		}
 		if (this.blockID == Block.slabShinglesSingle.blockID || this.blockID == Block.slabShinglesDouble.blockID) {
 			return Block.flintBricks.blockIndexInTexture;
+		}
+		if (this.blockID == Block.slabThatchSingle.blockID || this.blockID == Block.slabThatchDouble.blockID) {
+			return Block.thatch.blockIndexInTexture;
 		}
         if(j == 0)
         {
@@ -88,6 +91,11 @@ public class BlockStep extends Block
             world.setBlockWithNotify(i, j, k, 0);
             world.setBlockAndMetadataWithNotify(i, j - 1, k, Block.slabShinglesDouble.blockID, i1);
         }
+		if(l == slabThatchSingle.blockID)
+        {
+            world.setBlockWithNotify(i, j, k, 0);
+            world.setBlockAndMetadataWithNotify(i, j - 1, k, Block.slabThatchDouble.blockID, i1);
+        }
     }
 
     public int idDropped(int i, Random random)
@@ -97,6 +105,9 @@ public class BlockStep extends Block
 			
 		} else if (this.blockID == Block.slabShinglesSingle.blockID || this.blockID == Block.slabShinglesDouble.blockID) {
 			return Block.slabShinglesSingle.blockID;
+			
+		} else if (this.blockID == Block.slabThatchSingle.blockID || this.blockID == Block.slabThatchDouble.blockID) {
+			return Block.slabThatchSingle.blockID;
 			
 		} else {
 			return Block.stairSingle.blockID;

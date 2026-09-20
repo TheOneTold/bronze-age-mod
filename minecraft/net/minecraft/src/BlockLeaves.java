@@ -30,7 +30,7 @@ public class BlockLeaves extends BlockLeavesBase
         }
         if((i & 2) == 2)
         {
-            return ColorizerFoliage.getFoliageColorBirch();
+            return ColorizerFoliage.func_31073_c();
         } else
         {
             return ColorizerFoliage.func_31073_c();
@@ -44,10 +44,7 @@ public class BlockLeaves extends BlockLeavesBase
         {
             return ColorizerFoliage.getFoliageColorPine();
         }
-        if((l & 2) == 2)
-        {
-            return ColorizerFoliage.getFoliageColorBirch();
-        } else
+        else
         {
             iblockaccess.getWorldChunkManager().func_4069_a(i, k, 1, 1);
             double d = iblockaccess.getWorldChunkManager().temperature[0];
