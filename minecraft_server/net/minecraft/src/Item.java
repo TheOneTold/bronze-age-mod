@@ -349,9 +349,9 @@ public class Item
 	public static Item rawBronze = (new Item(146)).setIconCoord(11, 5).setItemName("rawBronze");
 	public static Item bowDrill = (new ItemBowDrill(147)).setIconCoord(3, 10).setItemName("bowDrill");
 	public static Item grapes = (new ItemFood(148, 3, false, 16)).setIconCoord(4, 10).setItemName("grapes");
-	public static Item grapeJuice = (new ItemDrink(149, 6, 1, 0)).setIconCoord(14, 3).setItemName("grapeJuice").setContainerItem(bucketEmpty);
-	public static Item flour = (new ItemBucket(150, -1, 1)).setIconCoord(14, 2).setItemName("flour");
-	public static Item dough = (new Item(151)).setIconCoord(12, 6).setItemName("dough").setContainerItem(bucketEmpty);
+	public static Item grapeJuice;
+	public static Item flour;
+	public static Item dough = (new Item(151)).setIconCoord(12, 6).setItemName("dough");
 	public static Item cakeMix = (new Item(152)).setIconCoord(12, 11).setItemName("cakeMix");
 	public static Item cookieDough = (new ItemFood(153, 1, false, 16)).setIconCoord(11, 11).setItemName("cookieDough");
 	public static Item rawBucket = (new Item(154)).setIconCoord(10, 11).setItemName("rawBucket");
@@ -371,7 +371,7 @@ public class Item
 	public static Item cupGoldGrapeJuice = (new ItemDrink(168, 2, 3, 4)).setIconCoord(8, 14).setItemName("cupGoldGrapeJuice");
 	public static Item cupGoldMilk = (new ItemDrink(169, 1, 3, 4)).setIconCoord(7, 14).setItemName("cupGoldMilk");
 	public static Item cupGoldWine = (new ItemDrink(170, 3, 3, 4)).setIconCoord(6, 14).setItemName("cupGoldWine");
-	public static Item wine = (new ItemDrink(171, 8, 1, 0)).setIconCoord(10, 12).setItemName("wine").setContainerItem(bucketEmpty);
+	public static Item wine;
 	public static Item ingotLead = (new Item(172)).setIconCoord(5, 11).setItemName("ingotLead");
 	public static Item helmetRebreather = (new ItemArmor(173, 1, 6, 0)).setIconCoord(4, 11).setItemName("helmetRebreather");
 	
@@ -422,7 +422,10 @@ public class Item
         bucketMilk = (new ItemBucket(79, -1, 1)).setIconCoord(13, 4).setItemName("milk").setContainerItem(bucketEmpty);
         reed = (new ItemReed(82, Block.reed)).setIconCoord(11, 1).setItemName("reeds");
         cake = (new ItemReed(98, Block.cake)).setMaxStackSize(1).setIconCoord(13, 1).setItemName("cake");
-        redstoneRepeater = (new ItemReed(100, Block.redstoneRepeaterIdle)).setIconCoord(6, 5).setItemName("diode");
+		grapeJuice = (new ItemDrink(149, 6, 1, 0)).setIconCoord(14, 3).setItemName("grapeJuice").setContainerItem(bucketEmpty).setMaxStackSize(1);
+	    wine = (new ItemDrink(171, 8, 1, 0)).setIconCoord(10, 12).setItemName("wine").setContainerItem(bucketEmpty).setMaxStackSize(1);
+		flour = (new ItemBucket(150, -1, 1)).setIconCoord(14, 2).setItemName("flour").setContainerItem(bucketEmpty);
+		redstoneRepeater = (new ItemReed(100, Block.redstoneRepeaterIdle)).setIconCoord(6, 5).setItemName("diode");
         StatList.func_25086_b();
     }
 }
