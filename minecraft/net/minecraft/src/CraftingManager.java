@@ -99,8 +99,6 @@ public class CraftingManager {
 		this.addRecipe(new ItemStack(Block.stairTiles, 4), new Object[]{"#  ", "## ", "###", Character.valueOf('#'), Block.tileBricks});
 		this.addRecipe(new ItemStack(Block.slabShinglesSingle, 2), new Object[]{"##", Character.valueOf('#'), Item.flint});
 		this.addRecipe(new ItemStack(Block.slabTileSingle, 3), new Object[]{"###", Character.valueOf('#'), Block.tileBricks});
-		this.addRecipe(new ItemStack(Block.whiteConcrete, 8), new Object[]{"X#X", "#Y#", "X#X", Character.valueOf('X'), Item.gunpowder, Character.valueOf('Y'), Item.bucketWater, Character.valueOf('#'), Block.sandStone});
-		this.addRecipe(new ItemStack(Block.blackConcrete, 8), new Object[]{"X#X", "#Y#", "X#X", Character.valueOf('X'), Item.gunpowder, Character.valueOf('Y'), Item.bucketWater, Character.valueOf('#'), Block.stone});
 		this.addRecipe(new ItemStack(Item.dough, 1), new Object[]{"X", "#", Character.valueOf('#'), Item.bucketWater, Character.valueOf('X'), Item.flour});
 		this.addRecipe(new ItemStack(Block.stairThatch, 3), new Object[]{"#  ", "## ", Character.valueOf('#'), Item.straw});
 		this.addRecipe(new ItemStack(Block.thatch, 4), new Object[]{"##", "##", Character.valueOf('#'), Item.straw});

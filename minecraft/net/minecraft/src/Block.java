@@ -160,6 +160,13 @@ public class Block {
 	public static final Block stairThatch = (new BlockStairs(137, thatch)).setBlockName("stairThatch").disableNeighborNotifyOnMetadataChange();
 	public static final Block slabThatchSingle = (new BlockStep(138, false)).setHardness(0.5F).setResistance(3.0F).setStepSound(soundStoneFootstep).setBlockName("slabThatch");
 	public static final Block slabThatchDouble = (new BlockStep(139, true)).setHardness(0.5F).setResistance(3.0F).setStepSound(soundStoneFootstep).setBlockName("slabThatch");
+	
+	public static final BlockFlower flowerMarigold = (BlockFlower)(new BlockFlower(140, 188)).setHardness(0.0F).setStepSound(soundGrassFootstep).setBlockName("flowerMarigold");
+	public static final BlockFlower flowerViolet = (BlockFlower)(new BlockFlower(141, 189)).setHardness(0.0F).setStepSound(soundGrassFootstep).setBlockName("flowerViolet");
+	public static final BlockFlower flowerDaisy = (BlockFlower)(new BlockFlower(142, 190)).setHardness(0.0F).setStepSound(soundGrassFootstep).setBlockName("flowerDaisy");
+	public static final BlockFlower flowerTulip = (BlockFlower)(new BlockFlower(143, 191)).setHardness(0.0F).setStepSound(soundGrassFootstep).setBlockName("flowerTulip");
+	public static final BlockFlower flowerHydrangea = (BlockFlower)(new BlockFlower(144, 187)).setHardness(0.0F).setStepSound(soundGrassFootstep).setBlockName("flowerHydrangea");
+	public static final BlockFlower flowerPoppy = (BlockFlower)(new BlockFlower(145, 186)).setHardness(0.0F).setStepSound(soundGrassFootstep).setBlockName("flowerPoppy");
 	public int blockIndexInTexture;
 	public final int blockID;
 	protected float blockHardness;

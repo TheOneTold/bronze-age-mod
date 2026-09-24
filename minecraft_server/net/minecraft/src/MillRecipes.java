@@ -48,6 +48,12 @@ public class MillRecipes
 		addRecipe(new ItemStack(Item.dyePowder, 2, 5), new Object[] {"#", Character.valueOf('#'), Block.flowerIndigo});
 		addRecipe(new ItemStack(Item.dyePowder, 2, 12), new Object[] {"#", Character.valueOf('#'), Block.flowerBluebell});
         addRecipe(new ItemStack(Item.dyePowder, 3, 15), new Object[] {"#", Character.valueOf('#'), Item.bone});
+	addRecipe(new ItemStack(Item.dyePowder, 2, 14), new Object[] {"#", Character.valueOf('#'), Block.flowerMarigold});	
+        addRecipe(new ItemStack(Item.dyePowder, 2, 13), new Object[] {"#", Character.valueOf('#'), Block.flowerViolet});
+        addRecipe(new ItemStack(Item.dyePowder, 2, 15), new Object[] {"#", Character.valueOf('#'), Block.flowerDaisy});
+        addRecipe(new ItemStack(Item.dyePowder, 2, 9), new Object[] {"#", Character.valueOf('#'), Block.flowerTulip});
+        addRecipe(new ItemStack(Item.dyePowder, 2, 10), new Object[] {"#", Character.valueOf('#'), Block.flowerHydrangea});
+        addRecipe(new ItemStack(Item.dyePowder, 2, 1), new Object[] {"#", Character.valueOf('#'), Block.flowerPoppy});
 		
         Collections.sort(recipes, new MillSorter(this));
         System.out.println((new StringBuilder()).append(recipes.size()).append(" recipes").toString());

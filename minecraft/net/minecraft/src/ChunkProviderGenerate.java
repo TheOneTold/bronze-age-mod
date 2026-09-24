@@ -544,11 +544,17 @@ public class ChunkProviderGenerate implements IChunkProvider {
 			(new WorldGenDeadBush(Block.deadBush.blockID)).generate(this.worldObj, this.rand, var25, var19, var20);
 		}
 
-		if(this.rand.nextInt(2) == 0) {
+		if(this.rand.nextInt(4) == 0) {
 			var17 = var4 + this.rand.nextInt(16) + 8;
 			var25 = this.rand.nextInt(128);
 			var19 = var5 + this.rand.nextInt(16) + 8;
 			(new WorldGenFlowers(Block.plantRed.blockID)).generate(this.worldObj, this.rand, var17, var25, var19);
+		}
+		if(this.rand.nextInt(2) == 0) {
+			var17 = var4 + this.rand.nextInt(16) + 8;
+			var25 = this.rand.nextInt(128);
+			var19 = var5 + this.rand.nextInt(16) + 8;
+			(new WorldGenFlowers(Block.flowerPoppy.blockID)).generate(this.worldObj, this.rand, var17, var25, var19);
 		}
 		
 		if(this.rand.nextInt(4) == 0) {
@@ -564,7 +570,36 @@ public class ChunkProviderGenerate implements IChunkProvider {
 			var19 = var5 + this.rand.nextInt(16) + 8;
 			(new WorldGenFlowers(Block.flowerBluebell.blockID)).generate(this.worldObj, this.rand, var17, var25, var19);
 		}
-
+		if(this.rand.nextInt(3) == 0) {
+			var17 = var4 + this.rand.nextInt(16) + 8;
+			var25 = this.rand.nextInt(128);
+			var19 = var5 + this.rand.nextInt(16) + 8;
+			(new WorldGenFlowers(Block.flowerMarigold.blockID)).generate(this.worldObj, this.rand, var17, var25, var19);
+		}
+		if(this.rand.nextInt(4) == 0) {
+			var17 = var4 + this.rand.nextInt(16) + 8;
+			var25 = this.rand.nextInt(128);
+			var19 = var5 + this.rand.nextInt(16) + 8;
+			(new WorldGenFlowers(Block.flowerViolet.blockID)).generate(this.worldObj, this.rand, var17, var25, var19);
+		}
+		if(this.rand.nextInt(3) == 0) {
+			var17 = var4 + this.rand.nextInt(16) + 8;
+			var25 = this.rand.nextInt(128);
+			var19 = var5 + this.rand.nextInt(16) + 8;
+			(new WorldGenFlowers(Block.flowerDaisy.blockID)).generate(this.worldObj, this.rand, var17, var25, var19);
+		}
+		if(this.rand.nextInt(5) == 0) {
+			var17 = var4 + this.rand.nextInt(16) + 8;
+			var25 = this.rand.nextInt(128);
+			var19 = var5 + this.rand.nextInt(16) + 8;
+			(new WorldGenFlowers(Block.flowerTulip.blockID)).generate(this.worldObj, this.rand, var17, var25, var19);
+		}
+		if(this.rand.nextInt(5) == 0) {
+			var17 = var4 + this.rand.nextInt(16) + 8;
+			var25 = this.rand.nextInt(128);
+			var19 = var5 + this.rand.nextInt(16) + 8;
+			(new WorldGenFlowers(Block.flowerHydrangea.blockID)).generate(this.worldObj, this.rand, var17, var25, var19);
+		}
 		if(this.rand.nextInt(4) == 0) {
 			var17 = var4 + this.rand.nextInt(16) + 8;
 			var25 = this.rand.nextInt(128);
