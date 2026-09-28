@@ -145,6 +145,11 @@ public class EntityPlayerSP extends EntityPlayer
         mc.displayGuiScreen(new GuiChest(inventory, iinventory));
     }
 
+    public void displayGUIPithos(IInventory iinventory)
+    {
+        mc.displayGuiScreen(new GuiPithos(inventory, iinventory));
+    }
+
     public void displayWorkbenchGUI(int i, int j, int k)
     {
         mc.displayGuiScreen(new GuiCrafting(inventory, worldObj, i, j, k));

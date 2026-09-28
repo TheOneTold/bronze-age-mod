@@ -700,6 +700,25 @@ public class Block
 	public static final BlockFlower flowerTulip;
 	public static final BlockFlower flowerHydrangea;
 	public static final BlockFlower flowerPoppy;
+	public static final Block pithos;
+	public static final BlockFlower flowerWhiteRose;
+	public static final BlockFlower flowerWhiteRoseSingle;
+	public static final BlockFlower flowerRedRoseSingle;
+
+	public static final Block paintedTerracottaGray;
+	public static final Block paintedTerracottaRed;
+	public static final Block paintedTerracottaPink;
+	public static final Block paintedTerracottaGreen;
+	public static final Block paintedTerracottaLime;
+	public static final Block paintedTerracottaBrown;
+	public static final Block paintedTerracottaYellow;
+	public static final Block paintedTerracottaBlue;
+	public static final Block paintedTerracottaCyan;
+	public static final Block paintedTerracottaLightBlue;
+	public static final Block paintedTerracottaOrange;
+	public static final Block paintedTerracottaIndigo;
+	public static final Block paintedTerracottaLightGray;
+	public static final Block paintedTerracottaViolet;
 	
     public int blockIndexInTexture;
     public final int blockID; 
@@ -864,7 +883,7 @@ public class Block
 		slabShinglesDouble = (new BlockStep(130, true)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("slabShingles");
 		whiteConcrete = (new Block(131, 168, Material.rock)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("whiteConcrete");
 		blackConcrete = (new Block(132, 169, Material.rock)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("blackConcrete");
-		mill = (new BlockMill(133)).setHardness(2.5F).setStepSound(soundStoneFootstep).setBlockName("mill");
+		mill = (new BlockMill(133)).setHardness(2.0F).setStepSound(soundStoneFootstep).setBlockName("mill");
 		oreLead = (new BlockOre(134, 166)).setHardness(3.0F).setResistance(5.0F).setStepSound(soundStoneFootstep).setBlockName("oreLead");
 		blockLead = (new BlockOreStorage(135, 182)).setHardness(5.0F).setResistance(20.0F).setStepSound(soundStoneFootstep).setBlockName("blockLead");
 		thatch = (new Block(136, 185, Material.sticks)).setHardness(0.5F).setResistance(3.0F).setStepSound(soundWoodFootstep).setBlockName("thatch");
@@ -877,6 +896,24 @@ public class Block
 		flowerTulip = (BlockFlower)(new BlockFlower(143, 191)).setHardness(0.0F).setStepSound(soundGrassFootstep).setBlockName("flowerTulip");
 		flowerHydrangea = (BlockFlower)(new BlockFlower(144, 187)).setHardness(0.0F).setStepSound(soundGrassFootstep).setBlockName("flowerHydrangea");	
 		flowerPoppy = (BlockFlower)(new BlockFlower(145, 186)).setHardness(0.0F).setStepSound(soundGrassFootstep).setBlockName("flowerPoppy");	
+        	pithos = (new BlockPithos(146)).setHardness(1.0F).setStepSound(soundWoodFootstep).setBlockName("pithos");
+		flowerWhiteRose = (BlockFlower)(new BlockFlower(147, 199)).setHardness(0.0F).setStepSound(soundGrassFootstep).setBlockName("flowerWhiteRose");
+		flowerWhiteRoseSingle = (BlockFlower)(new BlockFlower(148, 200)).setHardness(0.0F).setStepSound(soundGrassFootstep).setBlockName("flowerWhiteRoseSingle");
+		flowerRedRoseSingle = (BlockFlower)(new BlockFlower(149, 201)).setHardness(0.0F).setStepSound(soundGrassFootstep).setBlockName("flowerRedRoseSingle");
+	paintedTerracottaGray = (new Block(150, 211, Material.rock)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("paintedTerracottaGray");
+	paintedTerracottaRed = (new Block(151, 212, Material.rock)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("paintedTerracottaRed");
+	paintedTerracottaPink = (new Block(152, 213, Material.rock)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("paintedTerracottaPink");
+	paintedTerracottaGreen = (new Block(153, 214, Material.rock)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("paintedTerracottaGreen");
+	paintedTerracottaLime = (new Block(154, 215, Material.rock)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("paintedTerracottaLime");
+	paintedTerracottaBrown = (new Block(155, 216, Material.rock)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("paintedTerracottaBrown");
+	paintedTerracottaYellow = (new Block(156, 217, Material.rock)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("paintedTerracottaYellow");
+	paintedTerracottaBlue = (new Block(157, 202, Material.rock)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("paintedTerracottaBlue");
+	paintedTerracottaCyan = (new Block(158, 203, Material.rock)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("paintedTerracottaCyan");
+	paintedTerracottaLightBlue = (new Block(159, 218, Material.rock)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("paintedTerracottaLightBlue");
+	paintedTerracottaOrange = (new Block(160, 219, Material.rock)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("paintedTerracottaOrange");
+	paintedTerracottaIndigo = (new Block(161, 234, Material.rock)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("paintedTerracottaIndigo");
+	paintedTerracottaLightGray = (new Block(162, 235, Material.rock)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("paintedTerracottaLightGray");
+	paintedTerracottaViolet = (new Block(163, 250, Material.rock)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("paintedTerracottaViolet");
 
 		Item.itemsList[cloth.blockID] = (new ItemCloth(cloth.blockID - 256)).setItemName("cloth");
         Item.itemsList[wood.blockID] = (new ItemLog(wood.blockID - 256)).setItemName("log");

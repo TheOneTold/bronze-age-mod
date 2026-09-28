@@ -17,8 +17,8 @@ public class RecipesCrafting
 
     public void addRecipes(CraftingManager craftingmanager)
     {
-        craftingmanager.addRecipe(new ItemStack(Block.chest), new Object[] {"###", "# #", "###", Character.valueOf('#'), Block.planks});
-        craftingmanager.addRecipe(new ItemStack(Block.stoneOvenIdle), new Object[]{"###", "# #", "###", Character.valueOf('#'), Block.cobbleBricks});
+        craftingmanager.addRecipe(new ItemStack(Block.chest), new Object[]{"###", "#X#", "###", Character.valueOf('#'), Block.planks, Character.valueOf('X'), Item.ingotIron}); 
+	craftingmanager.addRecipe(new ItemStack(Block.stoneOvenIdle), new Object[]{"###", "# #", "###", Character.valueOf('#'), Block.cobbleBricks});
         craftingmanager.addRecipe(new ItemStack(Block.workbench), new Object[] {"##", "##", Character.valueOf('#'), Block.planks});
         craftingmanager.addRecipe(new ItemStack(Block.mill), new Object[]{"# #", "# #", "###", Character.valueOf('#'), Block.cobbleBricks});
 		craftingmanager.addRecipe(new ItemStack(Block.hearthIdle), new Object[]{"###", "# #", "#X#", Character.valueOf('#'), Block.cobblestone, Character.valueOf('X'), Block.sticks});
@@ -39,10 +39,10 @@ public class RecipesCrafting
 		craftingmanager.addRecipe(new ItemStack(Item.helmetRebreather, 1), new Object[]{"# #", "#X#", " # ", Character.valueOf('#'), Item.ingotSilver, Character.valueOf('X'), Block.sponge});
 		craftingmanager.addRecipe(new ItemStack(Block.sponge), new Object[]{"###", "###", "###", Character.valueOf('#'), Block.sand});
 		
-		craftingmanager.addRecipe(new ItemStack(Item.cupWood), new Object[]{"# #", " # ", " # ", Character.valueOf('#'), Block.planks});
-		craftingmanager.addRecipe(new ItemStack(Item.cupBronze), new Object[]{"# #", " # ", " # ", Character.valueOf('#'), Item.ingotBronze});
-		craftingmanager.addRecipe(new ItemStack(Item.cupSilver), new Object[]{"# #", " # ", " # ", Character.valueOf('#'), Item.ingotSilver});
-		craftingmanager.addRecipe(new ItemStack(Item.cupGold), new Object[]{"# #", " # ", " # ", Character.valueOf('#'), Item.ingotGold});
+		craftingmanager.addRecipe(new ItemStack(Item.cupWood, 3), new Object[]{"# #", " # ", " # ", Character.valueOf('#'), Block.planks});
+		craftingmanager.addRecipe(new ItemStack(Item.cupBronze, 3), new Object[]{"# #", " # ", " # ", Character.valueOf('#'), Item.ingotBronze});
+		craftingmanager.addRecipe(new ItemStack(Item.cupSilver, 3), new Object[]{"# #", " # ", " # ", Character.valueOf('#'), Item.ingotSilver});
+		craftingmanager.addRecipe(new ItemStack(Item.cupGold, 3), new Object[]{"# #", " # ", " # ", Character.valueOf('#'), Item.ingotGold});
 		craftingmanager.addRecipe(new ItemStack(Item.cupWoodGrapeJuice, 3), new Object[]{"#X", "XX", Character.valueOf('#'), Item.grapeJuice, Character.valueOf('X'), Item.cupWood});
 		craftingmanager.addRecipe(new ItemStack(Item.cupWoodMilk, 3), new Object[]{"#X", "XX", Character.valueOf('#'), Item.bucketMilk, Character.valueOf('X'), Item.cupWood});
 		craftingmanager.addRecipe(new ItemStack(Item.cupWoodWine, 3), new Object[]{"#X", "XX", Character.valueOf('#'), Item.wine, Character.valueOf('X'), Item.cupWood});
@@ -55,5 +55,25 @@ public class RecipesCrafting
 		craftingmanager.addRecipe(new ItemStack(Item.cupGoldGrapeJuice, 3), new Object[]{"#X", "XX", Character.valueOf('#'), Item.grapeJuice, Character.valueOf('X'), Item.cupGold});
 		craftingmanager.addRecipe(new ItemStack(Item.cupGoldMilk, 3), new Object[]{"#X", "XX", Character.valueOf('#'), Item.bucketMilk, Character.valueOf('X'), Item.cupGold});
 		craftingmanager.addRecipe(new ItemStack(Item.cupGoldWine, 3), new Object[]{"#X", "XX", Character.valueOf('#'), Item.wine, Character.valueOf('X'), Item.cupGold});
+
+		craftingmanager.addRecipe(new ItemStack(Item.rawPithos), new Object[]{"# #", "# #", "###", Character.valueOf('#'), Item.clay});
+
+
+		craftingmanager.addRecipe(new ItemStack(Block.flowerWhiteRoseSingle, 3), new Object[]{"#", Character.valueOf('#'), Block.flowerWhiteRose});
+		craftingmanager.addRecipe(new ItemStack(Block.flowerRedRoseSingle, 3), new Object[]{"#", Character.valueOf('#'), Block.plantRed});
+    		craftingmanager.addRecipe(new ItemStack(Block.paintedTerracottaGray, 3), new Object[]{"#X","XX", Character.valueOf('#'), new ItemStack(Item.dyePowder, 1, 8), Character.valueOf('X'), Block.paintedTerracottaRed});
+    		craftingmanager.addRecipe(new ItemStack(Block.paintedTerracottaPink, 3), new Object[]{"#X","XX", Character.valueOf('#'), new ItemStack(Item.dyePowder, 1, 9), Character.valueOf('X'), Block.paintedTerracottaRed});
+    		craftingmanager.addRecipe(new ItemStack(Block.paintedTerracottaGreen, 3), new Object[]{"#X","XX", Character.valueOf('#'), new ItemStack(Item.dyePowder, 1, 2), Character.valueOf('X'), Block.paintedTerracottaRed});
+    		craftingmanager.addRecipe(new ItemStack(Block.paintedTerracottaLime, 3), new Object[]{"#X","XX", Character.valueOf('#'), new ItemStack(Item.dyePowder, 1, 10), Character.valueOf('X'), Block.paintedTerracottaRed});
+    		craftingmanager.addRecipe(new ItemStack(Block.paintedTerracottaBrown, 3), new Object[]{"#X","XX", Character.valueOf('#'), new ItemStack(Item.dyePowder, 1, 3), Character.valueOf('X'), Block.paintedTerracottaRed});
+    		craftingmanager.addRecipe(new ItemStack(Block.paintedTerracottaYellow, 3), new Object[]{"#X","XX", Character.valueOf('#'), new ItemStack(Item.dyePowder, 1, 11), Character.valueOf('X'), Block.paintedTerracottaRed});
+    		craftingmanager.addRecipe(new ItemStack(Block.paintedTerracottaBlue, 3), new Object[]{"#X","XX", Character.valueOf('#'), new ItemStack(Item.dyePowder, 1, 4), Character.valueOf('X'), Block.paintedTerracottaRed});
+    		craftingmanager.addRecipe(new ItemStack(Block.paintedTerracottaCyan, 3), new Object[]{"#X","XX", Character.valueOf('#'), new ItemStack(Item.dyePowder, 1, 6), Character.valueOf('X'), Block.paintedTerracottaRed});
+    		craftingmanager.addRecipe(new ItemStack(Block.paintedTerracottaLightBlue, 3), new Object[]{"#X","XX", Character.valueOf('#'), new ItemStack(Item.dyePowder, 1, 12), Character.valueOf('X'), Block.paintedTerracottaRed});
+    		craftingmanager.addRecipe(new ItemStack(Block.paintedTerracottaOrange, 3), new Object[]{"#X","XX", Character.valueOf('#'), new ItemStack(Item.dyePowder, 1, 14), Character.valueOf('X'), Block.paintedTerracottaRed});
+    		craftingmanager.addRecipe(new ItemStack(Block.paintedTerracottaIndigo, 3), new Object[]{"#X","XX", Character.valueOf('#'), new ItemStack(Item.dyePowder, 1, 5), Character.valueOf('X'), Block.paintedTerracottaRed});
+    		craftingmanager.addRecipe(new ItemStack(Block.paintedTerracottaLightGray, 3), new Object[]{"#X","XX", Character.valueOf('#'), new ItemStack(Item.dyePowder, 1, 7), Character.valueOf('X'), Block.paintedTerracottaRed});
+    		craftingmanager.addRecipe(new ItemStack(Block.paintedTerracottaViolet, 3), new Object[]{"#X","XX", Character.valueOf('#'), new ItemStack(Item.dyePowder, 1, 13), Character.valueOf('X'), Block.paintedTerracottaRed});
+
     }
 }

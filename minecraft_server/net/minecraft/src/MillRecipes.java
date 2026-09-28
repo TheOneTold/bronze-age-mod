@@ -44,7 +44,7 @@ public class MillRecipes
 		addRecipe(new ItemStack(Block.smoothSandstone, 1), new Object[]{"#", Character.valueOf('#'), Block.sandstoneBricks});
 		addRecipe(new ItemStack(Block.sandStone, 4), new Object[]{"###", Character.valueOf('#'), Block.smoothSandstone});
 		addRecipe(new ItemStack(Item.dyePowder, 2, 11), new Object[] {"#", Character.valueOf('#'), Block.plantYellow});
-        addRecipe(new ItemStack(Item.dyePowder, 2, 1), new Object[] {"#", Character.valueOf('#'), Block.plantRed});
+        addRecipe(new ItemStack(Item.dyePowder, 3, 1), new Object[] {"#", Character.valueOf('#'), Block.plantRed});
 		addRecipe(new ItemStack(Item.dyePowder, 2, 5), new Object[] {"#", Character.valueOf('#'), Block.flowerIndigo});
 		addRecipe(new ItemStack(Item.dyePowder, 2, 12), new Object[] {"#", Character.valueOf('#'), Block.flowerBluebell});
         addRecipe(new ItemStack(Item.dyePowder, 3, 15), new Object[] {"#", Character.valueOf('#'), Item.bone});
@@ -54,7 +54,10 @@ public class MillRecipes
         addRecipe(new ItemStack(Item.dyePowder, 2, 9), new Object[] {"#", Character.valueOf('#'), Block.flowerTulip});
         addRecipe(new ItemStack(Item.dyePowder, 2, 10), new Object[] {"#", Character.valueOf('#'), Block.flowerHydrangea});
         addRecipe(new ItemStack(Item.dyePowder, 2, 1), new Object[] {"#", Character.valueOf('#'), Block.flowerPoppy});
-		
+	addRecipe(new ItemStack(Item.dyePowder, 3, 15), new Object[] {"#", Character.valueOf('#'), Block.flowerWhiteRose});	
+	addRecipe(new ItemStack(Item.dyePowder, 1, 15), new Object[] {"#", Character.valueOf('#'), Block.flowerWhiteRoseSingle});
+	addRecipe(new ItemStack(Item.dyePowder, 3, 1), new Object[] {"#", Character.valueOf('#'), Block.flowerRedRoseSingle});
+
         Collections.sort(recipes, new MillSorter(this));
         System.out.println((new StringBuilder()).append(recipes.size()).append(" recipes").toString());
     }

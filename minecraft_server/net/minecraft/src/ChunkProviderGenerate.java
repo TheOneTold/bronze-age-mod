@@ -651,7 +651,12 @@ public class ChunkProviderGenerate
             int j20 = l + rand.nextInt(16) + 8;
 			(new WorldGenFlowers(Block.flowerHydrangea.blockID)).generate(worldObj, rand, j15, j17, j20);
 		}
-
+		if(this.rand.nextInt(4) == 0) {
+			int j15 = k + rand.nextInt(16) + 8;
+            int j17 = rand.nextInt(128);
+            int j20 = l + rand.nextInt(16) + 8;
+			(new WorldGenFlowers(Block.flowerWhiteRose.blockID)).generate(worldObj, rand, j15, j17, j20);
+		}
 		if(rand.nextInt(4) == 0)
         {
             int k15 = k + rand.nextInt(16) + 8;

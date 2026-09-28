@@ -639,6 +639,12 @@ public class NetClientHandler extends NetHandler
             mc.thePlayer.displayMillGUI(MathHelper.floor_double(((EntityPlayer) (entityplayersp)).posX), MathHelper.floor_double(((EntityPlayer) (entityplayersp)).posY), MathHelper.floor_double(((EntityPlayer) (entityplayersp)).posZ));
             mc.thePlayer.craftingInventory.windowId = packet100openwindow.windowId;
         } else
+		if(packet100openwindow.inventoryType == 6)
+        {
+            InventoryBasic inventorybasic = new InventoryBasic(packet100openwindow.windowTitle, packet100openwindow.slotsCount);
+            mc.thePlayer.displayGUIPithos(inventorybasic);
+            mc.thePlayer.craftingInventory.windowId = packet100openwindow.windowId;
+        } else	
         if(packet100openwindow.inventoryType == 1)
         {
             EntityPlayerSP entityplayersp = mc.thePlayer;

@@ -357,6 +357,15 @@ public class EntityPlayerMP extends EntityPlayer
         currentCraftingInventory.windowId = currentWindowId;
         currentCraftingInventory.onCraftGuiOpened(this);
     }
+    
+    public void displayGUIPithos(IInventory iinventory)
+    {
+        getNextWidowId();
+        playerNetServerHandler.sendPacket(new Packet100OpenWindow(currentWindowId, 6, iinventory.getInvName(), iinventory.getSizeInventory()));
+        currentCraftingInventory = new ContainerPithos(inventory, iinventory);
+        currentCraftingInventory.windowId = currentWindowId;
+        currentCraftingInventory.onCraftGuiOpened(this);
+    }
 
     public void displayGUIFurnace(TileEntityFurnace tileentityfurnace)
     {
