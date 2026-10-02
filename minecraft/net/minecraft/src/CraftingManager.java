@@ -95,12 +95,12 @@ public class CraftingManager {
 		this.addRecipe(new ItemStack(Block.flintBricks, 2), new Object[]{"##", "##", Character.valueOf('#'), Item.flint});
 		this.addRecipe(new ItemStack(Block.clayBricks, 4), new Object[]{"##", "##", Character.valueOf('#'), Block.blockClay});
 		this.addRecipe(new ItemStack(Block.blockClay, 1), new Object[]{"#", Character.valueOf('#'), Block.clayBricks});
-		this.addRecipe(new ItemStack(Block.stairShingles, 3), new Object[]{"#  ", "## ", Character.valueOf('#'), Item.flint});
+		this.addRecipe(new ItemStack(Block.stairShingles, 3), new Object[]{" # ", "## ", Character.valueOf('#'), Item.flint});
 		this.addRecipe(new ItemStack(Block.stairTiles, 4), new Object[]{"#  ", "## ", "###", Character.valueOf('#'), Block.tileBricks});
 		this.addRecipe(new ItemStack(Block.slabShinglesSingle, 2), new Object[]{"##", Character.valueOf('#'), Item.flint});
 		this.addRecipe(new ItemStack(Block.slabTileSingle, 3), new Object[]{"###", Character.valueOf('#'), Block.tileBricks});
 		this.addRecipe(new ItemStack(Item.dough, 1), new Object[]{"X", "#", Character.valueOf('#'), Item.bucketWater, Character.valueOf('X'), Item.flour});
-		this.addRecipe(new ItemStack(Block.stairThatch, 3), new Object[]{"#  ", "## ", Character.valueOf('#'), Item.straw});
+		this.addRecipe(new ItemStack(Block.stairThatch, 3), new Object[]{" # ", "## ", Character.valueOf('#'), Item.straw});
 		this.addRecipe(new ItemStack(Block.thatch, 4), new Object[]{"##", "##", Character.valueOf('#'), Item.straw});
 		this.addRecipe(new ItemStack(Block.slabThatchSingle, 2), new Object[]{"##", Character.valueOf('#'), Item.straw});
 		

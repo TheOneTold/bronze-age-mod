@@ -22,6 +22,7 @@ public class MillRecipes {
 		this.addRecipe(new ItemStack(Block.gravel, 4), new Object[]{"###", Character.valueOf('#'), Block.cobblestone});
 		this.addRecipe(new ItemStack(Block.gravel, 4), new Object[]{"###", Character.valueOf('#'), Block.sandStone});
 		this.addRecipe(new ItemStack(Block.sand, 4), new Object[]{"###", Character.valueOf('#'), Block.gravel});
+		this.addRecipe(new ItemStack(Block.sand, 4), new Object[]{"###", Character.valueOf('#'), Block.dirt});
 		this.addRecipe(new ItemStack(Block.blockClay, 4), new Object[]{"###", Character.valueOf('#'), Block.sand});
 		this.addRecipe(new ItemStack(Block.cobblestone, 1), new Object[]{"#", Character.valueOf('#'), Block.stone});
 		this.addRecipe(new ItemStack(Block.sandStone, 1), new Object[]{"#", Character.valueOf('#'), Block.smoothSandstone});

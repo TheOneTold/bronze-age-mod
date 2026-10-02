@@ -32,6 +32,7 @@ public class MillRecipes
 		addRecipe(new ItemStack(Block.gravel, 4), new Object[]{"###", Character.valueOf('#'), Block.cobblestone});
 		addRecipe(new ItemStack(Block.gravel, 4), new Object[]{"###", Character.valueOf('#'), Block.sandStone});
 		addRecipe(new ItemStack(Block.sand, 4), new Object[]{"###", Character.valueOf('#'), Block.gravel});
+		addRecipe(new ItemStack(Block.sand, 4), new Object[]{"###", Character.valueOf('#'), Block.dirt});
 		addRecipe(new ItemStack(Block.blockClay, 4), new Object[]{"###", Character.valueOf('#'), Block.sand});
 		addRecipe(new ItemStack(Block.cobblestone, 1), new Object[]{"#", Character.valueOf('#'), Block.stone});
 		addRecipe(new ItemStack(Block.sandStone, 1), new Object[]{"#", Character.valueOf('#'), Block.smoothSandstone});

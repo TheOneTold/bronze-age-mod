@@ -4,15 +4,16 @@
 
 package net.minecraft.src;
 
+import java.util.Random;
 
 // Referenced classes of package net.minecraft.src:
-//            Block, Material
+//            BlockSand, Item
 
-public class BlockDirt extends Block
+public class BlockDirt extends BlockSand
 {
 
-    protected BlockDirt(int i, int j)
+    public BlockDirt(int i, int j)
     {
-        super(i, j, Material.ground);
+        super(i, j);
     }
 }
