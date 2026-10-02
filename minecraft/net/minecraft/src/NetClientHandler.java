@@ -141,7 +141,7 @@ public class NetClientHandler extends NetHandler
         {
             obj = new EntityFallingSand(worldClient, d, d1, d2, Block.gravel.blockID);
         }
-		if(packet23vehiclespawn.type == 72)
+	if(packet23vehiclespawn.type == 72)
         {
             obj = new EntityFallingSand(worldClient, d, d1, d2, Block.dirt.blockID);
         }

@@ -724,6 +724,7 @@ public class Block
 	public static final BlockFlower bush;
 	public static final Block mudBricks;
 	public static final Block mud;
+	public static final Block leadedGlass;
 	
     public int blockIndexInTexture;
     public final int blockID; 
@@ -919,6 +920,7 @@ public class Block
 	paintedTerracottaIndigo = (new Block(161, 234, Material.rock)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("paintedTerracottaIndigo");
 	paintedTerracottaLightGray = (new Block(162, 235, Material.rock)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("paintedTerracottaLightGray");
 	paintedTerracottaViolet = (new Block(163, 250, Material.rock)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("paintedTerracottaViolet");
+	leadedGlass = (new BlockGlass(164, 204, Material.glass, false)).setHardness(0.3F).setStepSound(soundGlassFootstep).setBlockName("leadedGlass");
 	oliveBush = (new BlockOlives(165, 236)).setHardness(0.0F).setStepSound(soundGrassFootstep).setBlockName("oliveBush");
 	bush = (BlockFlower)(new BlockFlower(166, 236)).setHardness(0.0F).setStepSound(soundGrassFootstep).setBlockName("bush");
 	mudBricks = (new Block(167, 220, Material.ground)).setHardness(0.5F).setStepSound(soundGravelFootstep).setBlockName("mudBricks");
