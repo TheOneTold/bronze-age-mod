@@ -33,6 +33,7 @@ public class FurnaceRecipes {
 		this.addSmelting(Item.rawBucket.shiftedIndex, new ItemStack(Item.bucketEmpty));
 		this.addSmelting(Item.rawPithos.shiftedIndex, new ItemStack(Block.pithos));
 		this.addSmelting(Block.blockClay.blockID, new ItemStack(Block.paintedTerracottaRed));	
+		this.addSmelting(Block.sand.blockID, new ItemStack(Item.glassPane));
 	}
 
 	public void addSmelting(int var1, ItemStack var2) {

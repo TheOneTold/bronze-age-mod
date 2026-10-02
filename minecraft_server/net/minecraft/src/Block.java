@@ -719,6 +719,11 @@ public class Block
 	public static final Block paintedTerracottaIndigo;
 	public static final Block paintedTerracottaLightGray;
 	public static final Block paintedTerracottaViolet;
+
+	public static final Block oliveBush;
+	public static final BlockFlower bush;
+	public static final Block mudBricks;
+	public static final Block mud;
 	
     public int blockIndexInTexture;
     public final int blockID; 
@@ -914,6 +919,10 @@ public class Block
 	paintedTerracottaIndigo = (new Block(161, 234, Material.rock)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("paintedTerracottaIndigo");
 	paintedTerracottaLightGray = (new Block(162, 235, Material.rock)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("paintedTerracottaLightGray");
 	paintedTerracottaViolet = (new Block(163, 250, Material.rock)).setHardness(2.0F).setResistance(10.0F).setStepSound(soundStoneFootstep).setBlockName("paintedTerracottaViolet");
+	oliveBush = (new BlockOlives(165, 236)).setHardness(0.0F).setStepSound(soundGrassFootstep).setBlockName("oliveBush");
+	bush = (BlockFlower)(new BlockFlower(166, 236)).setHardness(0.0F).setStepSound(soundGrassFootstep).setBlockName("bush");
+	mudBricks = (new Block(167, 220, Material.ground)).setHardness(0.5F).setStepSound(soundGravelFootstep).setBlockName("mudBricks");
+	mud = (new Block(168, 221, Material.ground)).setHardness(0.5F).setStepSound(soundGravelFootstep).setBlockName("mud");
 
 		Item.itemsList[cloth.blockID] = (new ItemCloth(cloth.blockID - 256)).setItemName("cloth");
         Item.itemsList[wood.blockID] = (new ItemLog(wood.blockID - 256)).setItemName("log");

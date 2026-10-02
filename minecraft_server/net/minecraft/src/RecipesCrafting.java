@@ -74,6 +74,9 @@ public class RecipesCrafting
     		craftingmanager.addRecipe(new ItemStack(Block.paintedTerracottaIndigo, 3), new Object[]{"#X","XX", Character.valueOf('#'), new ItemStack(Item.dyePowder, 1, 5), Character.valueOf('X'), Block.paintedTerracottaRed});
     		craftingmanager.addRecipe(new ItemStack(Block.paintedTerracottaLightGray, 3), new Object[]{"#X","XX", Character.valueOf('#'), new ItemStack(Item.dyePowder, 1, 7), Character.valueOf('X'), Block.paintedTerracottaRed});
     		craftingmanager.addRecipe(new ItemStack(Block.paintedTerracottaViolet, 3), new Object[]{"#X","XX", Character.valueOf('#'), new ItemStack(Item.dyePowder, 1, 13), Character.valueOf('X'), Block.paintedTerracottaRed});
+		craftingmanager.addRecipe(new ItemStack(Block.leadedGlass, 9), new Object[]{"###", "#X#", "###", Character.valueOf('#'), Item.glassPane, Character.valueOf('X'), Item.ingotLead});
+		craftingmanager.addRecipe(new ItemStack(Block.mud, 8), new Object[]{"###", "#X#", "###", Character.valueOf('#'), Block.dirt, Character.valueOf('X'), Item.bucketWater});
+		craftingmanager.addRecipe(new ItemStack(Block.mudBricks, 4), new Object[]{"##", "##", Character.valueOf('#'), Block.mud});
 
     }
 }

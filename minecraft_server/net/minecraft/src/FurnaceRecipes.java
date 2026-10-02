@@ -42,6 +42,7 @@ public class FurnaceRecipes
 		addSmelting(Item.rawBucket.shiftedIndex, new ItemStack(Item.bucketEmpty));
 		addSmelting(Item.rawPithos.shiftedIndex, new ItemStack(Block.pithos));
   	 	addSmelting(Block.blockClay.blockID, new ItemStack(Block.paintedTerracottaRed)); 
+   	 	addSmelting(Block.sand.blockID, new ItemStack(Item.glassPane));
     }
 
     public void addSmelting(int i, ItemStack itemstack)

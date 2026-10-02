@@ -88,7 +88,7 @@ public class CraftingManager
         addRecipe(new ItemStack(Item.doorSteel, 1), new Object[] {
             "##", "##", "##", Character.valueOf('#'), Item.ingotIron
         });
-        addRecipe(new ItemStack(Item.sign, 1), new Object[] {
+        addRecipe(new ItemStack(Item.sign, 3), new Object[] {
             "###", "###", " X ", Character.valueOf('#'), Block.planks, Character.valueOf('X'), Item.stick
         });
         addRecipe(new ItemStack(Item.cakeMix, 1), new Object[] {

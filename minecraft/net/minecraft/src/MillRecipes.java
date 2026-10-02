@@ -47,6 +47,7 @@ public class MillRecipes {
 	this.addRecipe(new ItemStack(Item.dyePowder, 3, 15), new Object[] {"#", Character.valueOf('#'), Block.flowerWhiteRose});
 	this.addRecipe(new ItemStack(Item.dyePowder, 1, 15), new Object[] {"#", Character.valueOf('#'), Block.flowerWhiteRoseSingle});
 	this.addRecipe(new ItemStack(Item.dyePowder, 1, 1), new Object[] {"#", Character.valueOf('#'), Block.flowerRedRoseSingle});
+	this.addRecipe(new ItemStack(Item.oliveOil, 1), new Object[]{"###", " X ", Character.valueOf('#'), Item.olivesBlack, Character.valueOf('X'), Item.bucketEmpty});
 
 		Collections.sort(this.recipes, new MillSorter(this));
 		System.out.println(this.recipes.size() + " recipes");
