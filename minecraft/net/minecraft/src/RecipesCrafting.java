@@ -61,5 +61,7 @@ public class RecipesCrafting {
 		var1.addRecipe(new ItemStack(Block.leadedGlass, 9), new Object[]{"###", "#X#", "###", Character.valueOf('#'), Item.glassPane, Character.valueOf('X'), Item.ingotLead});
 		var1.addRecipe(new ItemStack(Block.mud, 8), new Object[]{"###", "#X#", "###", Character.valueOf('#'), Block.dirt, Character.valueOf('X'), Item.bucketWater});
 		var1.addRecipe(new ItemStack(Block.mudBricks, 4), new Object[]{"##", "##", Character.valueOf('#'), Block.mud});
+		
+		var1.addRecipe(new ItemStack(Block.stainedGlass, 9), new Object[]{"C#D", "#X#", "A#B", Character.valueOf('#'), Item.glassPane, Character.valueOf('X'), Item.ingotLead, Character.valueOf('A'), new ItemStack(Item.dyePowder, 1, 11), Character.valueOf('B'), new ItemStack(Item.dyePowder, 1, 12), Character.valueOf('C'), new ItemStack(Item.dyePowder, 1, 1), Character.valueOf('D'), new ItemStack(Item.dyePowder, 1, 10) });
 	}
 }

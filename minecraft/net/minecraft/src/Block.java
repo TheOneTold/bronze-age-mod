@@ -190,6 +190,7 @@ public class Block {
 	public static final BlockFlower bush = (BlockFlower)(new BlockFlower(166, 236)).setHardness(0.0F).setStepSound(soundGrassFootstep).setBlockName("bush");
 	public static final Block mudBricks = (new Block(167, 220, Material.ground)).setHardness(0.5F).setStepSound(soundGravelFootstep).setBlockName("mudBricks");
 	public static final Block mud = (new Block(168, 221, Material.ground)).setHardness(0.5F).setStepSound(soundGravelFootstep).setBlockName("mud");
+	public static final Block stainedGlass = (new BlockGlass(169, 224, Material.glass, false)).setHardness(0.3F).setStepSound(soundGlassFootstep).setBlockName("stainedGlass");
 
 	public int blockIndexInTexture;
 	public final int blockID;

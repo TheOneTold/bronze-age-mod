@@ -453,6 +453,8 @@ tile.mudBricks.name=Mud Bricks
 tile.mudBricks.desc=
 tile.mud.name=Mud
 tile.mud.desc=
+tile.stainedGlass.name=Stained Glass
+tile.stainedGlass.desc=
 
 tile.flowerMarigold.name=Marigold
 tile.flowerMarigold.desc=

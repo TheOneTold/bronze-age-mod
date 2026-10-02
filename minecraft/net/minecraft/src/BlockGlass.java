@@ -24,6 +24,10 @@ public class BlockGlass extends BlockBreakable
 
     public int getRenderBlockPass()
     {
-        return 0;
+        if (this.blockID == Block.stainedGlass.blockID){
+	    return 1;
+	} else {
+	    return 0;
+	}
     }
 }
