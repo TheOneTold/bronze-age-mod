@@ -632,7 +632,7 @@ public class ChunkProviderGenerate implements IChunkProvider {
 			(new WorldGenReed()).generate(this.worldObj, this.rand, var25, var19, var20);
 		}
 
-		if(this.rand.nextInt(32) == 0) {
+		if(this.rand.nextInt(8) == 0) {
 			var17 = var4 + this.rand.nextInt(16) + 8;
 			var25 = this.rand.nextInt(128);
 			var19 = var5 + this.rand.nextInt(16) + 8;

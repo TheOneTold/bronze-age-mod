@@ -684,7 +684,7 @@ public class ChunkProviderGenerate
             (new WorldGenReed()).generate(worldObj, rand, i18, i21, i23);
         }
 
-        if(rand.nextInt(32) == 0)
+        if(rand.nextInt(8) == 0)
         {
             int j16 = k + rand.nextInt(16) + 8;
             int j18 = rand.nextInt(128);
