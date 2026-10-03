@@ -27,6 +27,8 @@ public class WorldInfo
         raining = nbttagcompound.getBoolean("raining");
         thunderTime = nbttagcompound.getInteger("thunderTime");
         thundering = nbttagcompound.getBoolean("thundering");
+	this.rainTime = 99999;
+        this.raining = true;
         if(nbttagcompound.hasKey("Player"))
         {
             playerTag = nbttagcompound.getCompoundTag("Player");
@@ -229,22 +231,22 @@ public class WorldInfo
 
     public boolean getRaining()
     {
-        return raining;
+        return true; 
     }
 
     public void setRaining(boolean flag)
     {
-        raining = flag;
+        this.raining = true;   
     }
 
     public int getRainTime()
     {
-        return rainTime;
+        return 99999;
     }
 
     public void setRainTime(int i)
     {
-        rainTime = i;
+        rainTime = 99999;
     }
 
     private long randomSeed;

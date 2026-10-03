@@ -39,18 +39,7 @@ public class BlockLeaves extends BlockLeavesBase
 
     public int colorMultiplier(IBlockAccess iblockaccess, int i, int j, int k)
     {
-        int l = iblockaccess.getBlockMetadata(i, j, k);
-        if((l & 1) == 1)
-        {
-            return ColorizerFoliage.getFoliageColorPine();
-        }
-        else
-        {
-            iblockaccess.getWorldChunkManager().func_4069_a(i, k, 1, 1);
-            double d = iblockaccess.getWorldChunkManager().temperature[0];
-            double d1 = iblockaccess.getWorldChunkManager().humidity[0];
-            return ColorizerFoliage.getFoliageColor(d, d1);
-        }
+        return 0xFFFFFF;
     }
 
     public void onBlockRemoval(World world, int i, int j, int k)

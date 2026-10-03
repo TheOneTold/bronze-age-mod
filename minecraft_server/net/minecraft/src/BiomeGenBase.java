@@ -188,15 +188,15 @@ public class BiomeGenBase
         }
     }
 
-    public static final BiomeGenBase rainforest = (new BiomeGenRainforest()).setColor(0x8fa36).setBiomeName("Rainforest").func_4080_a(0x1ff458);
-    public static final BiomeGenBase swampland = (new BiomeGenSwamp()).setColor(0x7f9b2).setBiomeName("Swampland").func_4080_a(0x8baf48);
-    public static final BiomeGenBase seasonalForest = (new BiomeGenBase()).setColor(0x9be023).setBiomeName("Seasonal Forest");
-    public static final BiomeGenBase forest = (new BiomeGenForest()).setColor(0x56621).setBiomeName("Forest").func_4080_a(0x4eba31);
-    public static final BiomeGenBase savanna = (new BiomeGenDesert()).setColor(0xd9e023).setBiomeName("Savanna");
-    public static final BiomeGenBase shrubland = (new BiomeGenBase()).setColor(0xa1ad20).setBiomeName("Shrubland");
+    public static final BiomeGenBase rainforest = (new BiomeGenRainforest()).setColor(0x8fa36).setEnableSnow().setBiomeName("Rainforest").func_4080_a(0x1ff458);
+    public static final BiomeGenBase swampland = (new BiomeGenSwamp()).setColor(0x7f9b2).setEnableSnow().setBiomeName("Swampland").func_4080_a(0x8baf48);
+    public static final BiomeGenBase seasonalForest = (new BiomeGenBase()).setColor(0x9be023).setEnableSnow().setBiomeName("Seasonal Forest");
+    public static final BiomeGenBase forest = (new BiomeGenForest()).setColor(0x56621).setEnableSnow().setBiomeName("Forest").func_4080_a(0x4eba31);
+    public static final BiomeGenBase savanna = (new BiomeGenDesert()).setColor(0xd9e023).setEnableSnow().setBiomeName("Savanna");
+    public static final BiomeGenBase shrubland = (new BiomeGenBase()).setColor(0xa1ad20).setEnableSnow().setBiomeName("Shrubland");
     public static final BiomeGenBase taiga = (new BiomeGenTaiga()).setColor(0x2eb153).setBiomeName("Taiga").setEnableSnow().func_4080_a(0x7bb731);
     public static final BiomeGenBase desert = (new BiomeGenDesert()).setColor(0xfa9418).setBiomeName("Desert").setDisableRain();
-    public static final BiomeGenBase plains = (new BiomeGenDesert()).setColor(0xffd910).setBiomeName("Plains");
+    public static final BiomeGenBase plains = (new BiomeGenDesert()).setColor(0xffd910).setEnableSnow().setBiomeName("Plains");
     public static final BiomeGenBase iceDesert = (new BiomeGenDesert()).setColor(0xffed93).setBiomeName("Ice Desert").setEnableSnow().setDisableRain().func_4080_a(0xc4d339);
     public static final BiomeGenBase tundra = (new BiomeGenBase()).setColor(0x57ebf9).setBiomeName("Tundra").setEnableSnow().func_4080_a(0xc4d339);
     public static final BiomeGenBase hell = (new BiomeGenHell()).setColor(0xff0000).setBiomeName("Hell").setDisableRain();
