@@ -88,7 +88,7 @@ public class CraftingManager
         addRecipe(new ItemStack(Item.doorSteel, 1), new Object[] {
             "##", "##", "##", Character.valueOf('#'), Item.ingotIron
         });
-        addRecipe(new ItemStack(Item.sign, 1), new Object[] {
+        addRecipe(new ItemStack(Item.sign, 3), new Object[] {
             "###", "###", " X ", Character.valueOf('#'), Block.planks, Character.valueOf('X'), Item.stick
         });
         addRecipe(new ItemStack(Item.cakeMix, 1), new Object[] {
@@ -213,14 +213,12 @@ public class CraftingManager
 		addRecipe(new ItemStack(Block.flintBricks, 2), new Object[]{"##", "##", Character.valueOf('#'), Item.flint});
 		addRecipe(new ItemStack(Block.clayBricks, 4), new Object[]{"##", "##", Character.valueOf('#'), Block.blockClay});
 		addRecipe(new ItemStack(Block.blockClay, 1), new Object[]{"#", Character.valueOf('#'), Block.clayBricks});
-		addRecipe(new ItemStack(Block.stairShingles, 3), new Object[]{"#  ", "## ", Character.valueOf('#'), Item.flint});
+		addRecipe(new ItemStack(Block.stairShingles, 3), new Object[]{" # ", "## ", Character.valueOf('#'), Item.flint});
 		addRecipe(new ItemStack(Block.stairTiles, 4), new Object[]{"#  ", "## ", "###", Character.valueOf('#'), Block.tileBricks});
 		addRecipe(new ItemStack(Block.slabShinglesSingle, 2), new Object[]{"##", Character.valueOf('#'), Item.flint});
 		addRecipe(new ItemStack(Block.slabTileSingle, 3), new Object[]{"###", Character.valueOf('#'), Block.tileBricks});
-		addRecipe(new ItemStack(Block.whiteConcrete, 8), new Object[]{"X#X", "#Y#", "X#X", Character.valueOf('X'), Item.gunpowder, Character.valueOf('Y'), Item.bucketWater, Character.valueOf('#'), Block.sandStone});
-		addRecipe(new ItemStack(Block.blackConcrete, 8), new Object[]{"X#X", "#Y#", "X#X", Character.valueOf('X'), Item.gunpowder, Character.valueOf('Y'), Item.bucketWater, Character.valueOf('#'), Block.stone});
 		addRecipe(new ItemStack(Item.dough, 1), new Object[]{"X", "#", Character.valueOf('#'), Item.bucketWater, Character.valueOf('X'), Item.flour});
-		addRecipe(new ItemStack(Block.stairThatch, 3), new Object[]{"#  ", "## ", Character.valueOf('#'), Item.straw});
+		addRecipe(new ItemStack(Block.stairThatch, 3), new Object[]{" # ", "## ", Character.valueOf('#'), Item.straw});
 		addRecipe(new ItemStack(Block.thatch, 4), new Object[]{"##", "##", Character.valueOf('#'), Item.straw});
 		addRecipe(new ItemStack(Block.slabThatchSingle, 2), new Object[]{"##", Character.valueOf('#'), Item.straw});
 		

@@ -15,7 +15,7 @@ public class ItemSign extends Item
     public ItemSign(int i)
     {
         super(i);
-        maxStackSize = 1;
+        maxStackSize = 16;
     }
 
     public boolean onItemUse(ItemStack itemstack, EntityPlayer entityplayer, World world, int i, int j, int k, int l)

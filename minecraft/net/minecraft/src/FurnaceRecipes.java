@@ -31,7 +31,10 @@ public class FurnaceRecipes {
 		this.addSmelting(Block.netherstoneBricks.blockID, new ItemStack(Block.purifiedNetherstoneBricks));
 		this.addSmelting(Block.clayBricks.blockID, new ItemStack(Block.tileBricks));
 		this.addSmelting(Item.rawBucket.shiftedIndex, new ItemStack(Item.bucketEmpty));
-		
+		this.addSmelting(Item.rawPithos.shiftedIndex, new ItemStack(Block.pithos));
+		this.addSmelting(Block.blockClay.blockID, new ItemStack(Block.paintedTerracottaRed));	
+		this.addSmelting(Block.sand.blockID, new ItemStack(Item.glassPane));
+		this.addSmelting(Block.mud.blockID, new ItemStack(Block.dirt));
 	}
 
 	public void addSmelting(int var1, ItemStack var2) {

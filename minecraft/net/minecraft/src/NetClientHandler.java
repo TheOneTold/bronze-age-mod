@@ -141,6 +141,10 @@ public class NetClientHandler extends NetHandler
         {
             obj = new EntityFallingSand(worldClient, d, d1, d2, Block.gravel.blockID);
         }
+	if(packet23vehiclespawn.type == 72)
+        {
+            obj = new EntityFallingSand(worldClient, d, d1, d2, Block.dirt.blockID);
+        }
         if(obj != null)
         {
             obj.serverPosX = packet23vehiclespawn.xPosition;
@@ -639,6 +643,12 @@ public class NetClientHandler extends NetHandler
             mc.thePlayer.displayMillGUI(MathHelper.floor_double(((EntityPlayer) (entityplayersp)).posX), MathHelper.floor_double(((EntityPlayer) (entityplayersp)).posY), MathHelper.floor_double(((EntityPlayer) (entityplayersp)).posZ));
             mc.thePlayer.craftingInventory.windowId = packet100openwindow.windowId;
         } else
+		if(packet100openwindow.inventoryType == 6)
+        {
+            InventoryBasic inventorybasic = new InventoryBasic(packet100openwindow.windowTitle, packet100openwindow.slotsCount);
+            mc.thePlayer.displayGUIPithos(inventorybasic);
+            mc.thePlayer.craftingInventory.windowId = packet100openwindow.windowId;
+        } else	
         if(packet100openwindow.inventoryType == 1)
         {
             EntityPlayerSP entityplayersp = mc.thePlayer;

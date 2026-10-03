@@ -56,7 +56,7 @@ public class ItemDye extends Item
                 }
                 return true;
             }
-			if(i1 == Block.grapePlant.blockID)
+	    if(i1 == Block.grapePlant.blockID)
             {
                 if(!world.multiplayerWorld)
                 {
@@ -65,6 +65,16 @@ public class ItemDye extends Item
                 }
                 return true;
             }
+	    if(i1 == Block.oliveBush.blockID)
+            {
+                if(!world.multiplayerWorld)
+                {
+                    ((BlockOlives)Block.oliveBush).fertilize(world, i, j, k);
+                    itemstack.stackSize--;
+                }
+                return true;
+            }
+
             if(i1 == Block.grass.blockID)
             {
                 if(!world.multiplayerWorld)

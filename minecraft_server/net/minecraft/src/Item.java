@@ -375,7 +375,12 @@ public class Item
 	public static Item ingotLead = (new Item(172)).setIconCoord(5, 11).setItemName("ingotLead");
 	public static Item helmetRebreather = (new ItemArmor(173, 1, 6, 0)).setIconCoord(4, 11).setItemName("helmetRebreather");
 	public static Item straw = (new Item(174)).setIconCoord(11, 12).setItemName("straw");
-	
+	public static Item rawPithos = (new Item(175)).setIconCoord(12,12).setItemName("rawPithos");
+	public static Item glassPane = (new Item (176)).setIconCoord(5,12).setItemName("glassPane");
+	public static Item olivesGreen = (new ItemFood(177, 6, false, 16)).setIconCoord(10, 13).setItemName("olivesGreen");
+	public static Item olivesBlack = (new ItemFood(178, 2, false, 16)).setIconCoord(11, 13).setItemName("olivesBlack");
+	public static Item oliveOil = (new Item(179)).setIconCoord(12, 13).setItemName("oliveOil");
+
 	public static Item record13 = (new ItemRecord(2000, "13")).setIconCoord(0, 15).setItemName("record");
     public static Item recordCat = (new ItemRecord(2001, "cat")).setIconCoord(1, 15).setItemName("record");
     public final int shiftedIndex;

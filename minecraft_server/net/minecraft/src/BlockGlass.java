@@ -17,8 +17,13 @@ public class BlockGlass extends BlockBreakable
         super(i, j, material, flag);
     }
 
+    public int idDropped(int i, Random random)
+    {
+	return Item.glassPane.shiftedIndex;
+    }
+
     public int quantityDropped(Random random)
     {
-        return 0;
+        return 4;
     }
 }

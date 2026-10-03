@@ -430,11 +430,14 @@ public abstract class EntityPlayer extends EntityLiving
     {
     }
 
+    public void displayGUIPithos(IInventory iinventory)
+    {
+    }
     public void displayWorkbenchGUI(int i, int j, int k)
     {
     }
 	
-	public void displayMillGUI(int i, int j, int k)
+    public void displayMillGUI(int i, int j, int k)
     {
     }
 

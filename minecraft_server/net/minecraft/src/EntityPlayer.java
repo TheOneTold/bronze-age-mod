@@ -406,7 +406,11 @@ public abstract class EntityPlayer extends EntityLiving
     public void displayGUIChest(IInventory iinventory)
     {
     }
-
+    
+    public void displayGUIPithos(IInventory iinventory)
+    {
+    }
+    
     public void displayWorkbenchGUI(int i, int j, int k)
     {
     }

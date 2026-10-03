@@ -385,7 +385,7 @@ public class ChunkProviderGenerate
             int k5 = k + rand.nextInt(16);
             int l8 = rand.nextInt(128);
             int k11 = l + rand.nextInt(16);
-            (new WorldGenClay(32)).generate(worldObj, rand, k5, l8, k11);
+            (new WorldGenClay(16)).generate(worldObj, rand, k5, l8, k11);
         }
 
         for(int j2 = 0; j2 < 20; j2++)
@@ -523,19 +523,19 @@ public class ChunkProviderGenerate
         byte byte0 = 0;
         if(biomegenbase == BiomeGenBase.forest)
         {
-            byte0 = 2;
+            byte0 = 1;
         }
         if(biomegenbase == BiomeGenBase.seasonalForest)
         {
-            byte0 = 4;
+            byte0 = 2;
         }
         if(biomegenbase == BiomeGenBase.taiga)
         {
-            byte0 = 2;
+            byte0 = 1;
         }
         if(biomegenbase == BiomeGenBase.plains)
         {
-            byte0 = 3;
+            byte0 = 2;
         }
         for(int i14 = 0; i14 < byte0; i14++)
         {
@@ -591,30 +591,78 @@ public class ChunkProviderGenerate
             int l22 = l + rand.nextInt(16) + 8;
             (new WorldGenDeadBush(Block.deadBush.blockID)).generate(worldObj, rand, i17, i20, l22);
         }
-
-        if(rand.nextInt(2) == 0)
+	if(this.rand.nextInt(1) == 0) {
+			int i17 = k + rand.nextInt(16) + 8;
+			int i20 = rand.nextInt(128);
+			int l22 = l + this.rand.nextInt(16) + 8;
+			(new WorldGenFlowers(Block.bush.blockID)).generate(worldObj, rand, i17, i20, l22);
+	}	
+        if(rand.nextInt(4) == 0)
         {
             int j15 = k + rand.nextInt(16) + 8;
             int j17 = rand.nextInt(128);
             int j20 = l + rand.nextInt(16) + 8;
             (new WorldGenFlowers(Block.plantRed.blockID)).generate(worldObj, rand, j15, j17, j20);
         }
+	if(rand.nextInt(2) == 0)
+        {
+            int j15 = k + rand.nextInt(16) + 8;
+            int j17 = rand.nextInt(128);
+            int j20 = l + rand.nextInt(16) + 8;
+            (new WorldGenFlowers(Block.flowerPoppy.blockID)).generate(worldObj, rand, j15, j17, j20);
+        }
 		
-		if(this.rand.nextInt(4) == 0) {
+		if(this.rand.nextInt(8) == 0) {
 			int j15 = k + rand.nextInt(16) + 8;
             int j17 = rand.nextInt(128);
             int j20 = l + rand.nextInt(16) + 8;
 			(new WorldGenFlowers(Block.flowerIndigo.blockID)).generate(worldObj, rand, j15, j17, j20);
 		}
 		
-		if(this.rand.nextInt(4) == 0) {
+		if(this.rand.nextInt(8) == 0) {
 			int j15 = k + rand.nextInt(16) + 8;
             int j17 = rand.nextInt(128);
             int j20 = l + rand.nextInt(16) + 8;
 			(new WorldGenFlowers(Block.flowerBluebell.blockID)).generate(worldObj, rand, j15, j17, j20);
 		}
 		
-        if(rand.nextInt(4) == 0)
+		if(this.rand.nextInt(8) == 0) {
+			int j15 = k + rand.nextInt(16) + 8;
+            int j17 = rand.nextInt(128);
+            int j20 = l + rand.nextInt(16) + 8;
+			(new WorldGenFlowers(Block.flowerMarigold.blockID)).generate(worldObj, rand, j15, j17, j20);
+		} 
+		if(this.rand.nextInt(8) == 0) {
+			int j15 = k + rand.nextInt(16) + 8;
+            int j17 = rand.nextInt(128);
+            int j20 = l + rand.nextInt(16) + 8;
+			(new WorldGenFlowers(Block.flowerViolet.blockID)).generate(worldObj, rand, j15, j17, j20);
+		}
+		if(this.rand.nextInt(6) == 0) {
+			int j15 = k + rand.nextInt(16) + 8;
+            int j17 = rand.nextInt(128);
+            int j20 = l + rand.nextInt(16) + 8;
+			(new WorldGenFlowers(Block.flowerDaisy.blockID)).generate(worldObj, rand, j15, j17, j20);
+		}
+		if(this.rand.nextInt(12) == 0) {
+			int j15 = k + rand.nextInt(16) + 8;
+            int j17 = rand.nextInt(128);
+            int j20 = l + rand.nextInt(16) + 8;
+			(new WorldGenFlowers(Block.flowerTulip.blockID)).generate(worldObj, rand, j15, j17, j20);
+		}
+		if(this.rand.nextInt(8) == 0) {
+			int j15 = k + rand.nextInt(16) + 8;
+            int j17 = rand.nextInt(128);
+            int j20 = l + rand.nextInt(16) + 8;
+			(new WorldGenFlowers(Block.flowerHydrangea.blockID)).generate(worldObj, rand, j15, j17, j20);
+		}
+		if(this.rand.nextInt(10) == 0) {
+			int j15 = k + rand.nextInt(16) + 8;
+            int j17 = rand.nextInt(128);
+            int j20 = l + rand.nextInt(16) + 8;
+			(new WorldGenFlowers(Block.flowerWhiteRose.blockID)).generate(worldObj, rand, j15, j17, j20);
+		}
+		if(rand.nextInt(4) == 0)
         {
             int k15 = k + rand.nextInt(16) + 8;
             int k17 = rand.nextInt(128);
