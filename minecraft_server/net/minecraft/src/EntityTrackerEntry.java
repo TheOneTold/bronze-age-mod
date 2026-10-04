@@ -308,6 +308,10 @@ public class EntityTrackerEntry
             {
                 return new Packet23VehicleSpawn(trackedEntity, 71);
             }
+	    if(entityfallingsand.blockID == Block.dirt.blockID)
+            {
+                return new Packet23VehicleSpawn(trackedEntity, 72);
+            }
         }
         if(trackedEntity instanceof EntityPainting)
         {
