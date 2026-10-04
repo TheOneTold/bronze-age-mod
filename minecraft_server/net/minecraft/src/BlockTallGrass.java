@@ -43,11 +43,13 @@ public class BlockTallGrass extends BlockFlower
         if(random.nextInt(6) == 0)
         {
 			// Switch to decide what kind of seed/plant is dropped.
-            switch(random.nextInt(2)) {
+            switch(random.nextInt(3)) {
 			  case 0:
 				return Item.seeds.shiftedIndex;
 			  case 1:
 				return Block.grapePlant.blockID;
+			  case 2:
+				return Block.oliveBush.blockID;
 			  default:
 				return Item.seeds.shiftedIndex;
 			}
