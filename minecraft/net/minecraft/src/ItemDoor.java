@@ -16,7 +16,7 @@ public class ItemDoor extends Item
     {
         super(i);
         doorMaterial = material;
-        maxStackSize = 1;
+        maxStackSize = 16;
     }
 
     public boolean onItemUse(ItemStack itemstack, EntityPlayer entityplayer, World world, int i, int j, int k, int l)

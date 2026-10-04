@@ -37,7 +37,7 @@ public class CraftingManager
         addRecipe(new ItemStack(Item.book, 1), new Object[] {
             "#", "#", "#", Character.valueOf('#'), Item.paper
         });
-        addRecipe(new ItemStack(Block.fence, 2), new Object[] {
+        addRecipe(new ItemStack(Block.fence, 3), new Object[] {
             "###", "###", Character.valueOf('#'), Item.stick
         });
         addRecipe(new ItemStack(Block.jukebox, 1), new Object[] {
@@ -78,10 +78,10 @@ public class CraftingManager
         addRecipe(new ItemStack(Block.ladder, 2), new Object[] {
             "# #", "###", "# #", Character.valueOf('#'), Item.stick
         });
-        addRecipe(new ItemStack(Item.doorWood, 1), new Object[] {
+        addRecipe(new ItemStack(Item.doorWood, 3), new Object[] {
             "##", "##", "##", Character.valueOf('#'), Block.planks
         });
-		addRecipe(new ItemStack(Item.doorWood, 1), new Object[]{"##", "##", "##", Character.valueOf('#'), Block.sticks});
+		addRecipe(new ItemStack(Item.doorWood, 3), new Object[]{"##", "##", "##", Character.valueOf('#'), Block.sticks});
         addRecipe(new ItemStack(Block.trapdoor, 2), new Object[] {
             "###", "###", Character.valueOf('#'), Block.planks
         });
@@ -221,7 +221,8 @@ public class CraftingManager
 		addRecipe(new ItemStack(Block.stairThatch, 3), new Object[]{" # ", "## ", Character.valueOf('#'), Item.straw});
 		addRecipe(new ItemStack(Block.thatch, 4), new Object[]{"##", "##", Character.valueOf('#'), Item.straw});
 		addRecipe(new ItemStack(Block.slabThatchSingle, 2), new Object[]{"##", Character.valueOf('#'), Item.straw});
-		
+		addRecipe(new ItemStack(Block.stakes, 12), new Object[]{"###", "###", Character.valueOf('#'), Block.wood});	
+
         Collections.sort(recipes, new RecipeSorter(this));
         System.out.println((new StringBuilder()).append(recipes.size()).append(" recipes").toString());
     }
