@@ -726,6 +726,7 @@ public class Block
 	public static final Block mud;
 	public static final Block leadedGlass;
 	public static final Block stainedGlass;
+	public static final Block stakes;
 	
     public int blockIndexInTexture;
     public final int blockID; 
@@ -927,6 +928,7 @@ public class Block
 	mudBricks = (new Block(167, 220, Material.ground)).setHardness(0.5F).setStepSound(soundGravelFootstep).setBlockName("mudBricks");
 	mud = (new Block(168, 221, Material.ground)).setHardness(0.5F).setStepSound(soundGravelFootstep).setBlockName("mud");
 	stainedGlass = (new BlockGlass(169, 224, Material.glass, false)).setHardness(0.3F).setStepSound(soundGlassFootstep).setBlockName("stainedGlass");
+	stakes = (new BlockFence(170, 20)).setHardness(2.0F).setResistance(5.0F).setStepSound(soundWoodFootstep).setBlockName("stakes");
 
 		Item.itemsList[cloth.blockID] = (new ItemCloth(cloth.blockID - 256)).setItemName("cloth");
         Item.itemsList[wood.blockID] = (new ItemLog(wood.blockID - 256)).setItemName("log");

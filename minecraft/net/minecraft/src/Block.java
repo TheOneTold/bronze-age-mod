@@ -191,6 +191,7 @@ public class Block {
 	public static final Block mudBricks = (new Block(167, 220, Material.ground)).setHardness(0.5F).setStepSound(soundGravelFootstep).setBlockName("mudBricks");
 	public static final Block mud = (new Block(168, 221, Material.ground)).setHardness(0.5F).setStepSound(soundGravelFootstep).setBlockName("mud");
 	public static final Block stainedGlass = (new BlockGlass(169, 224, Material.glass, false)).setHardness(0.3F).setStepSound(soundGlassFootstep).setBlockName("stainedGlass");
+	public static final Block stakes = (new BlockFence(170, 20)).setHardness(2.0F).setResistance(5.0F).setStepSound(soundWoodFootstep).setBlockName("stakes").disableNeighborNotifyOnMetadataChange();
 
 	public int blockIndexInTexture;
 	public final int blockID;

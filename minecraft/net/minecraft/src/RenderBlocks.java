@@ -2626,90 +2626,191 @@ public class RenderBlocks
         return flag;
     }
 
+    
+
+    
+
+    
+    
+    
+   
+    
+    
+    
+    
+    
+
+
     public boolean renderBlockFence(Block block, int i, int j, int k)
     {
         int blockID = block.blockID;
         boolean flag = false;
         
-        
+        boolean isStakes = block.blockID == Block.stakes.blockID;
+
         float fPostMin = 0.375F;
         float fPostMax = 0.625F;
-        
         
         float fRailMin = 0.4375F;
         float fRailMax = 0.5625F;
         
-        
-        block.setBlockBounds(fPostMin, 0.0F, fPostMin, fPostMax, 1.0F, fPostMax);
-        renderStandardBlock(block, i, j, k);
+        int idAbove = blockAccess.getBlockId(i, j + 1, k);
+        boolean isStackedUnder = isStakes && (idAbove == blockID);
+
+        if (isStakes)
+        {
+            fPostMin = 0.3125F;
+            fPostMax = 0.6875F;
+            
+            block.setBlockBounds(fPostMin, 0.0F, fPostMin, fPostMax, 1.0F, fPostMax);
+            
+            renderStakeComponentWithLogEnds(block, i, j, k);
+        }
+        else
+        {
+            block.setBlockBounds(fPostMin, 0.0F, fPostMin, fPostMax, 1.0F, fPostMax);
+            renderStandardBlock(block, i, j, k);
+        }
         flag = true;
 
-        
+        float fSideMin = 0.375F;
+        float fSideMax = 0.625F;
 
-        
+        float fSideHeight = (isStakes && !isStackedUnder) ? 0.9374F : 1.0F;
+
         int idNorth = blockAccess.getBlockId(i, j, k - 1);
         Block bNorth = Block.blocksList[idNorth];
-        if (idNorth == blockID || (bNorth != null && bNorth.isOpaqueCube()))
+        boolean hasNorthConnect = idNorth == blockID || (bNorth != null && bNorth.isOpaqueCube());
+        if (hasNorthConnect)
         {
-            
-            block.setBlockBounds(fRailMin, 0.3125F, 0.0F, fRailMax, 0.5F, fPostMin);
-            renderStandardBlock(block, i, j, k);
-            
-            
-            block.setBlockBounds(fRailMin, 0.75F, 0.0F, fRailMax, 0.9375F, fPostMin);
-            renderStandardBlock(block, i, j, k);
+            if (isStakes)
+            {
+                block.setBlockBounds(fSideMin, 0.0F, 0.0F, fSideMax, fSideHeight, fSideMin);
+                renderStakeComponentWithLogEnds(block, i, j, k);
+            }
+            else
+            {
+                block.setBlockBounds(fRailMin, 0.3125F, 0.0F, fRailMax, 0.5F, fPostMin);
+                renderStandardBlock(block, i, j, k);
+                block.setBlockBounds(fRailMin, 0.75F, 0.0F, fRailMax, 0.9375F, fPostMin);
+                renderStandardBlock(block, i, j, k);
+            }
             flag = true;
         }
 
-        
+        // SOUTH CONNECTION
         int idSouth = blockAccess.getBlockId(i, j, k + 1);
         Block bSouth = Block.blocksList[idSouth];
-        if (idSouth == blockID || (bSouth != null && bSouth.isOpaqueCube()))
+        boolean hasSouthConnect = idSouth == blockID || (bSouth != null && bSouth.isOpaqueCube());
+        if (hasSouthConnect)
         {
-            
-            block.setBlockBounds(fRailMin, 0.3125F, fPostMax, fRailMax, 0.5F, 1.0F);
-            renderStandardBlock(block, i, j, k);
-            
-            
-            block.setBlockBounds(fRailMin, 0.75F, fPostMax, fRailMax, 0.9375F, 1.0F);
-            renderStandardBlock(block, i, j, k);
+            if (isStakes)
+            {
+                block.setBlockBounds(fSideMin, 0.0F, fPostMax, fSideMax, fSideHeight, 1.0F);
+                renderStakeComponentWithLogEnds(block, i, j, k);
+            }
+            else
+            {
+                block.setBlockBounds(fRailMin, 0.3125F, fPostMax, fRailMax, 0.5F, 1.0F);
+                renderStandardBlock(block, i, j, k);
+                block.setBlockBounds(fRailMin, 0.75F, fPostMax, fRailMax, 0.9375F, 1.0F);
+                renderStandardBlock(block, i, j, k);
+            }
             flag = true;
         }
 
-        
+        // WEST CONNECTION
         int idWest = blockAccess.getBlockId(i - 1, j, k);
         Block bWest = Block.blocksList[idWest];
-        if (idWest == blockID || (bWest != null && bWest.isOpaqueCube()))
+        boolean hasWestConnect = idWest == blockID || (bWest != null && bWest.isOpaqueCube());
+        if (hasWestConnect)
         {
-            
-            block.setBlockBounds(0.0F, 0.3125F, fRailMin, fPostMin, 0.5F, fRailMax);
-            renderStandardBlock(block, i, j, k);
-            
-            
-            block.setBlockBounds(0.0F, 0.75F, fRailMin, fPostMin, 0.9375F, fRailMax);
-            renderStandardBlock(block, i, j, k);
+            if (isStakes)
+            {
+                block.setBlockBounds(0.0F, 0.0F, fSideMin, fSideMin, fSideHeight, fSideMax);
+                renderStakeComponentWithLogEnds(block, i, j, k);
+            }
+            else
+            {
+                block.setBlockBounds(0.0F, 0.3125F, fRailMin, fPostMin, 0.5F, fRailMax);
+                renderStandardBlock(block, i, j, k);
+                block.setBlockBounds(0.0F, 0.75F, fRailMin, fPostMin, 0.9375F, fRailMax);
+                renderStandardBlock(block, i, j, k);
+            }
             flag = true;
         }
 
-        
+        // EAST CONNECTION
         int idEast = blockAccess.getBlockId(i + 1, j, k);
         Block bEast = Block.blocksList[idEast];
-        if (idEast == blockID || (bEast != null && bEast.isOpaqueCube()))
+        boolean hasEastConnect = idEast == blockID || (bEast != null && bEast.isOpaqueCube());
+        if (hasEastConnect)
         {
-            
-            block.setBlockBounds(fPostMax, 0.3125F, fRailMin, 1.0F, 0.5F, fRailMax);
-            renderStandardBlock(block, i, j, k);
-            
-            
-            block.setBlockBounds(fPostMax, 0.75F, fRailMin, 1.0F, 0.9375F, fRailMax);
-            renderStandardBlock(block, i, j, k);
+            if (isStakes)
+            {
+                block.setBlockBounds(fSideMax, 0.0F, fSideMin, 1.0F, fSideHeight, fSideMax);
+                renderStakeComponentWithLogEnds(block, i, j, k);
+            }
+            else
+            {
+                block.setBlockBounds(fPostMax, 0.3125F, fRailMin, 1.0F, 0.5F, fRailMax);
+                renderStandardBlock(block, i, j, k);
+                block.setBlockBounds(fPostMax, 0.75F, fRailMin, 1.0F, 0.9375F, fRailMax);
+                renderStandardBlock(block, i, j, k);
+            }
             flag = true;
         }
 
-        
         block.setBlockBounds(fPostMin, 0.0F, fPostMin, fPostMax, 1.0F, fPostMax);
         return flag;
     }
+
+    private void renderStakeComponentWithLogEnds(Block block, int i, int j, int k)
+    {
+        Tessellator tessellator = Tessellator.instance;
+        float brightness = block.getBlockBrightness(blockAccess, i, j, k);
+
+        if (renderAllFaces || block.shouldSideBeRendered(blockAccess, i, j, k - 1, 2)) {
+            tessellator.setColorOpaque_F(brightness * 0.8F, brightness * 0.8F, brightness * 0.8F);
+            renderEastFace(block, i, j, k, block.getBlockTexture(blockAccess, i, j, k, 2));
+        }
+        if (renderAllFaces || block.shouldSideBeRendered(blockAccess, i, j, k + 1, 3)) {
+            tessellator.setColorOpaque_F(brightness * 0.8F, brightness * 0.8F, brightness * 0.8F);
+            renderWestFace(block, i, j, k, block.getBlockTexture(blockAccess, i, j, k, 3));
+        }
+        if (renderAllFaces || block.shouldSideBeRendered(blockAccess, i - 1, j, k, 4)) {
+            tessellator.setColorOpaque_F(brightness * 0.6F, brightness * 0.6F, brightness * 0.6F);
+            renderNorthFace(block, i, j, k, block.getBlockTexture(blockAccess, i, j, k, 4));
+        }
+        if (renderAllFaces || block.shouldSideBeRendered(blockAccess, i + 1, j, k, 5)) {
+            tessellator.setColorOpaque_F(brightness * 0.6F, brightness * 0.6F, brightness * 0.6F);
+            renderSouthFace(block, i, j, k, block.getBlockTexture(blockAccess, i, j, k, 5));
+        }
+
+        if (renderAllFaces || block.shouldSideBeRendered(blockAccess, i, j - 1, k, 0)) {
+            tessellator.setColorOpaque_F(brightness * 0.5F, brightness * 0.5F, brightness * 0.5F);
+            renderBottomFace(block, i, j, k, 21);
+        }
+        if (renderAllFaces || block.shouldSideBeRendered(blockAccess, i, j + 1, k, 1)) {
+            tessellator.setColorOpaque_F(brightness, brightness, brightness);
+            renderTopFace(block, i, j, k, 21);
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public boolean renderBlockStairs(Block block, int i, int j, int k)
     {

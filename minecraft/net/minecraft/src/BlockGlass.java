@@ -24,7 +24,7 @@ public class BlockGlass extends BlockBreakable
 
     public int quantityDropped(Random random)
     {
-        return 4;
+        return 1;
     }
 
     public int getRenderBlockPass()
